@@ -17,6 +17,6 @@ in real time using the gtfs feed provided by the MBTA.
     completeing the handling of static files.
     repurposing the current textInput.java class to no longer contain the main method,
       so that it can exist as a staticHandler class in the larger project.
-      
-    Once the statics, as well as the real time vehicle positions coexist within the same application I will
-      output the data to Max/MSP to generate the composition.
+   
+  Once the statics, as well as the real time vehicle positions coexist within the same application I will
+     output the data to Max/MSP to generate the composition.
