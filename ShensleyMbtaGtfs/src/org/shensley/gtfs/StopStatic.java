@@ -1,6 +1,6 @@
 package org.shensley.gtfs;
 
-public class Stop {
+public class StopStatic {
 	
 	private String id;
 	private String code;

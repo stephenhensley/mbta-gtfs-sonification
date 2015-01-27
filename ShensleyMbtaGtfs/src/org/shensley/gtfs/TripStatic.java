@@ -1,6 +1,6 @@
 package org.shensley.gtfs;
 
-public class Trip {
+public class TripStatic {
 	
 	private String routeId;
 	

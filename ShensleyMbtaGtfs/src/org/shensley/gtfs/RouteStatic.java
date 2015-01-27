@@ -1,7 +1,7 @@
 package org.shensley.gtfs;
 
 
-public class Route {
+public class RouteStatic {
 	
 	private String id;
 	

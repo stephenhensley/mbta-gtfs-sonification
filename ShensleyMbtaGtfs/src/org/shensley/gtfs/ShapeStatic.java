@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-public class Shape {
+public class ShapeStatic {
 	
 	private String id;
 	private int length;
@@ -59,25 +59,4 @@ public class Shape {
 		}
 	}
 	
-	/* This may not work. I may simply need a setPos function to load a Double[] 
-	public void setLat(int index, String lat){
-		if(this.posBySequence.get(index)[0] == null){
-			if(lat != null){
-				this.posBySequence.add(index, Double.parseDouble(lat)[0]);
-			}
-		}
-	}
-	*/
-	
-
-	
-	/* Same as above... possibly deprecated.
-	public void setLon(String lon){
-		
-	}
-	*/
-	
-	//THIS IS WHERE IM KINDA STUCK... GOTTA PLAN OUT HOW TO GET MULTIPLE LINES LOADED UP, ETC.
-	
-
 }
