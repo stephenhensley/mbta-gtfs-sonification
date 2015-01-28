@@ -15,7 +15,10 @@ import java.util.ArrayList;
 
 
 
+
 public class StaticHandler {
+	
+	
 	
 	private static ArrayList<String> lines = new ArrayList<String>();
 	private static List<String> routeIdList = new ArrayList<String>();
@@ -25,6 +28,8 @@ public class StaticHandler {
 	private static List<ShapeStatic> trainShapes = new ArrayList<ShapeStatic>();
 	private static List<Calendar> trainCalendar = new ArrayList<Calendar>();
 	
+	//Constant values that will be adjusted based on the current machine.
+	//Can only be run on compiler's machine until this is resolved. 
 	final static String PATH_NAME = "/Users/stephenhensley/MBTA_programming/MBTA_GTFS/";
 	final static String[] FILE_NAME = new String[]{"routes.txt", "trips.txt", "stops.txt","shapes.txt", "calendar.txt"};
 
@@ -32,19 +37,19 @@ public class StaticHandler {
 
 	
 	
-	public static void main(String... aArgs) throws IOException{
 		
-
-		
-		StaticHandler text = new StaticHandler();
-		
+	//Constructor
+	//Populates all lists upon creation.
+	public StaticHandler()throws IOException{
+	
+		//StaticHandler text = new StaticHandler();
 		for(int i = 0;i<5;i++){
 			StringBuilder fullPathString = new StringBuilder();
 		
 			fullPathString.append(PATH_NAME+FILE_NAME[i]);
 			log(fullPathString.toString());
 		
-			text.readFile(fullPathString.toString());
+			this.readFile(fullPathString.toString());
 			
 			switch(fullPathString.toString()){
 			
@@ -80,22 +85,46 @@ public class StaticHandler {
 					if(trainCalendar.isEmpty()){
 						log("Number of lines in calendar.txt: " + lines.size());
 						trainCalendar.addAll(setCalendar(lines));
+						
 					}
 				default:
 				break;
 			}
-		}
-		
-		
-		//Testing for retrieval
+		}		
+	}
 		
 
-		
+	
+	
+	
+	public List<RouteStatic> getTrainRoutes(){
+		return trainRoutes;
+	}
+	
+	public List<StopStatic> getTrainStops(){
+		return trainStops;
+	}
+	
+	public List<TripStatic> getTrainTrips(){
+		return trainTrips;
+	}
+	
+	public List<ShapeStatic> getTrainShapes(){
+		return trainShapes;
+	}
+	
+	public List<Calendar> getTrainCalendar(){
+		return trainCalendar;
 	}
 	
 	
 	
-	void readFile(String aFileName) throws IOException {
+	
+	
+	
+	
+	
+	private void readFile(String aFileName) throws IOException {
 		Path path = Paths.get(aFileName);
 		lines.clear();
 		try (Scanner scanner = new Scanner(path, ENCODING.name())){
@@ -130,7 +159,7 @@ public class StaticHandler {
 		log(sb);
 	}
 	
-	public static List<RouteStatic> setRoutes(ArrayList<String> lines){
+	private static List<RouteStatic> setRoutes(ArrayList<String> lines){
 		List<RouteStatic> routes = new ArrayList<RouteStatic>();
 		for(int i = 0; i<lines.size(); i++){
 			int j = 0;
@@ -186,7 +215,7 @@ public class StaticHandler {
 		return routes;
 	}
 
-	public static List<TripStatic> setTrips(ArrayList<String> lines){
+	private static List<TripStatic> setTrips(ArrayList<String> lines){
 		List<TripStatic> trips = new ArrayList<TripStatic>();
 		for(int i = 0; i<lines.size(); i++){
 			int j = 0;
@@ -237,7 +266,7 @@ public class StaticHandler {
 		return trips;
 	}
 
-	public static List<StopStatic> setStops(ArrayList<String> lines){
+	private static List<StopStatic> setStops(ArrayList<String> lines){
 		List<StopStatic> stops = new ArrayList<StopStatic>();
 		for(int i = 0; i < lines.size(); i++){
 			int j = 0;
@@ -296,7 +325,7 @@ public class StaticHandler {
 		return stops;
 	}
 	
-	public static List<ShapeStatic> setShapes(ArrayList<String> lines){
+	private static List<ShapeStatic> setShapes(ArrayList<String> lines){
 		List<ShapeStatic> shapes = new ArrayList<ShapeStatic>();
 		String shapeId = null;
 		String tempLat = null; 
@@ -422,7 +451,7 @@ public class StaticHandler {
 		return shapes;
 	}
 
-	public static List<Calendar> setCalendar(ArrayList<String> lines){
+	private static List<Calendar> setCalendar(ArrayList<String> lines){
 		List<Calendar> calendar = new ArrayList<Calendar>();
 		
 		for(int i = 0; i < lines.size(); i++){
