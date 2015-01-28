@@ -11,92 +11,92 @@ public class Calendar {
 	private boolean sunday;
 	private String startDate;
 	private String endDate;
-	
-	public String getServiceId(){
+
+	public String getServiceId() {
 		return serviceId;
 	}
-	
-	public void setServiceId(String serviceId){
+
+	public void setServiceId(String serviceId) {
 		this.serviceId = serviceId;
 	}
-	
-	public boolean getMonday(){
+
+	public boolean getMonday() {
 		return monday;
 	}
-	
-	public void setMonday(String monday){
+
+	public void setMonday(String monday) {
 		monday = monday.replace("\"", "");
 		this.monday = Boolean.parseBoolean(monday);
 	}
-	
-	public boolean getTuesday(){
+
+	public boolean getTuesday() {
 		return tuesday;
 	}
-	
-	public void setTuesday(String tuesday){
+
+	public void setTuesday(String tuesday) {
 		tuesday = tuesday.replace("\"", "");
 		this.tuesday = Boolean.parseBoolean(tuesday);
 	}
-	
-	public boolean getWednesday(){
+
+	public boolean getWednesday() {
 		return wednesday;
 	}
-	
-	public void setWednesday(String wednesday){
+
+	public void setWednesday(String wednesday) {
 		wednesday = wednesday.replace("\"", "");
 		this.wednesday = Boolean.parseBoolean(wednesday);
 	}
-	
-	public boolean getThursday(){
+
+	public boolean getThursday() {
 		return thursday;
 	}
-	
-	public void setThursday(String thursday){
+
+	public void setThursday(String thursday) {
 		thursday = thursday.replace("\"", "");
 		this.thursday = Boolean.parseBoolean(thursday);
 	}
-	
-	public boolean getFriday(){
+
+	public boolean getFriday() {
 		return friday;
 	}
-	
-	public void setFriday(String friday){
+
+	public void setFriday(String friday) {
 		friday = friday.replace("\"", "");
 		this.friday = Boolean.parseBoolean(friday);
 	}
-	
-	public boolean getSaturday(){
+
+	public boolean getSaturday() {
 		return saturday;
 	}
-	
-	public void setSaturday(String saturday){
+
+	public void setSaturday(String saturday) {
 		saturday = saturday.replace("\"", "");
 		this.saturday = Boolean.parseBoolean(saturday);
 	}
-	
-	public boolean getSunday(){
+
+	public boolean getSunday() {
 		return sunday;
 	}
-	
-	public void setSunday(String sunday){
+
+	public void setSunday(String sunday) {
 		sunday = sunday.replace("\"", "");
 		this.sunday = Boolean.parseBoolean(sunday);
 	}
-	
-	public String getStartDate(){
+
+	public String getStartDate() {
 		return startDate;
 	}
-	
-	public void setStartDate(String startDate){
+
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
-	
-	public String getEndDate(){
+
+	public String getEndDate() {
 		return endDate;
 	}
-	
-	public void setEndDate(String endDate){
+
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	
+
 }

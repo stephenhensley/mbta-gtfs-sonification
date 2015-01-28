@@ -1,6 +1,5 @@
 package org.shensley.gtfs;
 
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.charset.Charset;
@@ -10,16 +9,8 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
-
-
-
-
-
-
 public class StaticHandler {
-	
-	
-	
+
 	private static ArrayList<String> lines = new ArrayList<String>();
 	private static List<String> routeIdList = new ArrayList<String>();
 	private static List<RouteStatic> trainRoutes = new ArrayList<RouteStatic>();
@@ -27,256 +18,254 @@ public class StaticHandler {
 	private static List<StopStatic> trainStops = new ArrayList<StopStatic>();
 	private static List<ShapeStatic> trainShapes = new ArrayList<ShapeStatic>();
 	private static List<Calendar> trainCalendar = new ArrayList<Calendar>();
-	
-	//Constant values that will be adjusted based on the current machine.
-	//Can only be run on compiler's machine until this is resolved. 
+
+	// Constant values that will be adjusted based on the current machine.
+	// Can only be run on compiler's machine until this is resolved.
 	final static String PATH_NAME = "/Users/stephenhensley/MBTA_programming/MBTA_GTFS/";
-	final static String[] FILE_NAME = new String[]{"routes.txt", "trips.txt", "stops.txt","shapes.txt", "calendar.txt"};
+	final static String[] FILE_NAME = new String[] { "routes.txt", "trips.txt",
+			"stops.txt", "shapes.txt", "calendar.txt" };
 
 	final static Charset ENCODING = StandardCharsets.UTF_8;
 
-	
-	
-		
-	//Constructor
-	//Populates all lists upon creation.
-	public StaticHandler()throws IOException{
-	
-		//StaticHandler text = new StaticHandler();
-		for(int i = 0;i<5;i++){
+	// Constructor
+	// Populates all lists upon creation.
+	public StaticHandler() throws IOException {
+
+		// StaticHandler text = new StaticHandler();
+		for (int i = 0; i < 5; i++) {
 			StringBuilder fullPathString = new StringBuilder();
-		
-			fullPathString.append(PATH_NAME+FILE_NAME[i]);
+
+			fullPathString.append(PATH_NAME + FILE_NAME[i]);
 			log(fullPathString.toString());
-		
+
 			this.readFile(fullPathString.toString());
-			
-			switch(fullPathString.toString()){
-			
-				case (PATH_NAME+"routes.txt"):
-					if(trainRoutes.isEmpty()){
-						trainRoutes.addAll(setRoutes(lines));
-						if(routeIdList.isEmpty()){
-							for(RouteStatic r : trainRoutes){
-								routeIdList.add(r.getId());
-							}
+
+			switch (fullPathString.toString()) {
+
+			case (PATH_NAME + "routes.txt"):
+				if (trainRoutes.isEmpty()) {
+					trainRoutes.addAll(setRoutes(lines));
+					if (routeIdList.isEmpty()) {
+						for (RouteStatic r : trainRoutes) {
+							routeIdList.add(r.getId());
 						}
-					}else{log("This list was not empty before you tried to add shit(ROUTES)");}
-				break;
-				case (PATH_NAME+"trips.txt"):
-					if(trainTrips.isEmpty()){
-						log("Number of lines in trips.txt: " + lines.size());
-						trainTrips.addAll(setTrips(lines));
-					}else{log("This list was not empty before you tried to add shit(TRIPS)");}
-				break;
-					
-				case (PATH_NAME+"stops.txt"):
-					if(trainStops.isEmpty()){
-						trainStops.addAll(setStops(lines));
-					}else{log("This list was not empty before you tried to add shit(STOPS)");}
-				break;
-				case (PATH_NAME+"shapes.txt"):
-					if(trainShapes.isEmpty()){
-						log("Number of lines in shapes.txt: " + lines.size());
-						trainShapes.addAll(setShapes(lines));
-					}else{log("This list was not empty before you tried to add shit(SHAPES)");}
-				break;
-				case (PATH_NAME+"calendar.txt"):
-					if(trainCalendar.isEmpty()){
-						log("Number of lines in calendar.txt: " + lines.size());
-						trainCalendar.addAll(setCalendar(lines));
-						
 					}
-				default:
+				} else {
+					log("This list was not empty before you tried to add shit(ROUTES)");
+				}
+				break;
+			case (PATH_NAME + "trips.txt"):
+				if (trainTrips.isEmpty()) {
+					log("Number of lines in trips.txt: " + lines.size());
+					trainTrips.addAll(setTrips(lines));
+				} else {
+					log("This list was not empty before you tried to add shit(TRIPS)");
+				}
+				break;
+
+			case (PATH_NAME + "stops.txt"):
+				if (trainStops.isEmpty()) {
+					trainStops.addAll(setStops(lines));
+				} else {
+					log("This list was not empty before you tried to add shit(STOPS)");
+				}
+				break;
+			case (PATH_NAME + "shapes.txt"):
+				if (trainShapes.isEmpty()) {
+					log("Number of lines in shapes.txt: " + lines.size());
+					trainShapes.addAll(setShapes(lines));
+				} else {
+					log("This list was not empty before you tried to add shit(SHAPES)");
+				}
+				break;
+			case (PATH_NAME + "calendar.txt"):
+				if (trainCalendar.isEmpty()) {
+					log("Number of lines in calendar.txt: " + lines.size());
+					trainCalendar.addAll(setCalendar(lines));
+
+				}
+			default:
 				break;
 			}
-		}		
+		}
 	}
-		
 
-	
-	
-	
-	public List<RouteStatic> getTrainRoutes(){
+	public List<RouteStatic> getTrainRoutes() {
 		return trainRoutes;
 	}
-	
-	public List<StopStatic> getTrainStops(){
+
+	public List<StopStatic> getTrainStops() {
 		return trainStops;
 	}
-	
-	public List<TripStatic> getTrainTrips(){
+
+	public List<TripStatic> getTrainTrips() {
 		return trainTrips;
 	}
-	
-	public List<ShapeStatic> getTrainShapes(){
+
+	public List<ShapeStatic> getTrainShapes() {
 		return trainShapes;
 	}
-	
-	public List<Calendar> getTrainCalendar(){
+
+	public List<Calendar> getTrainCalendar() {
 		return trainCalendar;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	private void readFile(String aFileName) throws IOException {
 		Path path = Paths.get(aFileName);
 		lines.clear();
-		try (Scanner scanner = new Scanner(path, ENCODING.name())){
+		try (Scanner scanner = new Scanner(path, ENCODING.name())) {
 			scanner.useDelimiter(",");
-			while(scanner.hasNextLine()){
+			while (scanner.hasNextLine()) {
 				lines.add(scanner.nextLine());
 			}
 			scanner.close();
 		}
 	}
-	
-	private static void log(Object aMsg){
+
+	private static void log(Object aMsg) {
 		System.out.println(String.valueOf(aMsg));
 	}
-	
-	public static void dumpRoute(RouteStatic r){
+
+	public static void dumpRoute(RouteStatic r) {
 		StringBuilder s = new StringBuilder();
-		s.append(r.getId() + '\t' + r.getType() + '\t' + r.getColor() + '\t' + r.getLongName());
+		s.append(r.getId() + '\t' + r.getType() + '\t' + r.getColor() + '\t'
+				+ r.getLongName());
 		log(s);
 	}
 
-	public static void dumpTrip(TripStatic t){
+	public static void dumpTrip(TripStatic t) {
 
 		StringBuilder s = new StringBuilder();
-		s.append(t.getRouteId() + '\t' + t.getTripId() + '\t' + t.getTripHeadsign() + '\t' + t.getDirId() + '\t' + t.getShapeId());
+		s.append(t.getRouteId() + '\t' + t.getTripId() + '\t'
+				+ t.getTripHeadsign() + '\t' + t.getDirId() + '\t'
+				+ t.getShapeId());
 		log(s);
 	}
 
-	public static void dumpStop(StopStatic s){
+	public static void dumpStop(StopStatic s) {
 		StringBuilder sb = new StringBuilder();
-		sb.append(s.getId() + '\t' + s.getLat() + '\t' + s.getLon() + '\t' + s.getName());
+		sb.append(s.getId() + '\t' + s.getLat() + '\t' + s.getLon() + '\t'
+				+ s.getName());
 		log(sb);
 	}
-	
-	private static List<RouteStatic> setRoutes(ArrayList<String> lines){
+
+	private static List<RouteStatic> setRoutes(ArrayList<String> lines) {
 		List<RouteStatic> routes = new ArrayList<RouteStatic>();
-		for(int i = 0; i<lines.size(); i++){
+		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
-			if(i != 0){
+			if (i != 0) {
 				RouteStatic r = new RouteStatic();
-				try(Scanner s = new Scanner(lines.get(i))){
+				try (Scanner s = new Scanner(lines.get(i))) {
 					s.useDelimiter(",");
-					while(s.hasNext()){
+					while (s.hasNext()) {
 						String temp = s.next();
-			
-						
-						switch(j){
-							case 0:
-								r.setId(temp);
-								break;
-							case 1:
-								r.setA_id(temp);
-								break;
-							case 2:
-								r.setShortName(temp);
-								break;
-							case 3:
-								r.setLongName(temp);
-								break;
-							case 4:
-								r.setDesc(temp);
-								break;
-							case 5:
-								r.setType(temp);
-								break;
-							case 6:
-								r.setUrl(temp);
-								break;
-							case 7:
-								r.setColor(temp);
-								break;
-							case 8:
-								r.setTextColor(temp);
-								break;
-							default:
-								break;
+
+						switch (j) {
+						case 0:
+							r.setId(temp);
+							break;
+						case 1:
+							r.setA_id(temp);
+							break;
+						case 2:
+							r.setShortName(temp);
+							break;
+						case 3:
+							r.setLongName(temp);
+							break;
+						case 4:
+							r.setDesc(temp);
+							break;
+						case 5:
+							r.setType(temp);
+							break;
+						case 6:
+							r.setUrl(temp);
+							break;
+						case 7:
+							r.setColor(temp);
+							break;
+						case 8:
+							r.setTextColor(temp);
+							break;
+						default:
+							break;
 						}
 						j++;
 					}
-					if(r.getType() == 0 || r.getType() == 1){
+					if (r.getType() == 0 || r.getType() == 1) {
 						routes.add(r);
 					}
 				}
 			}
-					
+
 		}
-		
+
 		return routes;
 	}
 
-	private static List<TripStatic> setTrips(ArrayList<String> lines){
+	private static List<TripStatic> setTrips(ArrayList<String> lines) {
 		List<TripStatic> trips = new ArrayList<TripStatic>();
-		for(int i = 0; i<lines.size(); i++){
+		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
-			if(i != 0){
+			if (i != 0) {
 				TripStatic t = new TripStatic();
-				try(Scanner s = new Scanner(lines.get(i))){
+				try (Scanner s = new Scanner(lines.get(i))) {
 					s.useDelimiter(",");
-					while(s.hasNext()){
-						String temp = s.next();	
-						switch(j){
-							case 0:
-								t.setRouteId(temp);
-								break;
-							case 1:
-								t.setServiceId(temp);
-								break;
-							case 2:
-								t.setTripId(temp);
-								break;
-							case 3:
-								t.setTripHeadsign(temp);
-								break;
-							case 4:
-								t.setTripShortName(temp);
-							case 5:
-								t.setDirId(temp);
-								break;
-							case 6:
-								t.setBlockId(temp);
-								break;
-							case 7:
-								t.setShapeId(temp);
-								break;
-							default:
-								break;
+					while (s.hasNext()) {
+						String temp = s.next();
+						switch (j) {
+						case 0:
+							t.setRouteId(temp);
+							break;
+						case 1:
+							t.setServiceId(temp);
+							break;
+						case 2:
+							t.setTripId(temp);
+							break;
+						case 3:
+							t.setTripHeadsign(temp);
+							break;
+						case 4:
+							t.setTripShortName(temp);
+						case 5:
+							t.setDirId(temp);
+							break;
+						case 6:
+							t.setBlockId(temp);
+							break;
+						case 7:
+							t.setShapeId(temp);
+							break;
+						default:
+							break;
 						}
 						j++;
 					}
-					if(t.getRouteId().contains("_")){
+					if (t.getRouteId().contains("_")) {
 						trips.add(t);
 					}
 				}
-			}					
+			}
 		}
-		if(trips.get(0).getRouteId()==null){
+		if (trips.get(0).getRouteId() == null) {
 			trips.remove(0);
 		}
 		return trips;
 	}
 
-	private static List<StopStatic> setStops(ArrayList<String> lines){
+	private static List<StopStatic> setStops(ArrayList<String> lines) {
 		List<StopStatic> stops = new ArrayList<StopStatic>();
-		for(int i = 0; i < lines.size(); i++){
+		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
-			if(i != 0){
+			if (i != 0) {
 				StopStatic s = new StopStatic();
-				try(Scanner scan = new Scanner(lines.get(i))){
+				try (Scanner scan = new Scanner(lines.get(i))) {
 					scan.useDelimiter(",");
-					while(scan.hasNext()){
+					while (scan.hasNext()) {
 						String temp = scan.next();
-						switch(j){
+						switch (j) {
 						case 0:
 							s.setId(temp);
 							break;
@@ -303,7 +292,7 @@ public class StaticHandler {
 							break;
 						case 8:
 							s.setType(temp);
-							
+
 							break;
 						case 9:
 							s.setParentStation(temp);
@@ -313,37 +302,37 @@ public class StaticHandler {
 						}
 						j++;
 					}
-					if(s.getType() == 1){
+					if (s.getType() == 1) {
 						stops.add(s);
 					}
 				}
-			}	
-		}	
-		if(!stops.isEmpty() && stops.get(0).getId() == null){
+			}
+		}
+		if (!stops.isEmpty() && stops.get(0).getId() == null) {
 			stops.remove(0);
 		}
 		return stops;
 	}
-	
-	private static List<ShapeStatic> setShapes(ArrayList<String> lines){
+
+	private static List<ShapeStatic> setShapes(ArrayList<String> lines) {
 		List<ShapeStatic> shapes = new ArrayList<ShapeStatic>();
 		String shapeId = null;
-		String tempLat = null; 
+		String tempLat = null;
 		String tempLon = null;
 		int indexPerShape = 0;
 		int numberOfShapes = 0;
-		
-		for(int i = 0; i < lines.size(); i++){
+
+		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
-			if(i != 0){
-				if(shapes.isEmpty()){
+			if (i != 0) {
+				if (shapes.isEmpty()) {
 					ShapeStatic s = new ShapeStatic();
-					try(Scanner scan = new Scanner(lines.get(i))){
+					try (Scanner scan = new Scanner(lines.get(i))) {
 						scan.useDelimiter(",");
-						while(scan.hasNext()){
+						while (scan.hasNext()) {
 							String temp = scan.next();
-							
-							switch(j){
+
+							switch (j) {
 							case 0:
 								shapeId = temp;
 								s.setId(shapeId);
@@ -362,45 +351,42 @@ public class StaticHandler {
 							default:
 								break;
 							}
-							
 
 							j++;
 						}
 
-
 					}
-					for(String rId : routeIdList){
+					for (String rId : routeIdList) {
 						rId = rId.replace("_", "");
-						if(shapeId.contains(rId)){
-							if(tempLat != null && tempLon != null){
+						if (shapeId.contains(rId)) {
+							if (tempLat != null && tempLon != null) {
 								s.setPos(indexPerShape, tempLat, tempLon);
 							}
 							shapes.add(s);
-							
+
 							numberOfShapes++;
 							indexPerShape++;
 						}
 					}
-				}else{
+				} else {
 
-					try(Scanner scan = new Scanner(lines.get(i))){
+					try (Scanner scan = new Scanner(lines.get(i))) {
 						scan.useDelimiter(",");
 						ShapeStatic s = new ShapeStatic();
 						String newShapeId = null;
-						while(scan.hasNext()){
+						while (scan.hasNext()) {
 							String temp = scan.next();
 
-
-							
-							switch(j){
+							switch (j) {
 							case 0:
-								if(shapeId.matches(temp)){
+								if (shapeId.matches(temp)) {
 									newShapeId = shapeId;
 									break;
-								}else{
+								} else {
 									shapeId = temp;
 									s.setId(shapeId);
-									shapes.get(numberOfShapes-1).setLength(indexPerShape);
+									shapes.get(numberOfShapes - 1).setLength(
+											indexPerShape);
 									indexPerShape = 0;
 									break;
 								}
@@ -412,9 +398,11 @@ public class StaticHandler {
 								tempLon = temp;
 								break;
 							case 3:
-								if(newShapeId != null && newShapeId.matches(shapeId)){
-									shapes.get(numberOfShapes-1).setSequence(indexPerShape, temp);
-								}else{
+								if (newShapeId != null
+										&& newShapeId.matches(shapeId)) {
+									shapes.get(numberOfShapes - 1).setSequence(
+											indexPerShape, temp);
+								} else {
 									s.setSequence(indexPerShape, temp);
 								}
 								break;
@@ -424,17 +412,21 @@ public class StaticHandler {
 							j++;
 						}
 
-						if(newShapeId != null && newShapeId.matches(shapeId)){
+						if (newShapeId != null && newShapeId.matches(shapeId)) {
 							indexPerShape++;
-						}else{
-							for(String rId : routeIdList){
+						} else {
+							for (String rId : routeIdList) {
 								rId = rId.replace("_", "");
-								if(shapeId.contains(rId)){
-									if(tempLat != null && tempLon != null){
-										if(newShapeId != null && newShapeId.matches(shapeId)){
-											shapes.get(numberOfShapes-1).setPos(indexPerShape, tempLat, tempLon);
-										}else{
-											s.setPos(indexPerShape, tempLat, tempLon);
+								if (shapeId.contains(rId)) {
+									if (tempLat != null && tempLon != null) {
+										if (newShapeId != null
+												&& newShapeId.matches(shapeId)) {
+											shapes.get(numberOfShapes - 1)
+													.setPos(indexPerShape,
+															tempLat, tempLon);
+										} else {
+											s.setPos(indexPerShape, tempLat,
+													tempLon);
 										}
 									}
 									shapes.add(s);
@@ -445,38 +437,38 @@ public class StaticHandler {
 						}
 					}
 				}
-			}		
+			}
 		}
-		
+
 		return shapes;
 	}
 
-	private static List<Calendar> setCalendar(ArrayList<String> lines){
+	private static List<Calendar> setCalendar(ArrayList<String> lines) {
 		List<Calendar> calendar = new ArrayList<Calendar>();
-		
-		for(int i = 0; i < lines.size(); i++){
+
+		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
-			if(i != 0){
+			if (i != 0) {
 				Calendar c = new Calendar();
-				try(Scanner s = new Scanner(lines.get(i))){
+				try (Scanner s = new Scanner(lines.get(i))) {
 					s.useDelimiter(",");
-					
-					while(s.hasNext()){
-						
+
+					while (s.hasNext()) {
+
 						String temp = s.next();
 						temp = temp.replace("\"", "");
-					
-						switch(j){
+
+						switch (j) {
 						case 0:
-							if(temp.contains("LRV") || temp.contains("RTL")){
+							if (temp.contains("LRV") || temp.contains("RTL")) {
 								c.setServiceId(temp);
 								break;
-							}else{
+							} else {
 								s.close();
 								IllegalStateException scanClosed = new IllegalStateException();
-								throw(scanClosed);
+								throw (scanClosed);
 
-						}
+							}
 						case 1:
 							c.setMonday(temp);
 							break;
@@ -509,17 +501,17 @@ public class StaticHandler {
 							break;
 						}
 						j++;
-						
+
 					}
-				}catch(IllegalStateException scanClosed){
-					
+				} catch (IllegalStateException scanClosed) {
+
 				}
 
 			}
 
 		}
-		
+
 		return calendar;
 	}
-	
+
 }
