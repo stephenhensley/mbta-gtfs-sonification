@@ -1,6 +1,7 @@
 package org.shensley.gtfs;
 
 import java.io.IOException;
+import java.net.SocketException;
 import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,7 +33,7 @@ public class MainOutput {
 	}
 	
 	@SuppressWarnings("unused")
-	private void run(String[] args) throws Exception {
+	private void run(String[] args) throws Exception, SocketException {
 		if(args.length == 0 || CommandLineInterfaceLibrary.wantsHelp(args)) {
 			printUsage();
 			System.exit(-1);
@@ -62,11 +63,7 @@ public class MainOutput {
 				cli.getOptionValue(ARG_VEHICLE_POSITIONS_URL)));
 		
 		
-		/**
-		 * Again, below is code that won't be needed
-		 * it creates a server for the visualizer.
-		 */
-		//injector.getInstance(VisualizerServer.class);
+		
 		
 		LifecycleService lifecycleService = injector.getInstance(LifecycleService.class);
 		lifecycleService.start();	

@@ -98,7 +98,7 @@ public class StaticHandler {
 	
 	@PreDestroy
 	public void close(){
-		log("StaticHandler Destroyed.");
+		//log("StaticHandler Destroyed.");
 	}
 
 	public List<RouteStatic> getTrainRoutes() {

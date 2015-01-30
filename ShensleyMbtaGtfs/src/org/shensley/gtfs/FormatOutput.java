@@ -94,7 +94,7 @@ public class FormatOutput implements VehicleListener {
 		int z = 0;
 		for(Vehicle v : vehicles){
 			b.append(Integer.toString(z) + '\t' + v.getId() + '\t' + this.routeNameByRouteId.get(v.getRouteId())+ 
-					v.getLat() + '\t'+ v.getLon() + '\t' +  v.getBearing() + '\n');
+					'\t' + this.tripHeadsignByTripId.get(v.getTripId()) + '\t' + v.getTripId() + '\t' + v.getLat() + '\t'+ v.getLon() + '\t' +  v.getBearing() + '\n');
 			z++;
 		}
 		b.append("==================================================================\n");
@@ -115,9 +115,12 @@ public class FormatOutput implements VehicleListener {
 		}
 	}
 	
+	
+	//GreenLine tripId is not cooperative. for some reason: VehicleId+'_'+direction(presumedValue);
 	private void setTripHeadsignByTripId(StaticHandler handler){
 		for(TripStatic t : handler.getTrainTrips()){
-			this.tripHeadsignByTripId.put(t.getTripId(), t.getTripHeadsign());
+			String tripId = t.getTripId().replace("\"", "");
+			this.tripHeadsignByTripId.put(tripId, t.getTripHeadsign());
 		}
 		
 	}
@@ -133,7 +136,21 @@ public class FormatOutput implements VehicleListener {
 		
 	}
 	
+	
+	
 	private void setStopSequenceByShapeId(StaticHandler handler){
-		
+		/*
+		for(ShapeStatic sh : handler.getTrainShapes()){
+			for(StopStatic st : handler.getTrainStops()){
+				
+			}
+		}
+		*/
 	}
 }
+
+/**
+ * Movie called "Frank" worth watching for the creative process, etc.
+ * Daniel Suarez Books (Daemon)
+ * Watch Corraline
+ */

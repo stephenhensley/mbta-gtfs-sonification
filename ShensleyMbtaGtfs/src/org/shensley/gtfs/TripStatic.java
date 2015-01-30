@@ -39,6 +39,7 @@ public class TripStatic {
 	}
 
 	public void setTripId(String tripId) {
+		;
 		this.tripId = tripId;
 	}
 
