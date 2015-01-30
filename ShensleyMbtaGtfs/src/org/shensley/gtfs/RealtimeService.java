@@ -212,19 +212,6 @@ public class RealtimeService {
 		
 		if(update){
 			_log.info("vehicles updated: " + vehicles.size() + '\n');
-			
-			StringBuilder b = new StringBuilder();
-			b.append("\n");
-			b.append("Information: \nIndex,\tVehicle Id,\tRouteId,\tTripId,\tLat,\tLon,\tBearing\n");
-			int z = 0;
-
-			for(Vehicle v : vehicles){
-				b.append(Integer.toString(z) + '\t' + v.getId() + '\t' + v.getRouteId() + '\t' + v.getTripId() + '\t' + v.getLat() + '\t' + v.getLon() + '\t' + v.getBearing() + '\n');
-				z++;
-			}
-			b.append("=======================================================================\n");
-			_log.info(b.toString());
-			System.out.print(b.toString());
 		}
 		
 		for (VehicleListener listener : _listeners){

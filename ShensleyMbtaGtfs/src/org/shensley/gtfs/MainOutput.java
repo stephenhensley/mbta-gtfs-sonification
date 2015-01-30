@@ -30,7 +30,8 @@ public class MainOutput {
 		MainOutput m = new MainOutput();
 		m.run(args);
 	}
-
+	
+	@SuppressWarnings("unused")
 	private void run(String[] args) throws Exception {
 		if(args.length == 0 || CommandLineInterfaceLibrary.wantsHelp(args)) {
 			printUsage();
@@ -45,12 +46,7 @@ public class MainOutput {
 		Parser parser = new GnuParser();
 		CommandLine cli = parser.parse(options, args);		
 		Set<Module> modules = new HashSet<Module>();
-		/**
-		 * THIS IS IN THE ONEBUSAWAYPROGRAM BUT SEEMS USELESS TO ME:
-		 * Also, begs the questions of whether I should have a RealtimeModule class
-		 * extending AbstractModule ...
-		 * we will see
-		 */
+		
 		RealtimeModule.addModuleAndDependencies(modules);
 		
 		Injector injector = Guice.createInjector(modules);
