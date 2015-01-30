@@ -9,6 +9,11 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Singleton;
+
+@Singleton
 public class StaticHandler {
 
 	private static ArrayList<String> lines = new ArrayList<String>();
@@ -29,7 +34,8 @@ public class StaticHandler {
 
 	// Constructor
 	// Populates all lists upon creation.
-	public StaticHandler() throws IOException {
+	@PostConstruct
+	public void start() throws IOException {
 
 		// StaticHandler text = new StaticHandler();
 		for (int i = 0; i < 5; i++) {
@@ -88,6 +94,11 @@ public class StaticHandler {
 				break;
 			}
 		}
+	}
+	
+	@PreDestroy
+	public void close(){
+		log("StaticHandler Destroyed.");
 	}
 
 	public List<RouteStatic> getTrainRoutes() {
