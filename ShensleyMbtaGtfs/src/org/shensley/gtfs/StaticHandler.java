@@ -17,12 +17,12 @@ import javax.inject.Singleton;
 public class StaticHandler {
 
 	private static ArrayList<String> lines = new ArrayList<String>();
-	private static List<String> routeIdList = new ArrayList<String>();
-	private static List<RouteStatic> trainRoutes = new ArrayList<RouteStatic>();
-	private static List<TripStatic> trainTrips = new ArrayList<TripStatic>();
-	private static List<StopStatic> trainStops = new ArrayList<StopStatic>();
-	private static List<ShapeStatic> trainShapes = new ArrayList<ShapeStatic>();
-	private static List<Calendar> trainCalendar = new ArrayList<Calendar>();
+	private static ArrayList<String> routeIdList = new ArrayList<String>();
+	private static ArrayList<RouteStatic> trainRoutes = new ArrayList<RouteStatic>();
+	private static ArrayList<TripStatic> trainTrips = new ArrayList<TripStatic>();
+	private static ArrayList<StopStatic> trainStops = new ArrayList<StopStatic>();
+	private static ArrayList<ShapeStatic> trainShapes = new ArrayList<ShapeStatic>();
+	private static ArrayList<Calendar> trainCalendar = new ArrayList<Calendar>();
 
 	// Constant values that will be adjusted based on the current machine.
 	// Can only be run on compiler's machine until this is resolved.
@@ -80,6 +80,18 @@ public class StaticHandler {
 				if (trainShapes.isEmpty()) {
 					log("Number of lines in shapes.txt: " + lines.size());
 					trainShapes.addAll(setShapes(lines));
+					for(ShapeStatic sh : trainShapes){
+						try {
+							
+							if(sh.getId().contains("810_0001")){
+								log("0" + '\t' + sh.getSequence(0) + '\t' + sh.getLat(0) + '\t' + sh.getLon(0) + '\t' + sh.getLength());
+								log("1" + '\t' + sh.getSequence(1) + '\t' + sh.getLat(1) + '\t' + sh.getLon(1));
+							}
+							
+						}catch (NullPointerException ex){
+							log("Error: " + ex);
+						}
+					}
 				} else {
 					log("This list was not empty before you tried to add shit(SHAPES)");
 				}
@@ -101,23 +113,23 @@ public class StaticHandler {
 		//log("StaticHandler Destroyed.");
 	}
 
-	public List<RouteStatic> getTrainRoutes() {
+	public ArrayList<RouteStatic> getTrainRoutes() {
 		return trainRoutes;
 	}
 
-	public List<StopStatic> getTrainStops() {
+	public ArrayList<StopStatic> getTrainStops() {
 		return trainStops;
 	}
 
-	public List<TripStatic> getTrainTrips() {
+	public ArrayList<TripStatic> getTrainTrips() {
 		return trainTrips;
 	}
 
-	public List<ShapeStatic> getTrainShapes() {
+	public ArrayList<ShapeStatic> getTrainShapes() {
 		return trainShapes;
 	}
 
-	public List<Calendar> getTrainCalendar() {
+	public ArrayList<Calendar> getTrainCalendar() {
 		return trainCalendar;
 	}
 
@@ -161,7 +173,7 @@ public class StaticHandler {
 	}
 
 	private static List<RouteStatic> setRoutes(ArrayList<String> lines) {
-		List<RouteStatic> routes = new ArrayList<RouteStatic>();
+		ArrayList<RouteStatic> routes = new ArrayList<RouteStatic>();
 		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
 			if (i != 0) {
@@ -215,8 +227,8 @@ public class StaticHandler {
 		return routes;
 	}
 
-	private static List<TripStatic> setTrips(ArrayList<String> lines) {
-		List<TripStatic> trips = new ArrayList<TripStatic>();
+	private static ArrayList<TripStatic> setTrips(ArrayList<String> lines) {
+		ArrayList<TripStatic> trips = new ArrayList<TripStatic>();
 		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
 			if (i != 0) {
@@ -266,8 +278,8 @@ public class StaticHandler {
 		return trips;
 	}
 
-	private static List<StopStatic> setStops(ArrayList<String> lines) {
-		List<StopStatic> stops = new ArrayList<StopStatic>();
+	private static ArrayList<StopStatic> setStops(ArrayList<String> lines) {
+		ArrayList<StopStatic> stops = new ArrayList<StopStatic>();
 		for (int i = 0; i < lines.size(); i++) {
 			int j = 0;
 			if (i != 0) {
@@ -325,8 +337,8 @@ public class StaticHandler {
 		return stops;
 	}
 
-	private static List<ShapeStatic> setShapes(ArrayList<String> lines) {
-		List<ShapeStatic> shapes = new ArrayList<ShapeStatic>();
+	private static ArrayList<ShapeStatic> setShapes(ArrayList<String> lines) {
+		ArrayList<ShapeStatic> shapes = new ArrayList<ShapeStatic>();
 		String shapeId = null;
 		String tempLat = null;
 		String tempLon = null;
@@ -368,15 +380,19 @@ public class StaticHandler {
 
 					}
 					for (String rId : routeIdList) {
-						rId = rId.replace("_", "");
-						if (shapeId.contains(rId)) {
+						String rIdk = rId.replace("_", "k");
+						String rIdt = rId.replace("_", "t");
+						if (shapeId.contains(rId) || shapeId.contains(rIdk)||shapeId.contains(rIdt)) {
 							if (tempLat != null && tempLon != null) {
 								s.setPos(indexPerShape, tempLat, tempLon);
+							}else{
+								s.setPos(indexPerShape, "-1", "-1");
 							}
 							shapes.add(s);
 
 							numberOfShapes++;
 							indexPerShape++;
+							//log("FIRST OBJECT DONE: " + '\t' + "number of shapes: "+ numberOfShapes + '\t'+ "indexPerShape: " + indexPerShape);
 						}
 					}
 				} else {
@@ -390,14 +406,17 @@ public class StaticHandler {
 
 							switch (j) {
 							case 0:
-								if (shapeId.matches(temp)) {
-									newShapeId = shapeId;
+								if (shapeId.contains(temp)) {
+									newShapeId = shapeId;						
 									break;
 								} else {
 									shapeId = temp;
 									s.setId(shapeId);
-									shapes.get(numberOfShapes - 1).setLength(
-											indexPerShape);
+									ShapeStatic tempShape = shapes.get(numberOfShapes - 1);
+									shapes.remove(numberOfShapes - 1);
+									tempShape.setLength(indexPerShape);
+									shapes.add(tempShape);
+									
 									indexPerShape = 0;
 									break;
 								}
@@ -409,42 +428,54 @@ public class StaticHandler {
 								tempLon = temp;
 								break;
 							case 3:
-								if (newShapeId != null
-										&& newShapeId.matches(shapeId)) {
-									shapes.get(numberOfShapes - 1).setSequence(
-											indexPerShape, temp);
+								//just took out && newShapeId.contains(shapeId)
+								if (newShapeId != null) {
+									shapes.get(numberOfShapes - 1).setSequence(indexPerShape, temp);
 								} else {
 									s.setSequence(indexPerShape, temp);
 								}
 								break;
 							case 4:
 								break;
+							default:
+								break;
 							}
 							j++;
 						}
 
 						if (newShapeId != null && newShapeId.matches(shapeId)) {
+							
+							ShapeStatic tempShape = shapes.get(numberOfShapes -1);
+							shapes.remove(numberOfShapes -1);
+							tempShape.setPos(indexPerShape,tempLat, tempLon);
+							shapes.add(numberOfShapes -1, tempShape);
 							indexPerShape++;
 						} else {
 							for (String rId : routeIdList) {
-								rId = rId.replace("_", "");
-								if (shapeId.contains(rId)) {
+								String rIdk = rId.replace("_", "k");
+								String rIdt = rId.replace("_", "t");
+
+								if (shapeId.contains(rId) || shapeId.contains(rIdk)||shapeId.contains(rIdt)) {
 									if (tempLat != null && tempLon != null) {
-										if (newShapeId != null
-												&& newShapeId.matches(shapeId)) {
-											shapes.get(numberOfShapes - 1)
-													.setPos(indexPerShape,
-															tempLat, tempLon);
-										} else {
-											s.setPos(indexPerShape, tempLat,
-													tempLon);
-										}
+										//log("are we getting here ever? pre");
+											s.setPos(indexPerShape, tempLat, tempLon);
+									}else{
+										log("Templat and tempLon are null");
+									}
+									try {
+										//log("yeah");
+										log(shapes.get(numberOfShapes - 1).getId() + '\t' + shapes.get(numberOfShapes - 1).getSequence(indexPerShape)
+												+ '\t' + shapes.get(numberOfShapes -1 ).getLat(indexPerShape));
+									} catch (NullPointerException ex){
+										//log("didn't work");
 									}
 									shapes.add(s);
+									//log("added new shape: "+ shapes.size());
 									numberOfShapes++;
 									indexPerShape++;
 								}
 							}
+
 						}
 					}
 				}

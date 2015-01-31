@@ -3,6 +3,7 @@ package org.shensley.gtfs;
 
 //import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.annotation.PostConstruct;
@@ -33,7 +34,7 @@ public class FormatOutput implements VehicleListener {
 	private HashMap<String, String> routeNameByRouteId = new HashMap<String, String>();
 	private HashMap<String, String> tripHeadsignByTripId = new HashMap<String, String>();
 	private HashMap<String, StopStatic> stopByPosition = new HashMap<String, StopStatic>();
-	//private HashMap<List<StopStatic>, String> stopSequenceByShapeId = new HashMap<List<StopStatic>, String>();
+	private HashMap<String, ArrayList<StopStatic>> stopSequenceByShapeId = new HashMap<String, ArrayList<StopStatic>>();
 	
 
 	
@@ -69,6 +70,8 @@ public class FormatOutput implements VehicleListener {
 		System.out.println("handling");
 		printVehiclesCooked(vehicles);
 		//printVehiclesRaw(vehicles);
+		
+
 	}
 	
 	@SuppressWarnings("unused")
@@ -89,10 +92,18 @@ public class FormatOutput implements VehicleListener {
 	
 	private void printVehiclesCooked(List<Vehicle> vehicles){
 		StringBuilder b = new StringBuilder();
+		StringBuilder pos = new StringBuilder();
 		b.append("\nInformation: \n");
 		b.append("Index,\tVehicleId\tRouteName\tPosition\n");
 		int z = 0;
 		for(Vehicle v : vehicles){
+			pos.setLength(0);
+			pos.append(v.getLat() + ',' + v.getLon());
+			if(this.stopByPosition.containsKey(pos.toString())){
+				b.append("This vehicle is at " + this.stopByPosition.get(pos.toString()).getName() + ":  " );
+			}else{
+				//This vehicle is currently closest to ___ stop...  now implement.
+			}
 			b.append(Integer.toString(z) + '\t' + v.getId() + '\t' + this.routeNameByRouteId.get(v.getRouteId())+ 
 					'\t' + this.tripHeadsignByTripId.get(v.getTripId()) + '\t' + v.getTripId() + '\t' + v.getLat() + '\t'+ v.getLon() + '\t' +  v.getBearing() + '\n');
 			z++;
@@ -125,6 +136,8 @@ public class FormatOutput implements VehicleListener {
 		
 	}
 	
+	
+	//Position is a comma seperated value that can be generated relatively easy: Lat,Lon
 	private void setStopByPosition(StaticHandler handler){
 
 		StringBuilder b = new StringBuilder();
@@ -139,13 +152,27 @@ public class FormatOutput implements VehicleListener {
 	
 	
 	private void setStopSequenceByShapeId(StaticHandler handler){
-		/*
+
 		for(ShapeStatic sh : handler.getTrainShapes()){
-			for(StopStatic st : handler.getTrainStops()){
-				
+			for(int i = 0;i<sh.getLength();i++){
+				for(StopStatic st : handler.getTrainStops()){
+					if(st.getLat() == sh.getLat(i) && st.getLon() == sh.getLon(i)){
+						if(!this.stopSequenceByShapeId.containsKey(sh.getId())){
+							ArrayList<StopStatic> newStopList = new ArrayList<StopStatic>();
+							newStopList.add(st);
+							this.stopSequenceByShapeId.put(sh.getId(), newStopList);
+							
+						}else{
+							ArrayList<StopStatic> oldStopList = this.stopSequenceByShapeId.get(sh.getId());
+							this.stopSequenceByShapeId.remove(sh.getId());
+							oldStopList.add(st);
+							this.stopSequenceByShapeId.put(sh.getId(), oldStopList);
+						}
+					}
+				}
 			}
 		}
-		*/
+
 	}
 }
 
