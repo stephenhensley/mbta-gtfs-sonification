@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2015 Stephen Hensley
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.shensley.gtfs;
 
 import java.io.IOException;
@@ -137,7 +152,7 @@ public class RealtimeService {
 		
 	}
 	
-	private boolean processDataset(FeedMessage feed){
+	private boolean processDataset(FeedMessage feed) throws IOException{
 		List<Vehicle> vehicles = new ArrayList<Vehicle>();
 		
 		boolean update = false;
@@ -214,9 +229,13 @@ public class RealtimeService {
 			_log.info("vehicles updated: " + vehicles.size() + '\n');
 		}
 		
-		for (VehicleListener listener : _listeners){
-			listener.handleVehicles(vehicles);
-		}
+		try{
+			for (VehicleListener listener : _listeners) {
+				listener.handleVehicles(vehicles);
+			}
+		}catch (IOException ex){
+				System.out.println("Could not handleVehicles");
+			}
 
 		return update;
 	}
@@ -273,15 +292,19 @@ public class RealtimeService {
 			}
 			FeedMessage message = parseMessage(buf);
 			FeedHeader header = message.getHeader();
-			switch (header.getIncrementality()){
-			case FULL_DATASET:
-				processDataset(message);
-				break;
-			case DIFFERENTIAL:
-				processDataset(message);
-				break;
-			default:
-				_log.warn("unknown incrementality: " + header.getIncrementality());
+			try{
+				switch (header.getIncrementality()){
+				case FULL_DATASET:
+					processDataset(message);
+					break;
+				case DIFFERENTIAL:
+					processDataset(message);
+					break;
+				default:
+					_log.warn("unknown incrementality: " + header.getIncrementality());
+				}
+			}catch (IOException ex){
+				System.out.println("Could not create File");
 			}
 		}
 		@Override
