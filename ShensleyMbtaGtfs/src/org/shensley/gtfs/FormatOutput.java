@@ -27,7 +27,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import org.json.JSONArray;
+//import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,7 +39,7 @@ import javax.inject.Singleton;
 @Singleton
 public class FormatOutput implements VehicleListener {
 	
-	private static String OUTPUT_PATHNAME = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/test.json"; 
+	private static String OUTPUT_PATHNAME = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_NoArrays.json"; 
 	
 	private RealtimeService _realtimeService;
 	private StaticHandler _staticHandler;
@@ -222,8 +222,8 @@ public class FormatOutput implements VehicleListener {
 	private JSONObject formatJsonFile(StaticHandler handler, List<Vehicle> vehicles, String timestamp){
 		try{
 			JSONObject myFinalObj = new JSONObject();
-			JSONArray vehiclesArray = new JSONArray();
-			JSONArray stopsArray = new JSONArray();
+			JSONObject vehiclesArray = new JSONObject();
+			JSONObject stopsArray = new JSONObject();
 
 			myFinalObj.put("timestampOfUpdate", timestamp);
 			
@@ -235,8 +235,13 @@ public class FormatOutput implements VehicleListener {
 				tempVehicleObj.put("lon", Double.toString(vehicles.get(i).getLon()));
 				tempVehicleObj.put("bearing", Double.toString(vehicles.get(i).getBearing()));
 				tempVehicleObj.put("routeId", vehicles.get(i).getRouteId());
-				tempVehicleObj.put("tripId", vehicles.get(i).getTripId());
-				vehiclesArray.put(i,tempVehicleObj);
+				tempVehicleObj.put("routeName", this.routeNameByRouteId.get(vehicles.get(i).getRouteId()));
+				if(this.tripHeadsignByTripId.get(vehicles.get(i).getTripId()) != null){
+					tempVehicleObj.put("trip", this.tripHeadsignByTripId.get(vehicles.get(i).getTripId()));
+				}else{
+					tempVehicleObj.put("trip", vehicles.get(i).getTripId());
+				}
+				vehiclesArray.put(Integer.toString(i),tempVehicleObj);
 			}
 			JSONObject vehiclesArrayByTimeStamp = new JSONObject().put(timestamp,vehiclesArray);
 			//load stops and size of stops
@@ -247,7 +252,7 @@ public class FormatOutput implements VehicleListener {
 				tempStopObj.put("name", stop.getName());
 				tempStopObj.put("lat", Double.toString(stop.getLat()));
 				tempStopObj.put("lon", Double.toString(stop.getLon()));
-				stopsArray.put(index, tempStopObj);
+				stopsArray.put(Integer.toString(index), tempStopObj);
 				index++;
 			}
 
@@ -280,10 +285,14 @@ public class FormatOutput implements VehicleListener {
 			String previousFileAsString = readExistingFile(OUTPUT_PATHNAME);
 			JSONObject previous = new JSONObject(previousFileAsString);
 
-			JSONArray newVehiclesArrayByTimestamp = obj.getJSONObject("vehicles").getJSONArray(timestamp);
+			JSONObject newVehiclesArrayByTimestamp = obj.getJSONObject("vehicles").getJSONObject(timestamp);
 			JSONObject oldVehicles = previous.getJSONObject("vehicles");
 			oldVehicles.put(timestamp, newVehiclesArrayByTimestamp);
 			previous.put("vehicles", oldVehicles);
+			//myFinalObj.put("timestampOfUpdate", timestamp);
+			previous.remove("timestampOfUpdate");
+			previous.put("timestampOfUpdate", timestamp);
+			
 			FileWriter file = new FileWriter(OUTPUT_PATHNAME);
 			try{
 				//If I want the file to be printed in a human-readable way
