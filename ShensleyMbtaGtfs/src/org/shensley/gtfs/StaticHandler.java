@@ -95,6 +95,7 @@ public class StaticHandler {
 				if (trainShapes.isEmpty()) {
 					log("Number of lines in shapes.txt: " + lines.size());
 					trainShapes.addAll(setShapes(lines));
+					/*
 					for(ShapeStatic sh : trainShapes){
 						try {
 							
@@ -106,7 +107,9 @@ public class StaticHandler {
 						}catch (NullPointerException ex){
 							log("Error: " + ex);
 						}
+						
 					}
+					*/
 				} else {
 					log("This list was not empty before you tried to add shit(SHAPES)");
 				}
@@ -479,8 +482,8 @@ public class StaticHandler {
 									}
 									try {
 										//log("yeah");
-										log(shapes.get(numberOfShapes - 1).getId() + '\t' + shapes.get(numberOfShapes - 1).getSequence(indexPerShape)
-												+ '\t' + shapes.get(numberOfShapes -1 ).getLat(indexPerShape));
+										//log(shapes.get(numberOfShapes - 1).getId() + '\t' + shapes.get(numberOfShapes - 1).getSequence(indexPerShape)
+										//		+ '\t' + shapes.get(numberOfShapes -1 ).getLat(indexPerShape));
 									} catch (NullPointerException ex){
 										//log("didn't work");
 									}

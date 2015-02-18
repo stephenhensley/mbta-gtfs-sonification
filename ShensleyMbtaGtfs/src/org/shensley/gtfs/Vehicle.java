@@ -30,7 +30,14 @@ public class Vehicle {
 
 	  private double bearing;
 	  
-	  private long lastUpdate;  
+	  private long lastUpdate;
+	  
+	  //try here first current-nextStopName, Distance
+	  private String closestStopName;
+	  private String nextStopName;
+	  private double closestStopDist;
+	  private double nextStopDist;
+	  private double percentToEnd;
 
 
 	  public String getId() {
@@ -90,6 +97,47 @@ public class Vehicle {
 	  public void setBearing(double bearing) {
 	    this.bearing = bearing;
 	  }
+	  
+	  public String getClosestStopName(){
+		  return closestStopName;
+	  }
+	  
+	  public void setClosestStopName(String stopName){
+		  this.closestStopName = stopName;
+	  }
+	  
+	  public String getNextStopName(){
+		  return nextStopName;
+	  }
+	  
+	  public void setNextStopName(String stopName){
+		  this.nextStopName = stopName;
+	  }
+	  
+	  public double getClosestStopDist(){
+		  return closestStopDist;
+	  }
+	  
+	  public void setClosestStopDist(double stopDist){
+		  this.closestStopDist = stopDist;
+	  }
+	  
+	  public double getNextStopDist(){
+		  return nextStopDist;
+	  }
+	  
+	  public void setNextStopDist(double stopDist){
+		  this.nextStopDist = stopDist;
+	  }
+	  
+	  public double getPercentToEnd(){
+		  return percentToEnd;
+	  }
+	  
+	  public void setPercentToEnd(double percentToEnd){
+		  this.percentToEnd = percentToEnd;
+	  }
+	  
 
 
 }
