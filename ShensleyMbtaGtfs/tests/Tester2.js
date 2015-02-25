@@ -1,6 +1,6 @@
 
 inlets = 1;
-outlets = 5;
+outlets = 6;
 
 /**
 *Zeroith outlet will be timestamp of the most recent update.
@@ -15,34 +15,15 @@ function bang(){
 }
 
 function getDict(){
-	var pathname = "Macintosh HD:/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_NoArrays.json";
+	var pathname = "Macintosh HD:/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_withStops.json";
 	var actualFile = new Dict("RealFileDict");
-	actualFile.import_json(pathname);
-	
-	post(actualFile.getkeys());
+	actualFile.import_json(pathname);	
 	var currentUpdate = actualFile.get("timestampOfUpdate");
 	outlet(0, currentUpdate);
 	var stopsFull = actualFile.get("stops");
 	var vehiclesFull = actualFile.get("vehicles");
-	post('\n' + vehiclesFull.get(currentUpdate).getkeys());	
 	var currentVehicles = vehiclesFull.get(currentUpdate);
-	
-
-	var vehicleKeys = currentVehicles.getkeys();
-	for(i = 0; i < currentVehicles.getkeys().length; i++){
-
-		var vehicle = currentVehicles.get(i);
-
-	
-	//add the closestStop/closestDistance properties to each vehicle.
-		var lat = parseFloat(vehicle.get("lat"));
-		var lon = parseFloat(vehicle.get("lon"));
-		var ber = parseFloat(vehicle.get("bearing"));
-		var stopArray = calculateClosestStop(stopsFull, lat,lon, ber);
-		actualFile.replace("vehicles::" + currentUpdate + "::" + vehicleKeys[i]+ "::closestStopDist", stopArray[1]);
-		actualFile.replace("vehicles::" + currentUpdate + "::" + vehicleKeys[i]+ "::closestStopName", stopArray[0]);
-		//post(actualFile.get("vehicles").get(currentUpdate).get(i).getkeys());
-	}
+	outlet(1, currentVehicles.getkeys().length);
 }
 
 function createDicts(){
@@ -56,11 +37,6 @@ function createDicts(){
 	var rO = new Dict("redOut");
 	var bI = new Dict("blueIn");
 	var bO = new Dict("blueOut");
-	//assign index's for each line first. (just for some visual feedback)
-	var gInd = 0;
-	var oInd = 0;
-	var bInd = 0;
-	var rInd = 0;
 	var currentUpdate = actualFile.get("timestampOfUpdate");
 	//outlet(0, currentUpdate);
 	var stopsFull = actualFile.get("stops");
@@ -82,7 +58,7 @@ function createDicts(){
 					//guessing inbound for now(based entirely on average bearing)
 					gI.set(vehicle.get("vehicleId"), vehicle);
 				}
-				gInd++;
+
 				break;
 			case "\"Orange Line\"":
 				if(trip === "\"Oak Grove\""){
@@ -92,19 +68,19 @@ function createDicts(){
 				}else{
 					post("The orange line trip contains an error: " + trip);
 				}
-				oInd++;
+
 				break;
 			case "\"Red Line\"":
 				if(trip === "\"Alewife\""){
 					rI.set(vehicle.get("vehicleId"), vehicle);
 				}else if(trip === "\"Ashmont\""){
 					rO.set(vehicle.get("vehicleId"), vehicle);
+
 				}else if(trip==="\"Braintree\""){
 					rO.set(vehicle.get("vehicleId"), vehicle);
 				}else{
 					post("The orange line trip contains an error: " + trip);
 				}
-				rInd++;
 				break;
 			case "\"Blue Line\"":
 				if(trip === "\"Wonderland\""){
@@ -114,65 +90,31 @@ function createDicts(){
 				}else{
 					post("The orange line trip contains an error: " + trip);
 				}
-				bInd++;	
 				break;
 			default:
 				break;
-		}	
-					
-		
+		}		
 	}
-	outlet(1, "green line: " + gInd);
-	outlet(2, "Orange line: " + oInd);
-	outlet(3, "Red line: " + rInd);
-	outlet(4, "Blue line: " + bInd);
+
 	
+	var greenOutput = "greenlineIn " + getSize(gI) + " greenlineOut " + getSize(gO);
+	var orangeOutput = "orangelineIn " + getSize(oI) + " orangelineOut " + getSize(oO);
+	var redOutput = "redlineIn " + getSize(rI) + " redlineOut " + getSize(rO);
+	var blueOutput = "bluelineIn " + getSize(bI) + " bluelineOut " + getSize(bO);
+	
+	outlet(2, greenOutput);
+	outlet(3, orangeOutput);
+	outlet(4, redOutput);
+	outlet(5, blueOutput);
+	post("done\n");
 }
 
-
-function calculateClosestStop(stops, lat, lon, ber){
-	//post(typeof lat);
-	stopKeys = stops.getkeys();
-	//post(stopKeys);
-	var distanceToStop = null;
-	var closestDistance = null;
-	var closestBearing = null;
-	var nameOfStop;
-	for(var i = 0; i < stopKeys.length; i++){
-		stopLat = parseFloat(stops.get(i).get("lat"));
-		stopLon = parseFloat(stops.get(i).get("lon"));
-		distanceToStop = calculateDistance(stopLat, stopLon, lat, lon);
-		if(closestDistance === null || closestDistance > distanceToStop){
-			closestDistance = distanceToStop;
-			nameOfStop = stops.get(i).get("name");
-			/*
-			closestBearing = calculateFinalBearing(lat, lon, stopLat, stopLon);
-			*/
-		}			
+function getSize(dict){
+	var output;
+	if(dict.getkeys() === null){
+		output = 0;
+	}else{
+		 output = dict.getkeys().length;
 	}
-	//post('\n' + nameOfStop + '\t' + closestDistance + '\t' + closestBearing);
-	return [nameOfStop, closestDistance];
+	return output;
 }
-
-function calculateDistance(lat1, lon1, lat2, lon2){
-	var R = 6371000.0; //mean radius of earth in metres.
-	var dLat = (lat2 - lat1) * Math.PI / 180;  // deg2rad below
-  	var dLon = (lon2 - lon1) * Math.PI / 180;
-  	var a = 
-     	0.5 - Math.cos(dLat)/2 + 
-     	Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
-     	(1 - Math.cos(dLon))/2;
-
-  	return R * 2 * Math.asin(Math.sqrt(a));
-}
-
-function calculateFinalBearing(vLat, vLon, sLat, sLon){
-	var vLatR = vLat*Math.PI/180;
-	var vLonR = vLon*Math.PI/180;
-	var sLatR = vLat*Math.PI/180;
-	var sLonR = vLat*Math.PI/180;
-	
-	var y = Math.sin(sLonR * vLonR) * Math.cos(sLatR);
-	var x = Math.cos(vLatR) * Math.sin(sLatR) * Math.sin(vLatR) * Math.cos(sLatR) *Math.cos(sLonR - vLonR);
-	return (Math.atan2(y,x)*180)/Math.PI;
-}	

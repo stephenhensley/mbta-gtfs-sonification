@@ -1,0 +1,12 @@
+\"Bowdoin\", 8nd 8nd 8nd 32n 32n 4n 16n 8nd 16n 8n 16n 8n 32n 32n 8n 8nd 8nd;
+\"GovernmentCenter\", 8n 8n 8nd 8nd 8n 4nd 8nd 8nd 8nd 16n 16n 8n 4n;
+\"StateStreet\", 16n 16n 16n 16n 16n 16n 16n 16n 16n 16n 16n 16n 16n 16n 16n 16n;
+\"Maverick\", 8n 8n 8n 8nd 16n 8n 8n 8n 16n 16n 4n 8n 8n 8n 8n 16n 16n 8n 8n 8n 8n 16n 8nd 8n 8n;
+\"Aquarium\", 8n 4n 8n 4n 4nd 16n 16n 4n 4nd 8n;
+\"Airport\", 16nt 16nt 16nt 8nd 16n 8n 8n 16nt 16nt 16nt 8n 8n 8n 16nt 16nt 16nt 8nt 8nt 8nt 8n 4n 8n;
+\"WoodIsland\", 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd 8nd;
+\"OrientHeights\", 8n 16n 8n 8n 16n 8n 16n 8n 16n 8n 16n 8n 16n 8n 32n 32n 32n 32n 16n 8n 16n 16n;
+\"SuffolkDowns\", 16n 16n 8n 16n 16n 8n 16n 8n 16n 16n 16n 8nd 16n 16n 16n 8n 16n 16n 16n 8n 16n 16n 8n 8n;
+\"Beachmont\", 8nd 16n 16n 8n 16n 16n 8n 16n 16n 4n 8n 16n 16n 16n 8n 16n 16n 8n 32n 32n 16n 8nd;
+\"RevereBeach\", 4n 2n 2n 2n 8n 4nd 2n 2n 4n 8nd 16n 4n;
+\"Wonderland\", 8n 4n 4n 4n 4n 4n 4n 4n 4n 4n 4n 8nd 16n 16n 8n;

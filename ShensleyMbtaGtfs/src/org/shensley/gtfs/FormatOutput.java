@@ -124,7 +124,9 @@ public class FormatOutput implements VehicleListener {
 		int z = 0;
 
 		for(Vehicle v : vehicles){
-			b.append(Integer.toString(z) + '\t' + v.getId() + '\t' + v.getRouteId() + '\t' + v.getTripId() + '\t' + v.getLat() + '\t' + v.getLon() + '\t' + v.getBearing() + '\n');
+			b.append(Integer.toString(z) + '\t' + v.getId() + '\t' + v.getRouteId() + '\t' + v.getTripId() + 
+					'\t' + tripHeadsignByTripId.get(v.getTripId()) + '\t' + v.getLat() + '\t' + v.getLon() + 
+					'\t' + v.getBearing()  +'\t'+ v.getPercentToEnd() + '\n');
 			z++;
 		}
 		b.append("=======================================================================\n");
@@ -147,7 +149,9 @@ public class FormatOutput implements VehicleListener {
 				//This vehicle is currently closest to ___ stop...  now implement.
 			}
 			b.append(Integer.toString(z) + '\t' + v.getId() + '\t' + this.routeNameByRouteId.get(v.getRouteId())+ 
-					'\t' + v.getRouteId() + '\t' + v.getTripId() + '\t' + v.getLat() + '\t'+ v.getLon() + '\t' +  v.getBearing() + '\t' + v.getClosestStopName() + '\t' + v.getClosestStopDist() + '\t'+ v.getNextStopName() + '\t' + v.getNextStopDist() + '\n');
+					'\t' + v.getRouteId() + '\t' + v.getTripId() + '\t' + this.tripHeadsignByTripId.get(v.getTripId()) +
+					'\t' + v.getLat() + '\t'+ v.getLon() + '\t' +  v.getBearing() + '\t' + v.getClosestStopName() + '\t' +
+					v.getClosestStopDist() + '\t'+ v.getNextStopName() + '\t' + v.getNextStopDist() + '\t' + v.getPercentToEnd() +  '\n');
 			z++;
 		}
 		b.append("==================================================================\n");
@@ -203,7 +207,7 @@ public class FormatOutput implements VehicleListener {
 					System.out.println("This train is near its final stop.");
 				}
 			}else{
-				String headsign = tripHeadsignByTripId.get(v.getTripId());
+				String headsign = tripHeadsignByTripId.get(v.getTripId().replace("\"",""));
 				System.out.println(headsign + '\t'+ v.getTripId());
 				if(headsign != null){
 					if(headsign.contains("Alewife") || headsign.contains("Oak Grove")|| headsign.contains("Wonderland")){
@@ -216,22 +220,19 @@ public class FormatOutput implements VehicleListener {
 							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
 							System.out.println("This train is near its final stop.");
 						}
-					}
-				}else{
-					v.setPercentToEnd(((double)indexOfStop / (double)listOfStops.size()) * 100.0);
-					if(indexOfStop + 1 > 0 && indexOfStop + 1 < listOfStops.size()){
-						v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
-						v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
 					}else{
-						v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
-						v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
-						System.out.println("This train is near its final stop.");
-					}
-			
+						v.setPercentToEnd(((double)indexOfStop / (double)listOfStops.size()) * 100.0);
+						if(indexOfStop + 1 > 0 && indexOfStop + 1 < listOfStops.size()){
+							v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
+							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
+						}else{
+							v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
+							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
+							System.out.println("This train is near its final stop.");
+						}
+					}			
 				}
-			}
-			
-			
+			}			
 		}
 	}
 	private double calcDistance(double vlat, double vlon,double slat,double slon){
@@ -251,16 +252,7 @@ public class FormatOutput implements VehicleListener {
 		setStopByPosition(handler);
 		setStopSequenceByShapeId(handler);
 		setStopsByRouteId(handler);
-		for(RouteStatic r : handler.getTrainRoutes()){
-			String temp = r.getId();
-			//System.out.println(temp);
-			ArrayList<StopStatic> stops = stopsByRouteId.get('\"' + temp + '\"');
-			for(int i = 0; i < stopsByRouteId.size();i++){
-				if(temp == "813_"){
-					System.out.println(stops.get(i).getName());
-				}
-			}
-		}
+		
 	}
 	
 	private void setRouteNameByRouteId(StaticHandler handler){
@@ -279,7 +271,7 @@ public class FormatOutput implements VehicleListener {
 	//GreenLine tripId is not cooperative. for some reason: VehicleId+'_'+direction(presumedValue);
 	private void setTripHeadsignByTripId(StaticHandler handler){
 		for(TripStatic t : handler.getTrainTrips()){
-			String tripId = t.getTripId();//.replace("\"", "");
+			String tripId = t.getTripId().replace("\"", "");
 			this.tripHeadsignByTripId.put(tripId, t.getTripHeadsign());
 			//System.out.println(tripId + '\t' + t.getTripHeadsign());
 		}
