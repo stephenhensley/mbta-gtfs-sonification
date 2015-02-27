@@ -6,7 +6,7 @@ var previous = "oof";
 function anything(val){
 	if(current === "foo"){
 		current = messagename.replace(" ", "");
-	}else if(messagename != current){
+	}else if(messagename.replace(" ", "") != current){
 		previous = current;
 		current = messagename.replace(" ", "");
 		outlet(0, 0);

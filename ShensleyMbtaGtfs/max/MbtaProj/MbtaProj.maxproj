@@ -2,7 +2,7 @@
 	"name" : "MbtaProj",
 	"version" : 1,
 	"creationdate" : -787832050,
-	"modificationdate" : -787300471,
+	"modificationdate" : -787135794,
 	"viewrect" : [ 29.0, 69.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -10,13 +10,13 @@
 	"autolocalize" : 0,
 	"contents" : 	{
 		"patchers" : 		{
-			"bluePerc.maxpat" : 			{
+			"MaxTest2.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
 			}
 ,
-			"MaxTest2.maxpat" : 			{
+			"bluePerc.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -25,6 +25,11 @@
 ,
 		"code" : 		{
 			"Tester2.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
+			}
+,
+			"compareSymbols.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
 			}
