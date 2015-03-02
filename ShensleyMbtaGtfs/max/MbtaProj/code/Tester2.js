@@ -15,7 +15,7 @@ function bang(){
 }
 
 function getDict(){
-	var pathname = "Macintosh HD:/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_withStops.json";
+	var pathname = "Macintosh HD:/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/currentUpdate.json";
 	var actualFile = new Dict("RealFileDict");
 	actualFile.import_json(pathname);	
 	var currentUpdate = actualFile.get("timestampOfUpdate");

@@ -2,7 +2,7 @@
 	"name" : "MbtaProj",
 	"version" : 1,
 	"creationdate" : -787832050,
-	"modificationdate" : -787135794,
+	"modificationdate" : -786828492,
 	"viewrect" : [ 29.0, 69.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -33,11 +33,21 @@
 				"kind" : "javascript",
 				"local" : 1
 			}
+,
+			"pairAssigner.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
+			}
 
 		}
 ,
 		"data" : 		{
 			"blueRhythms.txt" : 			{
+				"kind" : "textfile",
+				"local" : 1
+			}
+,
+			"blueLineSounds.txt" : 			{
 				"kind" : "textfile",
 				"local" : 1
 			}

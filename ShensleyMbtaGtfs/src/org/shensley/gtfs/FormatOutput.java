@@ -40,7 +40,8 @@ import javax.inject.Singleton;
 @Singleton
 public class FormatOutput implements VehicleListener {
 	
-	private static String OUTPUT_PATHNAME = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_withStops.json"; 
+	private static String OUTPUT_PATHNAME_FULL = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_withStops.json";
+	private static String OUTPUT_PATHNAME_CURRENT = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/currentUpdate.json";
 	
 	private RealtimeService _realtimeService;
 	private StaticHandler _staticHandler;
@@ -138,7 +139,7 @@ public class FormatOutput implements VehicleListener {
 		StringBuilder b = new StringBuilder();
 		StringBuilder pos = new StringBuilder();
 		b.append("\nInformation: \n");
-		b.append("Index,\tVehicleId\tRouteName\tPosition\n");
+		b.append("Index,\tVehicleId\tRouteName\tPosition\tNextStops and Distances\n");
 		int z = 0;
 		for(Vehicle v : vehicles){
 			pos.setLength(0);
@@ -194,7 +195,7 @@ public class FormatOutput implements VehicleListener {
 				}else{
 					v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
 					v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
-					System.out.println("This train is near its final stop.");
+					//System.out.println("This train is near its final stop.");
 				}
 			}else if(tripHeadsignByTripId.get(v.getTripId()) == null && v.getTripId().contains(v.getId()+ "_0")){
 				v.setPercentToEnd(100.0 - (((double)indexOfStop / (double)listOfStops.size()) * 100.0));
@@ -204,11 +205,11 @@ public class FormatOutput implements VehicleListener {
 				}else{
 					v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
 					v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
-					System.out.println("This train is near its final stop.");
+					//System.out.println("This train is near its final stop.");
 				}
 			}else{
 				String headsign = tripHeadsignByTripId.get(v.getTripId().replace("\"",""));
-				System.out.println(headsign + '\t'+ v.getTripId());
+				//System.out.println(headsign + '\t'+ v.getTripId());
 				if(headsign != null){
 					if(headsign.contains("Alewife") || headsign.contains("Oak Grove")|| headsign.contains("Wonderland")){
 						v.setPercentToEnd(100.0 - (((double)indexOfStop / (double)listOfStops.size()) * 100.0));
@@ -218,7 +219,7 @@ public class FormatOutput implements VehicleListener {
 						}else{
 							v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
 							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
-							System.out.println("This train is near its final stop.");
+							//System.out.println("This train is near its final stop.");
 						}
 					}else{
 						v.setPercentToEnd(((double)indexOfStop / (double)listOfStops.size()) * 100.0);
@@ -228,7 +229,7 @@ public class FormatOutput implements VehicleListener {
 						}else{
 							v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
 							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
-							System.out.println("This train is near its final stop.");
+							//System.out.println("This train is near its final stop.");
 						}
 					}			
 				}
@@ -577,11 +578,11 @@ public class FormatOutput implements VehicleListener {
 	
 	private void outputJsonFile(JSONObject obj, String timestamp)throws IOException, JSONException{
 		//String pathname = "/Users/stephenhensley/Desktop/test.json";
-		if(!new File(OUTPUT_PATHNAME).isFile()){
-			FileWriter file = new FileWriter(OUTPUT_PATHNAME);
+		if(!new File(OUTPUT_PATHNAME_FULL).isFile()){
+			FileWriter file = new FileWriter(OUTPUT_PATHNAME_FULL);
 			try{
 				file.write(obj.toString(2));
-				System.out.println("Successfully wrote " + OUTPUT_PATHNAME);
+				System.out.println("Successfully wrote " + OUTPUT_PATHNAME_FULL);
 			}catch(IOException ex){
 				ex.printStackTrace();
 			}finally{
@@ -589,7 +590,7 @@ public class FormatOutput implements VehicleListener {
 				file.close();
 			}
 		}else{
-			String previousFileAsString = readExistingFile(OUTPUT_PATHNAME);
+			String previousFileAsString = readExistingFile(OUTPUT_PATHNAME_FULL);
 			JSONObject previous = new JSONObject(previousFileAsString);
 
 			JSONObject newVehiclesArrayByTimestamp = obj.getJSONObject("vehicles").getJSONObject(timestamp);
@@ -600,19 +601,29 @@ public class FormatOutput implements VehicleListener {
 			previous.remove("timestampOfUpdate");
 			previous.put("timestampOfUpdate", timestamp);
 			
-			FileWriter file = new FileWriter(OUTPUT_PATHNAME);
+			FileWriter file = new FileWriter(OUTPUT_PATHNAME_FULL);
 			try{
 				//If I want the file to be printed in a human-readable way
 				// then add the arguement 2 to previous.toString(); 
 				//  otherwise remove it for a singleline file
 				file.write(previous.toString(2));
-				System.out.println("Successfully updated " + OUTPUT_PATHNAME);
+				System.out.println("Successfully updated " + OUTPUT_PATHNAME_FULL);
 			}catch(IOException ex){
 				ex.printStackTrace();
 			}finally{
 				file.flush();
 				file.close();
 			}	
+		}
+		FileWriter file = new FileWriter(OUTPUT_PATHNAME_CURRENT);
+		try{
+			file.write(obj.toString(2));
+			System.out.println("Successfully wrote " + OUTPUT_PATHNAME_CURRENT);
+		}catch(IOException ex){
+			ex.printStackTrace();
+		}finally{
+			file.flush();
+			file.close();
 		}
 	}
 	
