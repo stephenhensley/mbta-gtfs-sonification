@@ -219,7 +219,20 @@ public class RealtimeService {
 				v.setLastUpdate(existing.getLastUpdate());
 				
 			}
+			//This needs to be tweaked to get trains.
 			boolean isTrain = v.getRouteId().contains("_");
+			
+			/**
+			 * This is going to be used when new feed rolls out.
+			boolean isTrain = false;
+			System.out.println(v.getRouteId());
+			if(v.getRouteId().contains("Green-B") || v.getRouteId().contains("Green-C") || v.getRouteId().contains("Green-D") || v.getRouteId().contains("Green-E")
+					|| v.getRouteId().contains("Orange") || v.getRouteId().contains("Red") || v.getRouteId().contains("Blue") || v.getRouteId().contains("Mattapan")){
+				isTrain = true;
+			}else{
+				isTrain = false;
+			}
+			*/
 			if(isTrain){
 				vehicles.add(v);
 			}

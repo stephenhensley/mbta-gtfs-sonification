@@ -1,0 +1,1459 @@
+{
+  "stops": {
+    "0": {
+      "lat": "42.395428",
+      "lon": "-71.142483",
+      "name": "\"Alewife\"",
+      "stopId": "place-alfcl"
+    },
+    "1": {
+      "lat": "42.348701",
+      "lon": "-71.137955",
+      "name": "\"Allston Street\"",
+      "stopId": "place-alsgr"
+    },
+    "10": {
+      "lat": "42.330139",
+      "lon": "-71.111313",
+      "name": "\"Back of the Hill\"",
+      "stopId": "place-bckhl"
+    },
+    "100": {
+      "lat": "42.29312583",
+      "lon": "-71.06573796",
+      "name": "\"Shawmut\"",
+      "stopId": "place-smmnl"
+    },
+    "101": {
+      "lat": "42.3396",
+      "lon": "-71.157661",
+      "name": "\"South Street\"",
+      "stopId": "place-sougr"
+    },
+    "102": {
+      "lat": "42.366664",
+      "lon": "-71.067666",
+      "name": "\"Science Park\"",
+      "stopId": "place-spmnl"
+    },
+    "103": {
+      "lat": "42.352271",
+      "lon": "-71.055242",
+      "name": "\"South Station\"",
+      "stopId": "place-sstat"
+    },
+    "104": {
+      "lat": "42.358978",
+      "lon": "-71.057598",
+      "name": "\"State Street\"",
+      "stopId": "place-state"
+    },
+    "105": {
+      "lat": "42.341614",
+      "lon": "-71.146202",
+      "name": "\"Sutherland Road\"",
+      "stopId": "place-sthld"
+    },
+    "106": {
+      "lat": "42.3512",
+      "lon": "-71.116104",
+      "name": "\"Saint Paul Street\"",
+      "stopId": "place-stplb"
+    },
+    "107": {
+      "lat": "42.343327",
+      "lon": "-71.116997",
+      "name": "\"Saint Paul Street\"",
+      "stopId": "place-stpul"
+    },
+    "108": {
+      "lat": "42.383975",
+      "lon": "-71.076994",
+      "name": "\"Sullivan Square\"",
+      "stopId": "place-sull"
+    },
+    "109": {
+      "lat": "42.34111",
+      "lon": "-71.12561",
+      "name": "\"Summit Ave.\"",
+      "stopId": "place-sumav"
+    },
+    "11": {
+      "lat": "42.335846",
+      "lon": "-71.140823",
+      "name": "\"Beaconsfield\"",
+      "stopId": "place-bcnfd"
+    },
+    "110": {
+      "lat": "42.342687",
+      "lon": "-71.085056",
+      "name": "\"Symphony\"",
+      "stopId": "place-symcl"
+    },
+    "111": {
+      "lat": "42.338459",
+      "lon": "-71.138702",
+      "name": "\"Tappan Street\"",
+      "stopId": "place-tapst"
+    },
+    "112": {
+      "lat": "42.349662",
+      "lon": "-71.063917",
+      "name": "\"Tufts Medical Center\"",
+      "stopId": "place-tumnl"
+    },
+    "113": {
+      "lat": "42.268322",
+      "lon": "-71.081566",
+      "name": "\"Valley Road\"",
+      "stopId": "place-valrd"
+    },
+    "114": {
+      "lat": "42.325943",
+      "lon": "-71.230728",
+      "name": "\"Waban\"",
+      "stopId": "place-waban"
+    },
+    "115": {
+      "lat": "42.343864",
+      "lon": "-71.142853",
+      "name": "\"Washington Street\"",
+      "stopId": "place-wascm"
+    },
+    "116": {
+      "lat": "42.40237",
+      "lon": "-71.077082",
+      "name": "\"Wellington\"",
+      "stopId": "place-welln"
+    },
+    "117": {
+      "lat": "42.3796403",
+      "lon": "-71.02286539",
+      "name": "\"Wood Island\"",
+      "stopId": "place-wimnl"
+    },
+    "118": {
+      "lat": "42.2665139",
+      "lon": "-71.0203369",
+      "name": "\"Wollaston\"",
+      "stopId": "place-wlsta"
+    },
+    "119": {
+      "lat": "42.41342",
+      "lon": "-70.991648",
+      "name": "\"Wonderland\"",
+      "stopId": "place-wondl"
+    },
+    "12": {
+      "lat": "42.339394",
+      "lon": "-71.13533",
+      "name": "\"Washington Square\"",
+      "stopId": "place-bcnwa"
+    },
+    "120": {
+      "lat": "42.333374",
+      "lon": "-71.244301",
+      "name": "\"Woodland\"",
+      "stopId": "place-woodl"
+    },
+    "121": {
+      "lat": "42.348343",
+      "lon": "-71.140457",
+      "name": "\"Warren Street\"",
+      "stopId": "place-wrnst"
+    },
+    "122": {
+      "lat": "42.34863",
+      "lon": "-71.04246",
+      "name": "\"World Trade Center\"",
+      "stopId": "place-wtcst"
+    },
+    "13": {
+      "lat": "42.349293",
+      "lon": "-71.100258",
+      "name": "\"Blandford Street\"",
+      "stopId": "place-bland"
+    },
+    "14": {
+      "lat": "42.39754234",
+      "lon": "-70.99231944",
+      "name": "\"Beachmont\"",
+      "stopId": "place-bmmnl"
+    },
+    "15": {
+      "lat": "42.340023",
+      "lon": "-71.129082",
+      "name": "\"Brandon Hall\"",
+      "stopId": "place-bndhl"
+    },
+    "16": {
+      "lat": "42.361365",
+      "lon": "-71.062037",
+      "name": "\"Bowdoin\"",
+      "stopId": "place-bomnl"
+    },
+    "17": {
+      "lat": "42.35302",
+      "lon": "-71.06459",
+      "name": "\"Boylston\"",
+      "stopId": "place-boyls"
+    },
+    "18": {
+      "lat": "42.342622",
+      "lon": "-71.056967",
+      "name": "\"Broadway\"",
+      "stopId": "place-brdwy"
+    },
+    "19": {
+      "lat": "42.351967",
+      "lon": "-71.125031",
+      "name": "\"Packards Corner\"",
+      "stopId": "place-brico"
+    },
+    "2": {
+      "lat": "42.330154",
+      "lon": "-71.057655",
+      "name": "\"Andrew\"",
+      "stopId": "place-andrw"
+    },
+    "20": {
+      "lat": "42.331333",
+      "lon": "-71.126999",
+      "name": "\"Brookline Hills\"",
+      "stopId": "place-brkhl"
+    },
+    "21": {
+      "lat": "42.334229",
+      "lon": "-71.104609",
+      "name": "\"Brigham Circle\"",
+      "stopId": "place-brmnl"
+    },
+    "22": {
+      "lat": "42.2078543",
+      "lon": "-71.0011385",
+      "name": "\"Braintree\"",
+      "stopId": "place-brntn"
+    },
+    "23": {
+      "lat": "42.350082",
+      "lon": "-71.106865",
+      "name": "\"Boston Univ. Central\"",
+      "stopId": "place-bucen"
+    },
+    "24": {
+      "lat": "42.349735",
+      "lon": "-71.103889",
+      "name": "\"Boston Univ. East\"",
+      "stopId": "place-buest"
+    },
+    "25": {
+      "lat": "42.272343",
+      "lon": "-71.062584",
+      "name": "\"Butler\"",
+      "stopId": "place-butlr"
+    },
+    "26": {
+      "lat": "42.350941",
+      "lon": "-71.113876",
+      "name": "\"Boston Univ. West\"",
+      "stopId": "place-buwst"
+    },
+    "27": {
+      "lat": "42.332774",
+      "lon": "-71.116296",
+      "name": "\"Brookline Village\"",
+      "stopId": "place-bvmnl"
+    },
+    "28": {
+      "lat": "42.267712",
+      "lon": "-71.087753",
+      "name": "\"Capen Street\"",
+      "stopId": "place-capst"
+    },
+    "29": {
+      "lat": "42.373622",
+      "lon": "-71.069533",
+      "name": "\"Community College\"",
+      "stopId": "place-ccmnl"
+    },
+    "3": {
+      "lat": "42.374262",
+      "lon": "-71.030395",
+      "name": "\"Airport\"",
+      "stopId": "place-aport"
+    },
+    "30": {
+      "lat": "42.279682",
+      "lon": "-71.060432",
+      "name": "\"Cedar Grove\"",
+      "stopId": "place-cedgr"
+    },
+    "31": {
+      "lat": "42.270027",
+      "lon": "-71.073334",
+      "name": "\"Central Ave.\"",
+      "stopId": "place-cenav"
+    },
+    "32": {
+      "lat": "42.326653",
+      "lon": "-71.165314",
+      "name": "\"Chestnut Hill\"",
+      "stopId": "place-chhil"
+    },
+    "33": {
+      "lat": "42.338169",
+      "lon": "-71.15316",
+      "name": "\"Chestnut Hill Ave.\"",
+      "stopId": "place-chill"
+    },
+    "34": {
+      "lat": "42.361166",
+      "lon": "-71.070628",
+      "name": "\"Charles/MGH\"",
+      "stopId": "place-chmnl"
+    },
+    "35": {
+      "lat": "42.352547",
+      "lon": "-71.062752",
+      "name": "\"Chinatown\"",
+      "stopId": "place-chncl"
+    },
+    "36": {
+      "lat": "42.340805",
+      "lon": "-71.150711",
+      "name": "\"Chiswick Road\"",
+      "stopId": "place-chswk"
+    },
+    "37": {
+      "lat": "42.336142",
+      "lon": "-71.149326",
+      "name": "\"Cleveland Circle\"",
+      "stopId": "place-clmnl"
+    },
+    "38": {
+      "lat": "42.365486",
+      "lon": "-71.103802",
+      "name": "\"Central\"",
+      "stopId": "place-cntsq"
+    },
+    "39": {
+      "lat": "42.349974",
+      "lon": "-71.077447",
+      "name": "\"Copley\"",
+      "stopId": "place-coecl"
+    },
+    "4": {
+      "lat": "42.359784",
+      "lon": "-71.051652",
+      "name": "\"Aquarium\"",
+      "stopId": "place-aqucl"
+    },
+    "40": {
+      "lat": "42.342213",
+      "lon": "-71.121201",
+      "name": "\"Coolidge Corner\"",
+      "stopId": "place-cool"
+    },
+    "41": {
+      "lat": "42.35245",
+      "lon": "-71.04685",
+      "name": "\"Courthouse\"",
+      "stopId": "place-crtst"
+    },
+    "42": {
+      "lat": "42.39674",
+      "lon": "-71.121815",
+      "name": "\"Davis\"",
+      "stopId": "place-davis"
+    },
+    "43": {
+      "lat": "42.337807",
+      "lon": "-71.141853",
+      "name": "\"Dean Road\"",
+      "stopId": "place-denrd"
+    },
+    "44": {
+      "lat": "42.355518",
+      "lon": "-71.060225",
+      "name": "\"Downtown Crossing\"",
+      "stopId": "place-dwnxg"
+    },
+    "45": {
+      "lat": "42.319023",
+      "lon": "-71.216713",
+      "name": "\"Eliot\"",
+      "stopId": "place-eliot"
+    },
+    "46": {
+      "lat": "42.336971",
+      "lon": "-71.14566",
+      "name": "\"Englewood Ave.\"",
+      "stopId": "place-engav"
+    },
+    "47": {
+      "lat": "42.339725",
+      "lon": "-71.131073",
+      "name": "\"Fairbanks Street\"",
+      "stopId": "place-fbkst"
+    },
+    "48": {
+      "lat": "42.333706",
+      "lon": "-71.105728",
+      "name": "\"Fenwood Road\"",
+      "stopId": "place-fenwd"
+    },
+    "49": {
+      "lat": "42.345394",
+      "lon": "-71.104187",
+      "name": "\"Fenway\"",
+      "stopId": "place-fenwy"
+    },
+    "5": {
+      "lat": "42.351902",
+      "lon": "-71.070893",
+      "name": "\"Arlington\"",
+      "stopId": "place-armnl"
+    },
+    "50": {
+      "lat": "42.300093",
+      "lon": "-71.061667",
+      "name": "\"Fields Corner\"",
+      "stopId": "place-fldcr"
+    },
+    "51": {
+      "lat": "42.300523",
+      "lon": "-71.113686",
+      "name": "\"Forest Hills\"",
+      "stopId": "place-forhl"
+    },
+    "52": {
+      "lat": "42.359705",
+      "lon": "-71.059215",
+      "name": "\"Government Center\"",
+      "stopId": "place-gover"
+    },
+    "53": {
+      "lat": "42.348545",
+      "lon": "-71.134949",
+      "name": "\"Griggs Street\"",
+      "stopId": "place-grigg"
+    },
+    "54": {
+      "lat": "42.310525",
+      "lon": "-71.107414",
+      "name": "\"Green Street\"",
+      "stopId": "place-grnst"
+    },
+    "55": {
+      "lat": "42.363021",
+      "lon": "-71.05829",
+      "name": "\"Haymarket\"",
+      "stopId": "place-haecl"
+    },
+    "56": {
+      "lat": "42.373362",
+      "lon": "-71.118956",
+      "name": "\"Harvard\"",
+      "stopId": "place-harsq"
+    },
+    "57": {
+      "lat": "42.350243",
+      "lon": "-71.131355",
+      "name": "\"Harvard Ave.\"",
+      "stopId": "place-harvd"
+    },
+    "58": {
+      "lat": "42.328681",
+      "lon": "-71.110559",
+      "name": "\"Heath Street\"",
+      "stopId": "place-hsmnl"
+    },
+    "59": {
+      "lat": "42.344906",
+      "lon": "-71.111145",
+      "name": "\"Hawes Street\"",
+      "stopId": "place-hwsst"
+    },
+    "6": {
+      "lat": "42.284652",
+      "lon": "-71.064489",
+      "name": "\"Ashmont\"",
+      "stopId": "place-asmnl"
+    },
+    "60": {
+      "lat": "42.347888",
+      "lon": "-71.087903",
+      "name": "\"Hynes Convention Center\"",
+      "stopId": "place-hymnl"
+    },
+    "61": {
+      "lat": "42.323132",
+      "lon": "-71.099592",
+      "name": "\"Jackson Square\"",
+      "stopId": "place-jaksn"
+    },
+    "62": {
+      "lat": "42.320685",
+      "lon": "-71.052391",
+      "name": "\"JFK/Umass\"",
+      "stopId": "place-jfk"
+    },
+    "63": {
+      "lat": "42.348949",
+      "lon": "-71.095169",
+      "name": "\"Kenmore\"",
+      "stopId": "place-kencl"
+    },
+    "64": {
+      "lat": "42.36249079",
+      "lon": "-71.08617653",
+      "name": "\"Kendall/MIT\"",
+      "stopId": "place-knncl"
+    },
+    "65": {
+      "lat": "42.344074",
+      "lon": "-71.114197",
+      "name": "\"Kent Street\"",
+      "stopId": "place-kntst"
+    },
+    "66": {
+      "lat": "42.340081",
+      "lon": "-71.166769",
+      "name": "\"Boston College\"",
+      "stopId": "place-lake"
+    },
+    "67": {
+      "lat": "42.370772",
+      "lon": "-71.076536",
+      "name": "\"Lechmere\"",
+      "stopId": "place-lech"
+    },
+    "68": {
+      "lat": "42.33596",
+      "lon": "-71.100052",
+      "name": "\"Longwood Medical Area\"",
+      "stopId": "place-lngmd"
+    },
+    "69": {
+      "lat": "42.341145",
+      "lon": "-71.110451",
+      "name": "\"Longwood\"",
+      "stopId": "place-longw"
+    },
+    "7": {
+      "lat": "42.392811",
+      "lon": "-71.077257",
+      "name": "\"Assembly\"",
+      "stopId": "place-astao"
+    },
+    "70": {
+      "lat": "42.341512",
+      "lon": "-71.083423",
+      "name": "\"Massachusetts Ave.\"",
+      "stopId": "place-masta"
+    },
+    "71": {
+      "lat": "42.267762",
+      "lon": "-71.092241",
+      "name": "\"Mattapan\"",
+      "stopId": "place-matt"
+    },
+    "72": {
+      "lat": "42.337711",
+      "lon": "-71.095512",
+      "name": "\"Museum of Fine Arts\"",
+      "stopId": "place-mfa"
+    },
+    "73": {
+      "lat": "42.270306",
+      "lon": "-71.067673",
+      "name": "\"Milton\"",
+      "stopId": "place-miltt"
+    },
+    "74": {
+      "lat": "42.333195",
+      "lon": "-71.109756",
+      "name": "\"Mission Park\"",
+      "stopId": "place-mispk"
+    },
+    "75": {
+      "lat": "42.426632",
+      "lon": "-71.07411",
+      "name": "\"Malden Center\"",
+      "stopId": "place-mlmnl"
+    },
+    "76": {
+      "lat": "42.36911856",
+      "lon": "-71.03952958",
+      "name": "\"Maverick\"",
+      "stopId": "place-mvbcl"
+    },
+    "77": {
+      "lat": "42.321735",
+      "lon": "-71.206116",
+      "name": "\"Newton Highlands\"",
+      "stopId": "place-newtn"
+    },
+    "78": {
+      "lat": "42.329391",
+      "lon": "-71.192429",
+      "name": "\"Newton Centre\"",
+      "stopId": "place-newto"
+    },
+    "79": {
+      "lat": "42.365577",
+      "lon": "-71.06129",
+      "name": "\"North Station\"",
+      "stopId": "place-north"
+    },
+    "8": {
+      "lat": "42.35182",
+      "lon": "-71.12165",
+      "name": "\"Babcock Street\"",
+      "stopId": "place-babck"
+    },
+    "80": {
+      "lat": "42.275275",
+      "lon": "-71.029583",
+      "name": "\"North Quincy\"",
+      "stopId": "place-nqncy"
+    },
+    "81": {
+      "lat": "42.340401",
+      "lon": "-71.088806",
+      "name": "\"Northeastern University\"",
+      "stopId": "place-nuniv"
+    },
+    "82": {
+      "lat": "42.43668",
+      "lon": "-71.071097",
+      "name": "\"Oak Grove\"",
+      "stopId": "place-ogmnl"
+    },
+    "83": {
+      "lat": "42.386867",
+      "lon": "-71.004736",
+      "name": "\"Orient Heights\"",
+      "stopId": "place-orhte"
+    },
+    "84": {
+      "lat": "42.35639457",
+      "lon": "-71.0624242",
+      "name": "\"Park Street\"",
+      "stopId": "place-pktrm"
+    },
+    "85": {
+      "lat": "42.351521",
+      "lon": "-71.118889",
+      "name": "\"Pleasant Street\"",
+      "stopId": "place-plsgr"
+    },
+    "86": {
+      "lat": "42.3884",
+      "lon": "-71.119149",
+      "name": "\"Porter\"",
+      "stopId": "place-portr"
+    },
+    "87": {
+      "lat": "42.34557",
+      "lon": "-71.081696",
+      "name": "\"Prudential\"",
+      "stopId": "place-prmnl"
+    },
+    "88": {
+      "lat": "42.233391",
+      "lon": "-71.007153",
+      "name": "\"Quincy Adams\"",
+      "stopId": "place-qamnl"
+    },
+    "89": {
+      "lat": "42.251809",
+      "lon": "-71.005409",
+      "name": "\"Quincy Center\"",
+      "stopId": "place-qnctr"
+    },
+    "9": {
+      "lat": "42.34735",
+      "lon": "-71.075727",
+      "name": "\"Back Bay\"",
+      "stopId": "place-bbsta"
+    },
+    "90": {
+      "lat": "42.40784254",
+      "lon": "-70.99253321",
+      "name": "\"Revere Beach\"",
+      "stopId": "place-rbmnl"
+    },
+    "91": {
+      "lat": "42.331397",
+      "lon": "-71.095451",
+      "name": "\"Roxbury Crossing\"",
+      "stopId": "place-rcmnl"
+    },
+    "92": {
+      "lat": "42.337059",
+      "lon": "-71.251742",
+      "name": "\"Riverside\"",
+      "stopId": "place-river"
+    },
+    "93": {
+      "lat": "42.335027",
+      "lon": "-71.148952",
+      "name": "\"Reservoir\"",
+      "stopId": "place-rsmnl"
+    },
+    "94": {
+      "lat": "42.336377",
+      "lon": "-71.088961",
+      "name": "\"Ruggles\"",
+      "stopId": "place-rugg"
+    },
+    "95": {
+      "lat": "42.331684",
+      "lon": "-71.111931",
+      "name": "\"Riverway\"",
+      "stopId": "place-rvrwy"
+    },
+    "96": {
+      "lat": "42.317062",
+      "lon": "-71.104248",
+      "name": "\"Stony Brook\"",
+      "stopId": "place-sbmnl"
+    },
+    "97": {
+      "lat": "42.39050067",
+      "lon": "-70.99712259",
+      "name": "\"Suffolk Downs\"",
+      "stopId": "place-sdmnl"
+    },
+    "98": {
+      "lat": "42.31129",
+      "lon": "-71.053331",
+      "name": "\"Savin Hill\"",
+      "stopId": "place-shmnl"
+    },
+    "99": {
+      "lat": "42.345974",
+      "lon": "-71.107353",
+      "name": "\"Saint Mary Street\"",
+      "stopId": "place-smary"
+    }
+  },
+  "timestampOfUpdate": "Tue Mar 03 14:38:44 EST 2015",
+  "vehicles": {"Tue Mar 03 14:38:44 EST 2015": {
+    "0": {
+      "bearing": "214.9199981689453",
+      "closestStopDist": 74.57826711320715,
+      "closestStopName": "\"Washington Street\"",
+      "lat": "42.3432502746582",
+      "lon": "-71.14321899414062",
+      "nextStopDist": 305.3044754068354,
+      "nextStopName": "\"Sutherland Road\"",
+      "percentToEnd": 25,
+      "routeId": "813_",
+      "routeName": "\"Green Line\"",
+      "trip": "3605_0",
+      "vehicleId": "3605"
+    },
+    "1": {
+      "bearing": "265.75",
+      "closestStopDist": 31.329500344020104,
+      "closestStopName": "\"Boston College\"",
+      "lat": "42.34001922607422",
+      "lon": "-71.16639709472656",
+      "nextStopDist": 719.5417906665866,
+      "nextStopName": "\"South Street\"",
+      "percentToEnd": 4.166666666666657,
+      "routeId": "813_",
+      "routeName": "\"Green Line\"",
+      "trip": "3608_0",
+      "vehicleId": "3608"
+    },
+    "10": {
+      "bearing": "260.4599914550781",
+      "closestStopDist": 337.47734141523944,
+      "closestStopName": "\"Newton Centre\"",
+      "lat": "42.33039093017578",
+      "lon": "-71.18855285644531",
+      "nextStopDist": 1735.2535537570986,
+      "nextStopName": "\"Newton Highlands\"",
+      "percentToEnd": 23.80952380952381,
+      "routeId": "851_",
+      "routeName": "\"Green Line\"",
+      "trip": "3711_0",
+      "vehicleId": "3711"
+    },
+    "11": {
+      "bearing": "237.25999450683594",
+      "closestStopDist": 70.6531219746136,
+      "closestStopName": "\"Newton Centre\"",
+      "lat": "42.32912063598633",
+      "lon": "-71.19320678710938",
+      "nextStopDist": 1341.912909096596,
+      "nextStopName": "\"Newton Highlands\"",
+      "percentToEnd": 23.80952380952381,
+      "routeId": "851_",
+      "routeName": "\"Green Line\"",
+      "trip": "3817_0",
+      "vehicleId": "3817"
+    },
+    "12": {
+      "bearing": "116.61000061035156",
+      "closestStopDist": 21.49152149256954,
+      "closestStopName": "\"Eliot\"",
+      "lat": "42.31892013549805",
+      "lon": "-71.21649169921875",
+      "nextStopDist": 908.6648082566722,
+      "nextStopName": "\"Newton Highlands\"",
+      "percentToEnd": 16.666666666666657,
+      "routeId": "852_",
+      "routeName": "\"Green Line\"",
+      "trip": "3660_1",
+      "vehicleId": "3660"
+    },
+    "13": {
+      "bearing": "302.8999938964844",
+      "closestStopDist": 33.900163085334505,
+      "closestStopName": "\"Riverside\"",
+      "lat": "42.33723068237305",
+      "lon": "-71.25208282470703",
+      "nextStopDist": 770.0977043554451,
+      "nextStopName": "\"Woodland\"",
+      "percentToEnd": 5.555555555555557,
+      "routeId": "852_",
+      "routeName": "\"Green Line\"",
+      "trip": "3671_0",
+      "vehicleId": "3671"
+    },
+    "14": {
+      "bearing": "83.37999725341797",
+      "closestStopDist": 193.5271497665939,
+      "closestStopName": "\"Reservoir\"",
+      "lat": "42.33531188964844",
+      "lon": "-71.1466293334961",
+      "nextStopDist": 480.94274367679,
+      "nextStopName": "\"Beaconsfield\"",
+      "percentToEnd": 38.888888888888886,
+      "routeId": "852_",
+      "routeName": "\"Green Line\"",
+      "trip": "3865_1",
+      "vehicleId": "3865"
+    },
+    "15": {
+      "bearing": "64.4800033569336",
+      "closestStopDist": 5.608430951965988,
+      "closestStopName": "\"Museum of Fine Arts\"",
+      "lat": "42.337669372558594",
+      "lon": "-71.09555053710938",
+      "nextStopDist": 632.1092612532195,
+      "nextStopName": "\"Northeastern University\"",
+      "percentToEnd": 42.10526315789473,
+      "routeId": "880_",
+      "routeName": "\"Green Line\"",
+      "trip": "3820_1",
+      "vehicleId": "3820"
+    },
+    "16": {
+      "bearing": "61.33000183105469",
+      "closestStopDist": 83.18295288452929,
+      "closestStopName": "\"Northeastern University\"",
+      "lat": "42.34003829956055",
+      "lon": "-71.08969116210938",
+      "nextStopDist": 481.5328565175884,
+      "nextStopName": "\"Symphony\"",
+      "percentToEnd": 47.36842105263158,
+      "routeId": "880_",
+      "routeName": "\"Green Line\"",
+      "trip": "3821_1",
+      "vehicleId": "3821"
+    },
+    "17": {
+      "bearing": "53.2400016784668",
+      "closestStopDist": 39.83491671309914,
+      "closestStopName": "\"Fenwood Road\"",
+      "lat": "42.33391189575195",
+      "lon": "-71.10533142089844",
+      "nextStopDist": 69.06172537773682,
+      "nextStopName": "\"Brigham Circle\"",
+      "percentToEnd": 26.31578947368422,
+      "routeId": "880_",
+      "routeName": "\"Green Line\"",
+      "trip": "3825_1",
+      "vehicleId": "3825"
+    },
+    "18": {
+      "bearing": "61.060001373291016",
+      "closestStopDist": 127.54007354718806,
+      "closestStopName": "\"Brigham Circle\"",
+      "lat": "42.33477020263672",
+      "lon": "-71.10324096679688",
+      "nextStopDist": 293.61862131251075,
+      "nextStopName": "\"Longwood Medical Area\"",
+      "percentToEnd": 31.578947368421055,
+      "routeId": "880_",
+      "routeName": "\"Green Line\"",
+      "trip": "3829_1",
+      "vehicleId": "3829"
+    },
+    "19": {
+      "bearing": "110.95999908447266",
+      "closestStopDist": 51.672297782117404,
+      "closestStopName": "\"Heath Street\"",
+      "lat": "42.328250885009766",
+      "lon": "-71.11032104492188",
+      "nextStopDist": 225.2285097571482,
+      "nextStopName": "\"Back of the Hill\"",
+      "percentToEnd": 5.26315789473685,
+      "routeId": "880_",
+      "routeName": "\"Green Line\"",
+      "trip": "3843_1",
+      "vehicleId": "3843"
+    },
+    "2": {
+      "bearing": "133.11000061035156",
+      "closestStopDist": 28.667944773743677,
+      "closestStopName": "\"Boston College\"",
+      "lat": "42.340179443359375",
+      "lon": "-71.1670913696289",
+      "nextStopDist": 777.7658694558646,
+      "nextStopName": "\"South Street\"",
+      "percentToEnd": 4.166666666666657,
+      "routeId": "813_",
+      "routeName": "\"Green Line\"",
+      "trip": "3656_1",
+      "vehicleId": "3656"
+    },
+    "20": {
+      "bearing": "330.0",
+      "closestStopDist": 117.39045852420452,
+      "closestStopName": "\"North Station\"",
+      "lat": "42.36513900756836",
+      "lon": "-71.05998992919922",
+      "nextStopDist": 1226.5344288125073,
+      "nextStopName": "\"Community College\"",
+      "percentToEnd": 73.6842105263158,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Oak Grove\"",
+      "vehicleId": "1253"
+    },
+    "21": {
+      "bearing": "150.0",
+      "closestStopDist": 17.447230140833078,
+      "closestStopName": "\"Haymarket\"",
+      "lat": "42.3631591796875",
+      "lon": "-71.05818939208984",
+      "nextStopDist": 467.45826157835944,
+      "nextStopName": "\"State Street\"",
+      "percentToEnd": 31.57894736842105,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Forest Hills\"",
+      "vehicleId": "1225"
+    },
+    "22": {
+      "bearing": "50.0",
+      "closestStopDist": 356.57651143716055,
+      "closestStopName": "\"Tufts Medical Center\"",
+      "lat": "42.347591400146484",
+      "lon": "-71.06723022460938",
+      "nextStopDist": 662.6267549365039,
+      "nextStopName": "\"Chinatown\"",
+      "percentToEnd": 47.36842105263158,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Oak Grove\"",
+      "vehicleId": "1246"
+    },
+    "23": {
+      "bearing": "175.0",
+      "closestStopDist": 200.52701678878128,
+      "closestStopName": "\"Sullivan Square\"",
+      "lat": "42.382171630859375",
+      "lon": "-71.0770034790039",
+      "nextStopDist": 1131.5179011884127,
+      "nextStopName": "\"Community College\"",
+      "percentToEnd": 15.789473684210526,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Forest Hills\"",
+      "vehicleId": "1239"
+    },
+    "24": {
+      "bearing": "195.0",
+      "closestStopDist": 24.21914759288893,
+      "closestStopName": "\"Jackson Square\"",
+      "lat": "42.32318878173828",
+      "lon": "-71.0998764038086",
+      "nextStopDist": 770.2642212593104,
+      "nextStopName": "\"Stony Brook\"",
+      "percentToEnd": 78.94736842105263,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Forest Hills\"",
+      "vehicleId": "1277"
+    },
+    "25": {
+      "bearing": "177.0",
+      "closestStopDist": 474.91877375519977,
+      "closestStopName": "\"Wellington\"",
+      "lat": "42.398101806640625",
+      "lon": "-71.0772933959961",
+      "nextStopDist": 1571.0216473146156,
+      "nextStopName": "\"Sullivan Square\"",
+      "percentToEnd": 10.526315789473683,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Forest Hills\"",
+      "vehicleId": "1208"
+    },
+    "26": {
+      "bearing": "30.0",
+      "closestStopDist": 319.19715012982914,
+      "closestStopName": "\"Stony Brook\"",
+      "lat": "42.319671630859375",
+      "lon": "-71.10263061523438",
+      "nextStopDist": 458.7619091805572,
+      "nextStopName": "\"Jackson Square\"",
+      "percentToEnd": 15.789473684210535,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Oak Grove\"",
+      "vehicleId": "1250"
+    },
+    "27": {
+      "bearing": "20.0",
+      "closestStopDist": 402.694619854358,
+      "closestStopName": "\"Malden Center\"",
+      "lat": "42.43014144897461",
+      "lon": "-71.0728988647461",
+      "nextStopDist": 3107.0789808353093,
+      "nextStopName": "\"Wellington\"",
+      "percentToEnd": 94.73684210526316,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Oak Grove\"",
+      "vehicleId": "1275"
+    },
+    "28": {
+      "bearing": "300.0",
+      "closestStopDist": 67.3106758861981,
+      "closestStopName": "\"Community College\"",
+      "lat": "42.37384033203125",
+      "lon": "-71.07029724121094",
+      "nextStopDist": 1254.0081744632628,
+      "nextStopName": "\"Sullivan Square\"",
+      "percentToEnd": 78.94736842105263,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Oak Grove\"",
+      "vehicleId": "1292"
+    },
+    "29": {
+      "bearing": "265.0",
+      "closestStopDist": 96.34357676415019,
+      "closestStopName": "\"Back Bay\"",
+      "lat": "42.34767150878906",
+      "lon": "-71.07463836669922",
+      "nextStopDist": 995.1529806229031,
+      "nextStopName": "\"Massachusetts Ave.\"",
+      "percentToEnd": 57.89473684210527,
+      "routeId": "903_",
+      "routeName": "\"Orange Line\"",
+      "trip": "\"Forest Hills\"",
+      "vehicleId": "1286"
+    },
+    "3": {
+      "bearing": "71.43000030517578",
+      "closestStopDist": 93.34567308791016,
+      "closestStopName": "\"Harvard Ave.\"",
+      "lat": "42.35063171386719",
+      "lon": "-71.1303482055664",
+      "nextStopDist": 461.4853358701397,
+      "nextStopName": "\"Packards Corner\"",
+      "percentToEnd": 41.666666666666664,
+      "routeId": "813_",
+      "routeName": "\"Green Line\"",
+      "trip": "3700_1",
+      "vehicleId": "3700"
+    },
+    "30": {
+      "bearing": "330.0",
+      "closestStopDist": 305.1795738748137,
+      "closestStopName": "\"JFK/Umass\"",
+      "lat": "42.32334899902344",
+      "lon": "-71.05328369140625",
+      "nextStopDist": 837.6783403253017,
+      "nextStopName": "\"Andrew\"",
+      "percentToEnd": 29.411764705882348,
+      "routeId": "931_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1875"
+    },
+    "31": {
+      "bearing": "170.0",
+      "closestStopDist": 432.0857226144725,
+      "closestStopName": "\"JFK/Umass\"",
+      "lat": "42.31679916381836",
+      "lon": "-71.05238342285156",
+      "nextStopDist": 617.5260932035121,
+      "nextStopName": "\"Savin Hill\"",
+      "percentToEnd": 70.58823529411765,
+      "routeId": "931_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Ashmont\"",
+      "vehicleId": "1717"
+    },
+    "32": {
+      "bearing": "95.0",
+      "closestStopDist": 81.50223999444091,
+      "closestStopName": "\"Charles/MGH\"",
+      "lat": "42.36122131347656",
+      "lon": "-71.07161712646484",
+      "nextStopDist": 926.6119422985207,
+      "nextStopName": "\"Park Street\"",
+      "percentToEnd": 35.294117647058826,
+      "routeId": "931_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Ashmont\"",
+      "vehicleId": "1857"
+    },
+    "33": {
+      "bearing": "290.0",
+      "closestStopDist": 44.4313775077338,
+      "closestStopName": "\"South Station\"",
+      "lat": "42.3526611328125",
+      "lon": "-71.05535888671875",
+      "nextStopDist": 510.68817896607186,
+      "nextStopName": "\"Downtown Crossing\"",
+      "percentToEnd": 47.05882352941176,
+      "routeId": "931_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1708"
+    },
+    "34": {
+      "bearing": "85.0",
+      "closestStopDist": 535.8915365204231,
+      "closestStopName": "\"Alewife\"",
+      "lat": "42.3963508605957",
+      "lon": "-71.13607788085938",
+      "nextStopDist": 1172.0241271354757,
+      "nextStopName": "\"Davis\"",
+      "percentToEnd": 0,
+      "routeId": "931_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Ashmont\"",
+      "vehicleId": "1840"
+    },
+    "35": {
+      "bearing": "0.0",
+      "closestStopDist": 18.745690163630346,
+      "closestStopName": "\"Porter\"",
+      "lat": "42.388328552246094",
+      "lon": "-71.11894226074219",
+      "nextStopDist": 964.6044110096461,
+      "nextStopName": "\"Davis\"",
+      "percentToEnd": 88.23529411764706,
+      "routeId": "931_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1838"
+    },
+    "36": {
+      "bearing": "330.0",
+      "closestStopDist": 955.5026419826463,
+      "closestStopName": "\"Quincy Adams\"",
+      "lat": "42.22515106201172",
+      "lon": "-71.00386047363281",
+      "nextStopDist": 2966.9674110855076,
+      "nextStopName": "\"Quincy Center\"",
+      "percentToEnd": 11.111111111111114,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1827"
+    },
+    "37": {
+      "bearing": "345.0",
+      "closestStopDist": 448.6582436595511,
+      "closestStopName": "\"North Quincy\"",
+      "lat": "42.27878189086914",
+      "lon": "-71.03227996826172",
+      "nextStopDist": 4944.275147435233,
+      "nextStopName": "\"JFK/Umass\"",
+      "percentToEnd": 27.777777777777786,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1616"
+    },
+    "38": {
+      "bearing": "275.0",
+      "closestStopDist": 786.4626693889396,
+      "closestStopName": "\"Alewife\"",
+      "lat": "42.398040771484375",
+      "lon": "-71.13358306884766",
+      "nextStopDist": 977.1101759859733,
+      "nextStopName": "\"Davis\"",
+      "percentToEnd": 100,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1831"
+    },
+    "39": {
+      "bearing": "315.0",
+      "closestStopDist": 331.05198009420417,
+      "closestStopName": "\"Charles/MGH\"",
+      "lat": "42.359371185302734",
+      "lon": "-71.06741333007812",
+      "nextStopDist": 1580.1960081218747,
+      "nextStopName": "\"Kendall/MIT\"",
+      "percentToEnd": 66.66666666666667,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1730"
+    },
+    "4": {
+      "bearing": "75.66999816894531",
+      "closestStopDist": 16.54017957231196,
+      "closestStopName": "\"Sutherland Road\"",
+      "lat": "42.3415412902832",
+      "lon": "-71.14637756347656",
+      "nextStopDist": 388.0936851733554,
+      "nextStopName": "\"Washington Street\"",
+      "percentToEnd": 20.833333333333343,
+      "routeId": "813_",
+      "routeName": "\"Green Line\"",
+      "trip": "3818_1",
+      "vehicleId": "3818"
+    },
+    "40": {
+      "bearing": "305.0",
+      "closestStopDist": 486.15234541080605,
+      "closestStopName": "\"Andrew\"",
+      "lat": "42.325889587402344",
+      "lon": "-71.05635070800781",
+      "nextStopDist": 1861.2489103979697,
+      "nextStopName": "\"Broadway\"",
+      "percentToEnd": 38.888888888888886,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Alewife\"",
+      "vehicleId": "1724"
+    },
+    "41": {
+      "bearing": "190.0",
+      "closestStopDist": 600.317944273156,
+      "closestStopName": "\"Braintree\"",
+      "lat": "42.21324920654297",
+      "lon": "-71.00086212158203",
+      "nextStopDist": 2298.7902363943867,
+      "nextStopName": "\"Quincy Adams\"",
+      "percentToEnd": 94.44444444444444,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Braintree\"",
+      "vehicleId": "1634"
+    },
+    "42": {
+      "bearing": "135.0",
+      "closestStopDist": 1394.9687280923554,
+      "closestStopName": "\"North Quincy\"",
+      "lat": "42.285770416259766",
+      "lon": "-71.03887176513672",
+      "nextStopDist": 2628.746550792905,
+      "nextStopName": "\"Wollaston\"",
+      "percentToEnd": 72.22222222222221,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Braintree\"",
+      "vehicleId": "1720"
+    },
+    "43": {
+      "bearing": "175.0",
+      "closestStopDist": 220.48141305845795,
+      "closestStopName": "\"Broadway\"",
+      "lat": "42.340641021728516",
+      "lon": "-71.05708312988281",
+      "nextStopDist": 1167.0506396822905,
+      "nextStopName": "\"Andrew\"",
+      "percentToEnd": 55.55555555555556,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Braintree\"",
+      "vehicleId": "1849"
+    },
+    "44": {
+      "bearing": "185.0",
+      "closestStopDist": 505.2752387432424,
+      "closestStopName": "\"Porter\"",
+      "lat": "42.383880615234375",
+      "lon": "-71.11978912353516",
+      "nextStopDist": 1171.6169184324208,
+      "nextStopName": "\"Harvard\"",
+      "percentToEnd": 11.11111111111111,
+      "routeId": "933_",
+      "routeName": "\"Red Line\"",
+      "trip": "\"Braintree\"",
+      "vehicleId": "1643"
+    },
+    "45": {
+      "bearing": "30.0",
+      "closestStopDist": 158.3550970273256,
+      "closestStopName": "\"Suffolk Downs\"",
+      "lat": "42.39173889160156",
+      "lon": "-70.99617004394531",
+      "nextStopDist": 718.6228093512995,
+      "nextStopName": "\"Beachmont\"",
+      "percentToEnd": 75,
+      "routeId": "946_",
+      "routeName": "\"Blue Line\"",
+      "trip": "\"Wonderland\"",
+      "vehicleId": "0723"
+    },
+    "46": {
+      "bearing": "90.0",
+      "closestStopDist": 474.92576157888004,
+      "closestStopName": "\"Airport\"",
+      "lat": "42.372310638427734",
+      "lon": "-71.03553771972656",
+      "nextStopDist": 1322.0614516680726,
+      "nextStopName": "\"Wood Island\"",
+      "percentToEnd": 50,
+      "routeId": "946_",
+      "routeName": "\"Blue Line\"",
+      "trip": "\"Wonderland\"",
+      "vehicleId": "0728"
+    },
+    "47": {
+      "bearing": "40.0",
+      "closestStopDist": 442.07631916584313,
+      "closestStopName": "\"Aquarium\"",
+      "lat": "42.361351013183594",
+      "lon": "-71.04670715332031",
+      "nextStopDist": 1045.819328324126,
+      "nextStopName": "\"Maverick\"",
+      "percentToEnd": 33.33333333333334,
+      "routeId": "946_",
+      "routeName": "\"Blue Line\"",
+      "trip": "\"Wonderland\"",
+      "vehicleId": "0780"
+    },
+    "48": {
+      "bearing": "260.0",
+      "closestStopDist": 23.926432120118335,
+      "closestStopName": "\"Aquarium\"",
+      "lat": "42.35956954956055",
+      "lon": "-71.05162811279297",
+      "nextStopDist": 494.91094719050125,
+      "nextStopName": "\"State Street\"",
+      "percentToEnd": 66.66666666666666,
+      "routeId": "946_",
+      "routeName": "\"Blue Line\"",
+      "trip": "\"Bowdoin\"",
+      "vehicleId": "0748"
+    },
+    "49": {
+      "bearing": "225.0",
+      "closestStopDist": 20.246426436872586,
+      "closestStopName": "\"Airport\"",
+      "lat": "42.37437057495117",
+      "lon": "-71.03019714355469",
+      "nextStopDist": 963.7490254783082,
+      "nextStopName": "\"Maverick\"",
+      "percentToEnd": 50,
+      "routeId": "946_",
+      "routeName": "\"Blue Line\"",
+      "trip": "\"Bowdoin\"",
+      "vehicleId": "0790"
+    },
+    "5": {
+      "bearing": "278.8999938964844",
+      "closestStopDist": 15.17666148146786,
+      "closestStopName": "\"Pleasant Street\"",
+      "lat": "42.351539611816406",
+      "lon": "-71.11907196044922",
+      "nextStopDist": 214.13406401569515,
+      "nextStopName": "\"Babcock Street\"",
+      "percentToEnd": 54.16666666666667,
+      "routeId": "813_",
+      "routeName": "\"Green Line\"",
+      "trip": "3838_0",
+      "vehicleId": "3838"
+    },
+    "50": {
+      "bearing": "170.0",
+      "closestStopDist": 282.27629621971647,
+      "closestStopName": "\"Revere Beach\"",
+      "lat": "42.40531921386719",
+      "lon": "-70.99215698242188",
+      "nextStopDist": 864.8517977281948,
+      "nextStopName": "\"Beachmont\"",
+      "percentToEnd": 8.333333333333332,
+      "routeId": "946_",
+      "routeName": "\"Blue Line\"",
+      "trip": "\"Bowdoin\"",
+      "vehicleId": "0754"
+    },
+    "6": {
+      "bearing": "98.38999938964844",
+      "closestStopDist": 162.49838198340643,
+      "closestStopName": "\"Pleasant Street\"",
+      "lat": "42.35123062133789",
+      "lon": "-71.11695098876953",
+      "nextStopDist": 878.8507285088588,
+      "nextStopName": "\"Saint Paul Street\"",
+      "percentToEnd": 54.16666666666667,
+      "routeId": "813_",
+      "routeName": "\"Green Line\"",
+      "trip": "3868_1",
+      "vehicleId": "3868"
+    },
+    "7": {
+      "bearing": "254.05999755859375",
+      "closestStopDist": 50.42803133808767,
+      "closestStopName": "\"Englewood Ave.\"",
+      "lat": "42.337120056152344",
+      "lon": "-71.14508056640625",
+      "nextStopDist": 365.5094868452264,
+      "nextStopName": "\"Cleveland Circle\"",
+      "percentToEnd": 9.090909090909093,
+      "routeId": "831_",
+      "routeName": "\"Green Line\"",
+      "trip": "3698_0",
+      "vehicleId": "3698"
+    },
+    "8": {
+      "bearing": "61.959999084472656",
+      "closestStopDist": 131.83933265948102,
+      "closestStopName": "\"Summit Ave.\"",
+      "lat": "42.34056854248047",
+      "lon": "-71.12703704833984",
+      "nextStopDist": 513.3318651619032,
+      "nextStopName": "\"Coolidge Corner\"",
+      "percentToEnd": 36.36363636363637,
+      "routeId": "831_",
+      "routeName": "\"Green Line\"",
+      "trip": "3870_1",
+      "vehicleId": "3870"
+    },
+    "9": {
+      "bearing": "302.5299987792969",
+      "closestStopDist": 125.10194368055235,
+      "closestStopName": "\"Eliot\"",
+      "lat": "42.319679260253906",
+      "lon": "-71.21794891357422",
+      "nextStopDist": 2648.0225076845686,
+      "nextStopName": "\"Woodland\"",
+      "percentToEnd": 14.285714285714292,
+      "routeId": "851_",
+      "routeName": "\"Green Line\"",
+      "trip": "3697_0",
+      "vehicleId": "3697"
+    }
+  }}
+}

@@ -17,6 +17,7 @@ function bang(){
 function getDict(){
 	var pathname = "Macintosh HD:/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/currentUpdate.json";
 	var actualFile = new Dict("RealFileDict");
+	actualFile.clear();
 	actualFile.import_json(pathname);	
 	var currentUpdate = actualFile.get("timestampOfUpdate");
 	outlet(0, currentUpdate);
@@ -30,13 +31,21 @@ function createDicts(){
 	var actualFile = new Dict("RealFileDict");
 	//Declare variables to access the line/direction specific dictionaries.
 	var gI = new Dict("greenIn");
+	//gI.clear();
 	var gO = new Dict("greenOut");
+	//gO.clear();
 	var oI = new Dict("orangeIn");
+	//oI.clear();
 	var oO = new Dict("orangeOut");
+	//oO.clear();
 	var rI = new Dict("redIn");
+	//ri.clear();
 	var rO = new Dict("redOut");
+	//rO.clear();
 	var bI = new Dict("blueIn");
+	//bI.clear();
 	var bO = new Dict("blueOut");
+	//bO.clear();
 	var currentUpdate = actualFile.get("timestampOfUpdate");
 	//outlet(0, currentUpdate);
 	var stopsFull = actualFile.get("stops");
@@ -102,10 +111,10 @@ function createDicts(){
 	var redOutput = "redlineIn " + getSize(rI) + " redlineOut " + getSize(rO);
 	var blueOutput = "bluelineIn " + getSize(bI) + " bluelineOut " + getSize(bO);
 	
-	outlet(2, greenOutput);
-	outlet(3, orangeOutput);
-	outlet(4, redOutput);
-	outlet(5, blueOutput);
+	outlet(2, "greenlineIn ", getSize(gI), "greenlineOut ", getSize(gO));
+	outlet(3, "oranglineIn ", getSize(oI), "orangelineOut ", getSize(oO));
+	outlet(4, "redlineIn ", getSize(rI), "redlineOut ", getSize(rO));
+	outlet(5, "bluelineIn ", getSize(bI), "bluelineOut ", getSize(bO));
 	post("done\n");
 }
 

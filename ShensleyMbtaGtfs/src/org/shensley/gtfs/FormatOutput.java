@@ -40,7 +40,7 @@ import javax.inject.Singleton;
 @Singleton
 public class FormatOutput implements VehicleListener {
 	
-	private static String OUTPUT_PATHNAME_FULL = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_withStops.json";
+	//private static String OUTPUT_PATHNAME_FULL = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/testCooked_withStops.json";
 	private static String OUTPUT_PATHNAME_CURRENT = "/Users/stephenhensley/git/MbtaProj/ShensleyMbtaGtfs/tests/currentUpdate.json";
 	
 	private RealtimeService _realtimeService;
@@ -172,9 +172,11 @@ public class FormatOutput implements VehicleListener {
 			double lon = v.getLon();
 			String id = v.getRouteId();
 			//System.out.println(id +'\n');
+			//System.out.println(id);
 			ArrayList<StopStatic> listOfStops = stopsByRouteId.get(id);
 			//for(StopStatic s : listOfStops){
 			for(int i = 0; i < listOfStops.size(); i++){
+				//System.out.println(i);
 				double sLat = listOfStops.get(i).getLat();
 				double sLon = listOfStops.get(i).getLon();
 				double dist = calcDistance(lat, lon, sLat, sLon);
@@ -235,6 +237,7 @@ public class FormatOutput implements VehicleListener {
 				}
 			}			
 		}
+		
 	}
 	private double calcDistance(double vlat, double vlon,double slat,double slon){
 		double R = 6371000.0;  // Earth's radius in metres.
@@ -252,7 +255,8 @@ public class FormatOutput implements VehicleListener {
 		setTripHeadsignByTripId(handler);
 		setStopByPosition(handler);
 		setStopSequenceByShapeId(handler);
-		setStopsByRouteId(handler);
+		setStopsByRouteIdOld(handler);
+		//setStopsByRouteIdNew(handler);
 		
 	}
 	
@@ -322,31 +326,35 @@ public class FormatOutput implements VehicleListener {
 	//Therefore, I will hard code this to be accurate. May come back to fix later.
 	//Green Line, Blue Line, Red Line, Orange Line stops
 	//I may need to handle green line and redline differently as they each have multiple paths.
-	private void setStopsByRouteId(StaticHandler handler){
+	private void setStopsByRouteIdOld(StaticHandler handler){
 		for(RouteStatic r : handler.getTrainRoutes()){
 			String id = r.getId();
 			ArrayList<StopStatic> stopSequence = new ArrayList<StopStatic>();
 			//greenline
+			
 			if(id.contains("810_") || id.contains("813_") || id.contains("823_") || id.contains("830_") || 
 					id.contains("831_") || id.contains("840_") || id.contains("842_") || id.contains("851_") || 
 					id.contains("852_") || id.contains("880_") || id.contains("882_")){
+			
+			//if(id.contains("Green")){
 				//System.out.println("Adding Green Line.");
-				if(id.contains("810_") || id.contains("830_") || id.contains("840_") || id.contains("880_")){
+				//if(id.contains("810_") || id.contains("830_") || id.contains("840_") || id.contains("880_")){
 					stopSequence.add(stopByStopName.get("Lechmere"));
 					stopSequence.add(stopByStopName.get("Science Park"));
-				}
-				if(id.contains("831_") || id.contains("851_")){
+				//}
+				//if(id.contains("831_") || id.contains("851_")){
 					stopSequence.add(stopByStopName.get("North Station"));
-				}
-				if(!stopSequence.isEmpty()){
+				//}
+				//if(!stopSequence.isEmpty()){
 					stopSequence.add(stopByStopName.get("Haymarket"));
 					stopSequence.add(stopByStopName.get("Government Center"));
-				}
+			//	}
 				stopSequence.add(stopByStopName.get("Park Street"));
 				stopSequence.add(stopByStopName.get("Boylston"));
 				stopSequence.add(stopByStopName.get("Arlington"));
 				stopSequence.add(stopByStopName.get("Copley"));
 				if(id.contains("880_") || id.contains("882_")){
+				//if(id.contains("Green-E")){
 					//System.out.println("E LINE");
 					stopSequence.add(stopByStopName.get("Prudential"));
 					stopSequence.add(stopByStopName.get("Symphony"));
@@ -366,6 +374,7 @@ public class FormatOutput implements VehicleListener {
 					stopSequence.add(stopByStopName.get("Hynes Convention Center"));
 					stopSequence.add(stopByStopName.get("Kenmore"));
 					if(id.contains("810_") || id.contains("813_") || id.contains("823_")){
+					//if(id.contains("Green-B")){
 						//System.out.println("B LINE");
 						stopSequence.add(stopByStopName.get("Blandford Street"));
 						stopSequence.add(stopByStopName.get("Boston Univ. East"));
@@ -388,6 +397,7 @@ public class FormatOutput implements VehicleListener {
 						
 						stopsByRouteId.put(id, stopSequence);
 					}else if(id.contains("830_") || id.contains("831_")){
+					//}else if(id.contains("Green-C")){	
 						//System.out.println("C LINE");
 						stopSequence.add(stopByStopName.get("Saint Mary Street"));
 						stopSequence.add(stopByStopName.get("Hawes Street"));
@@ -406,6 +416,7 @@ public class FormatOutput implements VehicleListener {
 						
 		
 					}else if(id.contains("840_") || id.contains("842_") || id.contains("851_") || id.contains("852_")){
+					//}else if(id.contains("Green-D")){	
 						//System.out.println("D LINE");
 						stopSequence.add(stopByStopName.get("Fenway"));
 						stopSequence.add(stopByStopName.get("Longwood"));
@@ -424,6 +435,7 @@ public class FormatOutput implements VehicleListener {
 				}
 				//System.out.print("done with green lines");
 			}else if(id.contains("903_") || id.contains("913_")){
+			//}else if(id.contains("Orange")){
 				//System.out.println("Adding Orange Line");
 				stopSequence.add(stopByStopName.get("Oak Grove"));
 				stopSequence.add(stopByStopName.get("Malden Center"));
@@ -448,6 +460,7 @@ public class FormatOutput implements VehicleListener {
 
 			//Red
 			}else if(id.contains("931_") || id.contains("933_")){
+			//}else if(id.contains("Red")){
 				//System.out.println("Adding Red Line.");
 				stopSequence.add(stopByStopName.get("Alewife"));
 				stopSequence.add(stopByStopName.get("Davis"));
@@ -462,24 +475,25 @@ public class FormatOutput implements VehicleListener {
 				stopSequence.add(stopByStopName.get("Broadway"));
 				stopSequence.add(stopByStopName.get("Andrew"));
 				stopSequence.add(stopByStopName.get("JFK/Umass"));
-				if(id.contains("931_")){
+				//if(id.contains("931_")){
 					//System.out.println("Ashmont");
 					stopSequence.add(stopByStopName.get("Savin Hill"));
 					stopSequence.add(stopByStopName.get("Fields Corner"));
 					stopSequence.add(stopByStopName.get("Shawmut"));
 					stopSequence.add(stopByStopName.get("Ashmont"));
-				}else if(id.contains("933_")){
+				//}else if(id.contains("933_")){
 					//System.out.println("Braintree");
 					stopSequence.add(stopByStopName.get("North Quincy"));
 					stopSequence.add(stopByStopName.get("Wollaston"));
 					stopSequence.add(stopByStopName.get("Quincy Center"));
 					stopSequence.add(stopByStopName.get("Quincy Adams"));
 					stopSequence.add(stopByStopName.get("Braintree"));
-				}
+				//}
 				stopsByRouteId.put(id, stopSequence);
 				
 			//Blue
 			}else if(id.contains("946_") || id.contains("948_")){
+			//}else if(id.contains("Blue")){
 				//System.out.println("Adding Blue Line");
 				stopSequence.add(stopByStopName.get("Wonderland"));
 				stopSequence.add(stopByStopName.get("Revere Beach"));
@@ -497,6 +511,7 @@ public class FormatOutput implements VehicleListener {
 				
 			
 			}else if(id.contains("899")){
+			//}else if(id.contains("Mattapan")){
 				//System.out.println("Mattapan Trolley");
 				stopSequence.add(stopByStopName.get("Ashmont"));
 				stopSequence.add(stopByStopName.get("Cedar Grove"));
@@ -509,10 +524,216 @@ public class FormatOutput implements VehicleListener {
 				stopsByRouteId.put(id, stopSequence);	
 				
 			}else{
-				System.out.println("RouteId does not match" + id);
+				System.out.println("RouteId does not match " + id);
 			}		
 		}		
 	}
+	
+	@SuppressWarnings("unused")
+	private void setStopsByRouteIdNew(StaticHandler handler){
+		for(RouteStatic r : handler.getTrainRoutes()){
+			String id = r.getId();
+			ArrayList<StopStatic> stopSequence = new ArrayList<StopStatic>();
+			//greenline
+			/*
+			if(id.contains("810_") || id.contains("813_") || id.contains("823_") || id.contains("830_") || 
+					id.contains("831_") || id.contains("840_") || id.contains("842_") || id.contains("851_") || 
+					id.contains("852_") || id.contains("880_") || id.contains("882_")){
+			*/
+			if(id.contains("Green")){
+				//System.out.println("Adding Green Line.");
+				//if(id.contains("810_") || id.contains("830_") || id.contains("840_") || id.contains("880_")){
+					stopSequence.add(stopByStopName.get("Lechmere"));
+					stopSequence.add(stopByStopName.get("Science Park"));
+				//}
+				//if(id.contains("831_") || id.contains("851_")){
+					stopSequence.add(stopByStopName.get("North Station"));
+				//}
+				//if(!stopSequence.isEmpty()){
+					stopSequence.add(stopByStopName.get("Haymarket"));
+					stopSequence.add(stopByStopName.get("Government Center"));
+			//	}
+				stopSequence.add(stopByStopName.get("Park Street"));
+				stopSequence.add(stopByStopName.get("Boylston"));
+				stopSequence.add(stopByStopName.get("Arlington"));
+				stopSequence.add(stopByStopName.get("Copley"));
+				//if(id.contains("880_") || id.contains("882_")){
+				if(id.contains("Green-E")){
+					//System.out.println("E LINE");
+					stopSequence.add(stopByStopName.get("Prudential"));
+					stopSequence.add(stopByStopName.get("Symphony"));
+					stopSequence.add(stopByStopName.get("Northeastern University"));
+					stopSequence.add(stopByStopName.get("Museum of Fine Arts"));
+					stopSequence.add(stopByStopName.get("Longwood Medical Area"));
+					stopSequence.add(stopByStopName.get("Brigham Circle"));
+					stopSequence.add(stopByStopName.get("Fenwood Road"));
+					stopSequence.add(stopByStopName.get("Mission Park"));
+					stopSequence.add(stopByStopName.get("Riverway"));
+					stopSequence.add(stopByStopName.get("Back of the Hill"));
+					stopSequence.add(stopByStopName.get("Heath Street"));
+					stopsByRouteId.put(id, stopSequence);
+					
+					
+				}else{
+					stopSequence.add(stopByStopName.get("Hynes Convention Center"));
+					stopSequence.add(stopByStopName.get("Kenmore"));
+					//if(id.contains("810_") || id.contains("813_") || id.contains("823_")){
+					if(id.contains("Green-B")){
+						//System.out.println("B LINE");
+						stopSequence.add(stopByStopName.get("Blandford Street"));
+						stopSequence.add(stopByStopName.get("Boston Univ. East"));
+						stopSequence.add(stopByStopName.get("Boston Univ. Central"));
+						stopSequence.add(stopByStopName.get("Boston Univ. West"));
+						stopSequence.add(stopByStopName.get("Saint Paul Street"));
+						stopSequence.add(stopByStopName.get("Pleasant Street"));
+						stopSequence.add(stopByStopName.get("Babcock Street"));
+						stopSequence.add(stopByStopName.get("Packards Corner"));
+						stopSequence.add(stopByStopName.get("Harvard Ave."));
+						stopSequence.add(stopByStopName.get("Griggs Street"));
+						stopSequence.add(stopByStopName.get("Allston Street"));
+						stopSequence.add(stopByStopName.get("Warren Street"));
+						stopSequence.add(stopByStopName.get("Washington Street"));
+						stopSequence.add(stopByStopName.get("Sutherland Road"));
+						stopSequence.add(stopByStopName.get("Chiswick Road"));
+						stopSequence.add(stopByStopName.get("Chestnut Hill Ave."));
+						stopSequence.add(stopByStopName.get("South Street"));
+						stopSequence.add(stopByStopName.get("Boston College"));
+						
+						stopsByRouteId.put(id, stopSequence);
+					//}else if(id.contains("830_") || id.contains("831_")){
+					}else if(id.contains("Green-C")){	
+						//System.out.println("C LINE");
+						stopSequence.add(stopByStopName.get("Saint Mary Street"));
+						stopSequence.add(stopByStopName.get("Hawes Street"));
+						stopSequence.add(stopByStopName.get("Kent Street"));
+						stopSequence.add(stopByStopName.get("Saint Paul Street"));
+						stopSequence.add(stopByStopName.get("Coolidge Corner"));
+						stopSequence.add(stopByStopName.get("Summit Ave."));
+						stopSequence.add(stopByStopName.get("Brandon Hall"));
+						stopSequence.add(stopByStopName.get("Fairbanks Street"));
+						stopSequence.add(stopByStopName.get("Washington Street"));
+						stopSequence.add(stopByStopName.get("Tappan Street"));
+						stopSequence.add(stopByStopName.get("Dean Road"));
+						stopSequence.add(stopByStopName.get("Englewood Ave."));
+						stopSequence.add(stopByStopName.get("Cleveland Circle"));
+						stopsByRouteId.put(id, stopSequence);
+						
+		
+					//}else if(id.contains("840_") || id.contains("842_") || id.contains("851_") || id.contains("852_")){
+					}else if(id.contains("Green-D")){	
+						//System.out.println("D LINE");
+						stopSequence.add(stopByStopName.get("Fenway"));
+						stopSequence.add(stopByStopName.get("Longwood"));
+						stopSequence.add(stopByStopName.get("Brookline Village"));
+						stopSequence.add(stopByStopName.get("Brookline Hills"));
+						stopSequence.add(stopByStopName.get("Beaconsfield"));
+						stopSequence.add(stopByStopName.get("Reservoir"));
+						stopSequence.add(stopByStopName.get("Chestnut Hill"));
+						stopSequence.add(stopByStopName.get("Newton Centre"));
+						stopSequence.add(stopByStopName.get("Newton Highlands"));
+						stopSequence.add(stopByStopName.get("Eliot"));
+						stopSequence.add(stopByStopName.get("Woodland"));
+						stopSequence.add(stopByStopName.get("Riverside"));
+						stopsByRouteId.put(id, stopSequence);
+					}
+				}
+				//System.out.print("done with green lines");
+			//}else if(id.contains("903_") || id.contains("913_")){
+			}else if(id.contains("Orange")){
+				//System.out.println("Adding Orange Line");
+				stopSequence.add(stopByStopName.get("Oak Grove"));
+				stopSequence.add(stopByStopName.get("Malden Center"));
+				stopSequence.add(stopByStopName.get("Wellington"));
+				stopSequence.add(stopByStopName.get("Sullivan Square"));
+				stopSequence.add(stopByStopName.get("Community College"));
+				stopSequence.add(stopByStopName.get("North Station"));
+				stopSequence.add(stopByStopName.get("Haymarket"));
+				stopSequence.add(stopByStopName.get("State Street"));
+				stopSequence.add(stopByStopName.get("Downtown Crossing"));
+				stopSequence.add(stopByStopName.get("Chinatown"));
+				stopSequence.add(stopByStopName.get("Tufts Medical Center"));
+				stopSequence.add(stopByStopName.get("Back Bay"));
+				stopSequence.add(stopByStopName.get("Massachusetts Ave."));
+				stopSequence.add(stopByStopName.get("Ruggles"));
+				stopSequence.add(stopByStopName.get("Roxbury Crossing"));
+				stopSequence.add(stopByStopName.get("Jackson Square"));
+				stopSequence.add(stopByStopName.get("Stony Brook"));
+				stopSequence.add(stopByStopName.get("Green Street"));
+				stopSequence.add(stopByStopName.get("Forest Hills"));
+				stopsByRouteId.put(id, stopSequence);
+
+			//Red
+			//}else if(id.contains("931_") || id.contains("933_")){
+			}else if(id.contains("Red")){
+				//System.out.println("Adding Red Line.");
+				stopSequence.add(stopByStopName.get("Alewife"));
+				stopSequence.add(stopByStopName.get("Davis"));
+				stopSequence.add(stopByStopName.get("Porter"));
+				stopSequence.add(stopByStopName.get("Harvard"));
+				stopSequence.add(stopByStopName.get("Central"));
+				stopSequence.add(stopByStopName.get("Kendall/MIT"));
+				stopSequence.add(stopByStopName.get("Charles/MGH"));
+				stopSequence.add(stopByStopName.get("Park Street"));
+				stopSequence.add(stopByStopName.get("Downtown Crossing"));
+				stopSequence.add(stopByStopName.get("South Station"));
+				stopSequence.add(stopByStopName.get("Broadway"));
+				stopSequence.add(stopByStopName.get("Andrew"));
+				stopSequence.add(stopByStopName.get("JFK/Umass"));
+				//if(id.contains("931_")){
+					//System.out.println("Ashmont");
+					stopSequence.add(stopByStopName.get("Savin Hill"));
+					stopSequence.add(stopByStopName.get("Fields Corner"));
+					stopSequence.add(stopByStopName.get("Shawmut"));
+					stopSequence.add(stopByStopName.get("Ashmont"));
+				//}else if(id.contains("933_")){
+					//System.out.println("Braintree");
+					stopSequence.add(stopByStopName.get("North Quincy"));
+					stopSequence.add(stopByStopName.get("Wollaston"));
+					stopSequence.add(stopByStopName.get("Quincy Center"));
+					stopSequence.add(stopByStopName.get("Quincy Adams"));
+					stopSequence.add(stopByStopName.get("Braintree"));
+				//}
+				stopsByRouteId.put(id, stopSequence);
+				
+			//Blue
+			//}else if(id.contains("946_") || id.contains("948_")){
+			}else if(id.contains("Blue")){
+				//System.out.println("Adding Blue Line");
+				stopSequence.add(stopByStopName.get("Wonderland"));
+				stopSequence.add(stopByStopName.get("Revere Beach"));
+				stopSequence.add(stopByStopName.get("Beachmont"));
+				stopSequence.add(stopByStopName.get("Suffolk Downs"));
+				stopSequence.add(stopByStopName.get("Orient Heights"));
+				stopSequence.add(stopByStopName.get("Wood Island"));
+				stopSequence.add(stopByStopName.get("Airport"));
+				stopSequence.add(stopByStopName.get("Maverick"));
+				stopSequence.add(stopByStopName.get("Aquarium"));
+				stopSequence.add(stopByStopName.get("State Street"));
+				stopSequence.add(stopByStopName.get("Government Center"));
+				stopSequence.add(stopByStopName.get("Bowdoin"));
+				stopsByRouteId.put(id, stopSequence);
+				
+			
+			//}else if(id.contains("899")){
+			}else if(id.contains("Mattapan")){
+				//System.out.println("Mattapan Trolley");
+				stopSequence.add(stopByStopName.get("Ashmont"));
+				stopSequence.add(stopByStopName.get("Cedar Grove"));
+				stopSequence.add(stopByStopName.get("Butler"));
+				stopSequence.add(stopByStopName.get("Milton"));
+				stopSequence.add(stopByStopName.get("Central Ave."));
+				stopSequence.add(stopByStopName.get("Valley Road"));
+				stopSequence.add(stopByStopName.get("Capen Street"));
+				stopSequence.add(stopByStopName.get("Mattapan"));
+				stopsByRouteId.put(id, stopSequence);	
+				
+			}else{
+				System.out.println("RouteId does not match " + id);
+			}		
+		}		
+	}
+
+	
 	
 	/*
 	 * info to pack and order
@@ -578,6 +799,7 @@ public class FormatOutput implements VehicleListener {
 	
 	private void outputJsonFile(JSONObject obj, String timestamp)throws IOException, JSONException{
 		//String pathname = "/Users/stephenhensley/Desktop/test.json";
+		/*
 		if(!new File(OUTPUT_PATHNAME_FULL).isFile()){
 			FileWriter file = new FileWriter(OUTPUT_PATHNAME_FULL);
 			try{
@@ -590,6 +812,7 @@ public class FormatOutput implements VehicleListener {
 				file.close();
 			}
 		}else{
+		
 			String previousFileAsString = readExistingFile(OUTPUT_PATHNAME_FULL);
 			JSONObject previous = new JSONObject(previousFileAsString);
 
@@ -615,6 +838,12 @@ public class FormatOutput implements VehicleListener {
 				file.close();
 			}	
 		}
+		*/
+		
+		File f = new File(OUTPUT_PATHNAME_CURRENT);
+		if(f.exists()){
+			f.delete();
+		}
 		FileWriter file = new FileWriter(OUTPUT_PATHNAME_CURRENT);
 		try{
 			file.write(obj.toString(2));
@@ -627,7 +856,7 @@ public class FormatOutput implements VehicleListener {
 		}
 	}
 	
-	
+	@SuppressWarnings("unused")
 	private String readExistingFile(String path){
 		try{
 			FileReader readFile = new FileReader(path);

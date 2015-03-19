@@ -1,0 +1,1379 @@
+{
+  "stops": [
+    {
+      "lat": "42.395428",
+      "lon": "-71.142483",
+      "name": "\"Alewife\"",
+      "stopId": "place-alfcl"
+    },
+    {
+      "lat": "42.348701",
+      "lon": "-71.137955",
+      "name": "\"Allston Street\"",
+      "stopId": "place-alsgr"
+    },
+    {
+      "lat": "42.330154",
+      "lon": "-71.057655",
+      "name": "\"Andrew\"",
+      "stopId": "place-andrw"
+    },
+    {
+      "lat": "42.374262",
+      "lon": "-71.030395",
+      "name": "\"Airport\"",
+      "stopId": "place-aport"
+    },
+    {
+      "lat": "42.359784",
+      "lon": "-71.051652",
+      "name": "\"Aquarium\"",
+      "stopId": "place-aqucl"
+    },
+    {
+      "lat": "42.351902",
+      "lon": "-71.070893",
+      "name": "\"Arlington\"",
+      "stopId": "place-armnl"
+    },
+    {
+      "lat": "42.284652",
+      "lon": "-71.064489",
+      "name": "\"Ashmont\"",
+      "stopId": "place-asmnl"
+    },
+    {
+      "lat": "42.392811",
+      "lon": "-71.077257",
+      "name": "\"Assembly\"",
+      "stopId": "place-astao"
+    },
+    {
+      "lat": "42.35182",
+      "lon": "-71.12165",
+      "name": "\"Babcock Street\"",
+      "stopId": "place-babck"
+    },
+    {
+      "lat": "42.34735",
+      "lon": "-71.075727",
+      "name": "\"Back Bay\"",
+      "stopId": "place-bbsta"
+    },
+    {
+      "lat": "42.330139",
+      "lon": "-71.111313",
+      "name": "\"Back of the Hill\"",
+      "stopId": "place-bckhl"
+    },
+    {
+      "lat": "42.335846",
+      "lon": "-71.140823",
+      "name": "\"Beaconsfield\"",
+      "stopId": "place-bcnfd"
+    },
+    {
+      "lat": "42.339394",
+      "lon": "-71.13533",
+      "name": "\"Washington Square\"",
+      "stopId": "place-bcnwa"
+    },
+    {
+      "lat": "42.349293",
+      "lon": "-71.100258",
+      "name": "\"Blandford Street\"",
+      "stopId": "place-bland"
+    },
+    {
+      "lat": "42.39754234",
+      "lon": "-70.99231944",
+      "name": "\"Beachmont\"",
+      "stopId": "place-bmmnl"
+    },
+    {
+      "lat": "42.340023",
+      "lon": "-71.129082",
+      "name": "\"Brandon Hall\"",
+      "stopId": "place-bndhl"
+    },
+    {
+      "lat": "42.361365",
+      "lon": "-71.062037",
+      "name": "\"Bowdoin\"",
+      "stopId": "place-bomnl"
+    },
+    {
+      "lat": "42.35302",
+      "lon": "-71.06459",
+      "name": "\"Boylston\"",
+      "stopId": "place-boyls"
+    },
+    {
+      "lat": "42.342622",
+      "lon": "-71.056967",
+      "name": "\"Broadway\"",
+      "stopId": "place-brdwy"
+    },
+    {
+      "lat": "42.351967",
+      "lon": "-71.125031",
+      "name": "\"Packards Corner\"",
+      "stopId": "place-brico"
+    },
+    {
+      "lat": "42.331333",
+      "lon": "-71.126999",
+      "name": "\"Brookline Hills\"",
+      "stopId": "place-brkhl"
+    },
+    {
+      "lat": "42.334229",
+      "lon": "-71.104609",
+      "name": "\"Brigham Circle\"",
+      "stopId": "place-brmnl"
+    },
+    {
+      "lat": "42.2078543",
+      "lon": "-71.0011385",
+      "name": "\"Braintree\"",
+      "stopId": "place-brntn"
+    },
+    {
+      "lat": "42.350082",
+      "lon": "-71.106865",
+      "name": "\"Boston Univ. Central\"",
+      "stopId": "place-bucen"
+    },
+    {
+      "lat": "42.349735",
+      "lon": "-71.103889",
+      "name": "\"Boston Univ. East\"",
+      "stopId": "place-buest"
+    },
+    {
+      "lat": "42.272343",
+      "lon": "-71.062584",
+      "name": "\"Butler\"",
+      "stopId": "place-butlr"
+    },
+    {
+      "lat": "42.350941",
+      "lon": "-71.113876",
+      "name": "\"Boston Univ. West\"",
+      "stopId": "place-buwst"
+    },
+    {
+      "lat": "42.332774",
+      "lon": "-71.116296",
+      "name": "\"Brookline Village\"",
+      "stopId": "place-bvmnl"
+    },
+    {
+      "lat": "42.267712",
+      "lon": "-71.087753",
+      "name": "\"Capen Street\"",
+      "stopId": "place-capst"
+    },
+    {
+      "lat": "42.373622",
+      "lon": "-71.069533",
+      "name": "\"Community College\"",
+      "stopId": "place-ccmnl"
+    },
+    {
+      "lat": "42.279682",
+      "lon": "-71.060432",
+      "name": "\"Cedar Grove\"",
+      "stopId": "place-cedgr"
+    },
+    {
+      "lat": "42.270027",
+      "lon": "-71.073334",
+      "name": "\"Central Ave.\"",
+      "stopId": "place-cenav"
+    },
+    {
+      "lat": "42.326653",
+      "lon": "-71.165314",
+      "name": "\"Chestnut Hill\"",
+      "stopId": "place-chhil"
+    },
+    {
+      "lat": "42.338169",
+      "lon": "-71.15316",
+      "name": "\"Chestnut Hill Ave.\"",
+      "stopId": "place-chill"
+    },
+    {
+      "lat": "42.361166",
+      "lon": "-71.070628",
+      "name": "\"Charles/MGH\"",
+      "stopId": "place-chmnl"
+    },
+    {
+      "lat": "42.352547",
+      "lon": "-71.062752",
+      "name": "\"Chinatown\"",
+      "stopId": "place-chncl"
+    },
+    {
+      "lat": "42.340805",
+      "lon": "-71.150711",
+      "name": "\"Chiswick Road\"",
+      "stopId": "place-chswk"
+    },
+    {
+      "lat": "42.336142",
+      "lon": "-71.149326",
+      "name": "\"Cleveland Circle\"",
+      "stopId": "place-clmnl"
+    },
+    {
+      "lat": "42.365486",
+      "lon": "-71.103802",
+      "name": "\"Central\"",
+      "stopId": "place-cntsq"
+    },
+    {
+      "lat": "42.349974",
+      "lon": "-71.077447",
+      "name": "\"Copley\"",
+      "stopId": "place-coecl"
+    },
+    {
+      "lat": "42.342213",
+      "lon": "-71.121201",
+      "name": "\"Coolidge Corner\"",
+      "stopId": "place-cool"
+    },
+    {
+      "lat": "42.35245",
+      "lon": "-71.04685",
+      "name": "\"Courthouse\"",
+      "stopId": "place-crtst"
+    },
+    {
+      "lat": "42.39674",
+      "lon": "-71.121815",
+      "name": "\"Davis\"",
+      "stopId": "place-davis"
+    },
+    {
+      "lat": "42.337807",
+      "lon": "-71.141853",
+      "name": "\"Dean Road\"",
+      "stopId": "place-denrd"
+    },
+    {
+      "lat": "42.355518",
+      "lon": "-71.060225",
+      "name": "\"Downtown Crossing\"",
+      "stopId": "place-dwnxg"
+    },
+    {
+      "lat": "42.319023",
+      "lon": "-71.216713",
+      "name": "\"Eliot\"",
+      "stopId": "place-eliot"
+    },
+    {
+      "lat": "42.336971",
+      "lon": "-71.14566",
+      "name": "\"Englewood Ave.\"",
+      "stopId": "place-engav"
+    },
+    {
+      "lat": "42.339725",
+      "lon": "-71.131073",
+      "name": "\"Fairbanks Street\"",
+      "stopId": "place-fbkst"
+    },
+    {
+      "lat": "42.333706",
+      "lon": "-71.105728",
+      "name": "\"Fenwood Road\"",
+      "stopId": "place-fenwd"
+    },
+    {
+      "lat": "42.345394",
+      "lon": "-71.104187",
+      "name": "\"Fenway\"",
+      "stopId": "place-fenwy"
+    },
+    {
+      "lat": "42.300093",
+      "lon": "-71.061667",
+      "name": "\"Fields Corner\"",
+      "stopId": "place-fldcr"
+    },
+    {
+      "lat": "42.300523",
+      "lon": "-71.113686",
+      "name": "\"Forest Hills\"",
+      "stopId": "place-forhl"
+    },
+    {
+      "lat": "42.359705",
+      "lon": "-71.059215",
+      "name": "\"Government Center\"",
+      "stopId": "place-gover"
+    },
+    {
+      "lat": "42.348545",
+      "lon": "-71.134949",
+      "name": "\"Griggs Street\"",
+      "stopId": "place-grigg"
+    },
+    {
+      "lat": "42.310525",
+      "lon": "-71.107414",
+      "name": "\"Green Street\"",
+      "stopId": "place-grnst"
+    },
+    {
+      "lat": "42.363021",
+      "lon": "-71.05829",
+      "name": "\"Haymarket\"",
+      "stopId": "place-haecl"
+    },
+    {
+      "lat": "42.373362",
+      "lon": "-71.118956",
+      "name": "\"Harvard\"",
+      "stopId": "place-harsq"
+    },
+    {
+      "lat": "42.350243",
+      "lon": "-71.131355",
+      "name": "\"Harvard Ave.\"",
+      "stopId": "place-harvd"
+    },
+    {
+      "lat": "42.328681",
+      "lon": "-71.110559",
+      "name": "\"Heath Street\"",
+      "stopId": "place-hsmnl"
+    },
+    {
+      "lat": "42.344906",
+      "lon": "-71.111145",
+      "name": "\"Hawes Street\"",
+      "stopId": "place-hwsst"
+    },
+    {
+      "lat": "42.347888",
+      "lon": "-71.087903",
+      "name": "\"Hynes Convention Center\"",
+      "stopId": "place-hymnl"
+    },
+    {
+      "lat": "42.323132",
+      "lon": "-71.099592",
+      "name": "\"Jackson Square\"",
+      "stopId": "place-jaksn"
+    },
+    {
+      "lat": "42.320685",
+      "lon": "-71.052391",
+      "name": "\"JFK/Umass\"",
+      "stopId": "place-jfk"
+    },
+    {
+      "lat": "42.348949",
+      "lon": "-71.095169",
+      "name": "\"Kenmore\"",
+      "stopId": "place-kencl"
+    },
+    {
+      "lat": "42.36249079",
+      "lon": "-71.08617653",
+      "name": "\"Kendall/MIT\"",
+      "stopId": "place-knncl"
+    },
+    {
+      "lat": "42.344074",
+      "lon": "-71.114197",
+      "name": "\"Kent Street\"",
+      "stopId": "place-kntst"
+    },
+    {
+      "lat": "42.340081",
+      "lon": "-71.166769",
+      "name": "\"Boston College\"",
+      "stopId": "place-lake"
+    },
+    {
+      "lat": "42.370772",
+      "lon": "-71.076536",
+      "name": "\"Lechmere\"",
+      "stopId": "place-lech"
+    },
+    {
+      "lat": "42.33596",
+      "lon": "-71.100052",
+      "name": "\"Longwood Medical Area\"",
+      "stopId": "place-lngmd"
+    },
+    {
+      "lat": "42.341145",
+      "lon": "-71.110451",
+      "name": "\"Longwood\"",
+      "stopId": "place-longw"
+    },
+    {
+      "lat": "42.341512",
+      "lon": "-71.083423",
+      "name": "\"Massachusetts Ave.\"",
+      "stopId": "place-masta"
+    },
+    {
+      "lat": "42.267762",
+      "lon": "-71.092241",
+      "name": "\"Mattapan\"",
+      "stopId": "place-matt"
+    },
+    {
+      "lat": "42.337711",
+      "lon": "-71.095512",
+      "name": "\"Museum of Fine Arts\"",
+      "stopId": "place-mfa"
+    },
+    {
+      "lat": "42.270306",
+      "lon": "-71.067673",
+      "name": "\"Milton\"",
+      "stopId": "place-miltt"
+    },
+    {
+      "lat": "42.333195",
+      "lon": "-71.109756",
+      "name": "\"Mission Park\"",
+      "stopId": "place-mispk"
+    },
+    {
+      "lat": "42.426632",
+      "lon": "-71.07411",
+      "name": "\"Malden Center\"",
+      "stopId": "place-mlmnl"
+    },
+    {
+      "lat": "42.36911856",
+      "lon": "-71.03952958",
+      "name": "\"Maverick\"",
+      "stopId": "place-mvbcl"
+    },
+    {
+      "lat": "42.321735",
+      "lon": "-71.206116",
+      "name": "\"Newton Highlands\"",
+      "stopId": "place-newtn"
+    },
+    {
+      "lat": "42.329391",
+      "lon": "-71.192429",
+      "name": "\"Newton Centre\"",
+      "stopId": "place-newto"
+    },
+    {
+      "lat": "42.365577",
+      "lon": "-71.06129",
+      "name": "\"North Station\"",
+      "stopId": "place-north"
+    },
+    {
+      "lat": "42.275275",
+      "lon": "-71.029583",
+      "name": "\"North Quincy\"",
+      "stopId": "place-nqncy"
+    },
+    {
+      "lat": "42.340401",
+      "lon": "-71.088806",
+      "name": "\"Northeastern University\"",
+      "stopId": "place-nuniv"
+    },
+    {
+      "lat": "42.43668",
+      "lon": "-71.071097",
+      "name": "\"Oak Grove\"",
+      "stopId": "place-ogmnl"
+    },
+    {
+      "lat": "42.386867",
+      "lon": "-71.004736",
+      "name": "\"Orient Heights\"",
+      "stopId": "place-orhte"
+    },
+    {
+      "lat": "42.35639457",
+      "lon": "-71.0624242",
+      "name": "\"Park Street\"",
+      "stopId": "place-pktrm"
+    },
+    {
+      "lat": "42.351521",
+      "lon": "-71.118889",
+      "name": "\"Pleasant Street\"",
+      "stopId": "place-plsgr"
+    },
+    {
+      "lat": "42.3884",
+      "lon": "-71.119149",
+      "name": "\"Porter\"",
+      "stopId": "place-portr"
+    },
+    {
+      "lat": "42.34557",
+      "lon": "-71.081696",
+      "name": "\"Prudential\"",
+      "stopId": "place-prmnl"
+    },
+    {
+      "lat": "42.233391",
+      "lon": "-71.007153",
+      "name": "\"Quincy Adams\"",
+      "stopId": "place-qamnl"
+    },
+    {
+      "lat": "42.251809",
+      "lon": "-71.005409",
+      "name": "\"Quincy Center\"",
+      "stopId": "place-qnctr"
+    },
+    {
+      "lat": "42.40784254",
+      "lon": "-70.99253321",
+      "name": "\"Revere Beach\"",
+      "stopId": "place-rbmnl"
+    },
+    {
+      "lat": "42.331397",
+      "lon": "-71.095451",
+      "name": "\"Roxbury Crossing\"",
+      "stopId": "place-rcmnl"
+    },
+    {
+      "lat": "42.337059",
+      "lon": "-71.251742",
+      "name": "\"Riverside\"",
+      "stopId": "place-river"
+    },
+    {
+      "lat": "42.335027",
+      "lon": "-71.148952",
+      "name": "\"Reservoir\"",
+      "stopId": "place-rsmnl"
+    },
+    {
+      "lat": "42.336377",
+      "lon": "-71.088961",
+      "name": "\"Ruggles\"",
+      "stopId": "place-rugg"
+    },
+    {
+      "lat": "42.331684",
+      "lon": "-71.111931",
+      "name": "\"Riverway\"",
+      "stopId": "place-rvrwy"
+    },
+    {
+      "lat": "42.317062",
+      "lon": "-71.104248",
+      "name": "\"Stony Brook\"",
+      "stopId": "place-sbmnl"
+    },
+    {
+      "lat": "42.39050067",
+      "lon": "-70.99712259",
+      "name": "\"Suffolk Downs\"",
+      "stopId": "place-sdmnl"
+    },
+    {
+      "lat": "42.31129",
+      "lon": "-71.053331",
+      "name": "\"Savin Hill\"",
+      "stopId": "place-shmnl"
+    },
+    {
+      "lat": "42.345974",
+      "lon": "-71.107353",
+      "name": "\"Saint Mary Street\"",
+      "stopId": "place-smary"
+    },
+    {
+      "lat": "42.29312583",
+      "lon": "-71.06573796",
+      "name": "\"Shawmut\"",
+      "stopId": "place-smmnl"
+    },
+    {
+      "lat": "42.3396",
+      "lon": "-71.157661",
+      "name": "\"South Street\"",
+      "stopId": "place-sougr"
+    },
+    {
+      "lat": "42.366664",
+      "lon": "-71.067666",
+      "name": "\"Science Park\"",
+      "stopId": "place-spmnl"
+    },
+    {
+      "lat": "42.352271",
+      "lon": "-71.055242",
+      "name": "\"South Station\"",
+      "stopId": "place-sstat"
+    },
+    {
+      "lat": "42.358978",
+      "lon": "-71.057598",
+      "name": "\"State Street\"",
+      "stopId": "place-state"
+    },
+    {
+      "lat": "42.341614",
+      "lon": "-71.146202",
+      "name": "\"Sutherland Road\"",
+      "stopId": "place-sthld"
+    },
+    {
+      "lat": "42.3512",
+      "lon": "-71.116104",
+      "name": "\"Saint Paul Street\"",
+      "stopId": "place-stplb"
+    },
+    {
+      "lat": "42.343327",
+      "lon": "-71.116997",
+      "name": "\"Saint Paul Street\"",
+      "stopId": "place-stpul"
+    },
+    {
+      "lat": "42.383975",
+      "lon": "-71.076994",
+      "name": "\"Sullivan Square\"",
+      "stopId": "place-sull"
+    },
+    {
+      "lat": "42.34111",
+      "lon": "-71.12561",
+      "name": "\"Summit Ave.\"",
+      "stopId": "place-sumav"
+    },
+    {
+      "lat": "42.342687",
+      "lon": "-71.085056",
+      "name": "\"Symphony\"",
+      "stopId": "place-symcl"
+    },
+    {
+      "lat": "42.338459",
+      "lon": "-71.138702",
+      "name": "\"Tappan Street\"",
+      "stopId": "place-tapst"
+    },
+    {
+      "lat": "42.349662",
+      "lon": "-71.063917",
+      "name": "\"Tufts Medical Center\"",
+      "stopId": "place-tumnl"
+    },
+    {
+      "lat": "42.268322",
+      "lon": "-71.081566",
+      "name": "\"Valley Road\"",
+      "stopId": "place-valrd"
+    },
+    {
+      "lat": "42.325943",
+      "lon": "-71.230728",
+      "name": "\"Waban\"",
+      "stopId": "place-waban"
+    },
+    {
+      "lat": "42.343864",
+      "lon": "-71.142853",
+      "name": "\"Washington Street\"",
+      "stopId": "place-wascm"
+    },
+    {
+      "lat": "42.40237",
+      "lon": "-71.077082",
+      "name": "\"Wellington\"",
+      "stopId": "place-welln"
+    },
+    {
+      "lat": "42.3796403",
+      "lon": "-71.02286539",
+      "name": "\"Wood Island\"",
+      "stopId": "place-wimnl"
+    },
+    {
+      "lat": "42.2665139",
+      "lon": "-71.0203369",
+      "name": "\"Wollaston\"",
+      "stopId": "place-wlsta"
+    },
+    {
+      "lat": "42.41342",
+      "lon": "-70.991648",
+      "name": "\"Wonderland\"",
+      "stopId": "place-wondl"
+    },
+    {
+      "lat": "42.333374",
+      "lon": "-71.244301",
+      "name": "\"Woodland\"",
+      "stopId": "place-woodl"
+    },
+    {
+      "lat": "42.348343",
+      "lon": "-71.140457",
+      "name": "\"Warren Street\"",
+      "stopId": "place-wrnst"
+    },
+    {
+      "lat": "42.34863",
+      "lon": "-71.04246",
+      "name": "\"World Trade Center\"",
+      "stopId": "place-wtcst"
+    }
+  ],
+  "timestampOfUpdate": "Sat Feb 07 14:12:48 EST 2015",
+  "vehicles": {
+    "Sat Feb 07 14:12:48 EST 2015": [
+      {
+        "bearing": "279.1300048828125",
+        "lat": "42.350379943847656",
+        "lon": "-71.10962677001953",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3652_0",
+        "vehicleId": "3652"
+      },
+      {
+        "bearing": "135.97000122070312",
+        "lat": "42.340179443359375",
+        "lon": "-71.1670913696289",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3681_1",
+        "vehicleId": "3681"
+      },
+      {
+        "bearing": "278.44000244140625",
+        "lat": "42.34941101074219",
+        "lon": "-71.10140228271484",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3820_0",
+        "vehicleId": "3820"
+      },
+      {
+        "bearing": "206.41000366210938",
+        "lat": "42.34375",
+        "lon": "-71.14288330078125",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3848_0",
+        "vehicleId": "3848"
+      },
+      {
+        "bearing": "104.58999633789062",
+        "lat": "42.338069915771484",
+        "lon": "-71.15384674072266",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3863_1",
+        "vehicleId": "3863"
+      },
+      {
+        "bearing": "99.2699966430664",
+        "lat": "42.349700927734375",
+        "lon": "-71.1043472290039",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3874_1",
+        "vehicleId": "3874"
+      },
+      {
+        "bearing": "271.95001220703125",
+        "lat": "42.340171813964844",
+        "lon": "-71.16356658935547",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3878_0",
+        "vehicleId": "3878"
+      },
+      {
+        "bearing": "85.98999786376953",
+        "lat": "42.35054016113281",
+        "lon": "-71.12869262695312",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3882_1",
+        "vehicleId": "3882"
+      },
+      {
+        "bearing": "63.029998779296875",
+        "lat": "42.34056854248047",
+        "lon": "-71.12703704833984",
+        "routeId": "831_",
+        "routeName": "\"Green Line\"",
+        "trip": "3842_1",
+        "vehicleId": "3842"
+      },
+      {
+        "bearing": "93.45999908447266",
+        "lat": "42.33620071411133",
+        "lon": "-71.14895629882812",
+        "routeId": "831_",
+        "routeName": "\"Green Line\"",
+        "trip": "3859_1",
+        "vehicleId": "3859"
+      },
+      {
+        "bearing": "124.69999694824219",
+        "lat": "42.33475112915039",
+        "lon": "-71.24716186523438",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3643_1",
+        "vehicleId": "3643"
+      },
+      {
+        "bearing": "264.7799987792969",
+        "lat": "42.335060119628906",
+        "lon": "-71.14903259277344",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3835_0",
+        "vehicleId": "3835"
+      },
+      {
+        "bearing": "279.3699951171875",
+        "lat": "42.33599853515625",
+        "lon": "-71.14148712158203",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3846_0",
+        "vehicleId": "3846"
+      },
+      {
+        "bearing": "76.83999633789062",
+        "lat": "42.335140228271484",
+        "lon": "-71.14820098876953",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3857_1",
+        "vehicleId": "3857"
+      },
+      {
+        "bearing": "74.83999633789062",
+        "lat": "42.330101013183594",
+        "lon": "-71.18997955322266",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3867_1",
+        "vehicleId": "3867"
+      },
+      {
+        "bearing": "302.7099914550781",
+        "lat": "42.32292175292969",
+        "lon": "-71.22480010986328",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3868_0",
+        "vehicleId": "3868"
+      },
+      {
+        "bearing": "307.9700012207031",
+        "lat": "42.33325958251953",
+        "lon": "-71.1355972290039",
+        "routeId": "852_",
+        "routeName": "\"Green Line\"",
+        "trip": "3706_0",
+        "vehicleId": "3706"
+      },
+      {
+        "bearing": "243.27999877929688",
+        "lat": "42.33488082885742",
+        "lon": "-71.10304260253906",
+        "routeId": "880_",
+        "routeName": "\"Green Line\"",
+        "trip": "3678_0",
+        "vehicleId": "3678"
+      },
+      {
+        "bearing": "61.939998626708984",
+        "lat": "42.337669372558594",
+        "lon": "-71.09555053710938",
+        "routeId": "880_",
+        "routeName": "\"Green Line\"",
+        "trip": "3811_1",
+        "vehicleId": "3811"
+      },
+      {
+        "bearing": "330.0",
+        "lat": "42.36809158325195",
+        "lon": "-71.06263732910156",
+        "routeId": "903_",
+        "routeName": "\"Orange Line\"",
+        "trip": "\"Oak Grove\"",
+        "vehicleId": "1284"
+      },
+      {
+        "bearing": "40.0",
+        "lat": "42.34571075439453",
+        "lon": "-71.07814025878906",
+        "routeId": "903_",
+        "routeName": "\"Orange Line\"",
+        "trip": "\"Oak Grove\"",
+        "vehicleId": "1298"
+      },
+      {
+        "bearing": "130.0",
+        "lat": "42.373958587646484",
+        "lon": "-71.11873626708984",
+        "routeId": "931_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Ashmont\"",
+        "vehicleId": "1870"
+      },
+      {
+        "bearing": "175.0",
+        "lat": "42.33021926879883",
+        "lon": "-71.05699920654297",
+        "routeId": "931_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Ashmont\"",
+        "vehicleId": "1629"
+      },
+      {
+        "bearing": "330.0",
+        "lat": "42.25205993652344",
+        "lon": "-71.00537872314453",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1735"
+      },
+      {
+        "bearing": "315.0",
+        "lat": "42.359371185302734",
+        "lon": "-71.06741333007812",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1726"
+      },
+      {
+        "bearing": "190.0",
+        "lat": "42.210289001464844",
+        "lon": "-71.00125885009766",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Ashmont\"",
+        "vehicleId": "1820"
+      },
+      {
+        "bearing": "350.0",
+        "lat": "42.37406921386719",
+        "lon": "-71.11875915527344",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1831"
+      },
+      {
+        "bearing": "30.0",
+        "lat": "42.343658447265625",
+        "lon": "-71.05690002441406",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1864"
+      },
+      {
+        "bearing": "135.0",
+        "lat": "42.275760650634766",
+        "lon": "-71.03024291992188",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Braintree\"",
+        "vehicleId": "1852"
+      },
+      {
+        "bearing": "95.0",
+        "lat": "42.362430572509766",
+        "lon": "-71.08580780029297",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Braintree\"",
+        "vehicleId": "1736"
+      },
+      {
+        "bearing": "45.0",
+        "lat": "42.37022018432617",
+        "lon": "-71.03849792480469",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Wonderland\"",
+        "vehicleId": "0750"
+      },
+      {
+        "bearing": "300.0",
+        "lat": "42.36063003540039",
+        "lon": "-71.06060028076172",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Bowdoin\"",
+        "vehicleId": "0742"
+      },
+      {
+        "bearing": "245.0",
+        "lat": "42.37971115112305",
+        "lon": "-71.02278900146484",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Bowdoin\"",
+        "vehicleId": "0786"
+      },
+      {
+        "bearing": "10.0",
+        "lat": "42.410850524902344",
+        "lon": "-70.99259185791016",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Wonderland\"",
+        "vehicleId": "0781"
+      },
+      {
+        "bearing": "15.0",
+        "lat": "42.3985595703125",
+        "lon": "-70.9917221069336",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Wonderland\"",
+        "vehicleId": "0715"
+      }
+    ],
+    "Sat Feb 07 14:13:08 EST 2015": [
+      {
+        "bearing": "279.1300048828125",
+        "lat": "42.350379943847656",
+        "lon": "-71.10962677001953",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3652_0",
+        "vehicleId": "3652"
+      },
+      {
+        "bearing": "135.97000122070312",
+        "lat": "42.340179443359375",
+        "lon": "-71.1670913696289",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3681_1",
+        "vehicleId": "3681"
+      },
+      {
+        "bearing": "278.44000244140625",
+        "lat": "42.34941101074219",
+        "lon": "-71.10140228271484",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3820_0",
+        "vehicleId": "3820"
+      },
+      {
+        "bearing": "206.41000366210938",
+        "lat": "42.34375",
+        "lon": "-71.14288330078125",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3848_0",
+        "vehicleId": "3848"
+      },
+      {
+        "bearing": "104.58999633789062",
+        "lat": "42.338069915771484",
+        "lon": "-71.15384674072266",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3863_1",
+        "vehicleId": "3863"
+      },
+      {
+        "bearing": "99.2699966430664",
+        "lat": "42.349700927734375",
+        "lon": "-71.1043472290039",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3874_1",
+        "vehicleId": "3874"
+      },
+      {
+        "bearing": "271.95001220703125",
+        "lat": "42.340171813964844",
+        "lon": "-71.16356658935547",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3878_0",
+        "vehicleId": "3878"
+      },
+      {
+        "bearing": "85.98999786376953",
+        "lat": "42.35054016113281",
+        "lon": "-71.12869262695312",
+        "routeId": "813_",
+        "routeName": "\"Green Line\"",
+        "trip": "3882_1",
+        "vehicleId": "3882"
+      },
+      {
+        "bearing": "63.029998779296875",
+        "lat": "42.34056854248047",
+        "lon": "-71.12703704833984",
+        "routeId": "831_",
+        "routeName": "\"Green Line\"",
+        "trip": "3842_1",
+        "vehicleId": "3842"
+      },
+      {
+        "bearing": "93.45999908447266",
+        "lat": "42.33620071411133",
+        "lon": "-71.14895629882812",
+        "routeId": "831_",
+        "routeName": "\"Green Line\"",
+        "trip": "3859_1",
+        "vehicleId": "3859"
+      },
+      {
+        "bearing": "124.69999694824219",
+        "lat": "42.33475112915039",
+        "lon": "-71.24716186523438",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3643_1",
+        "vehicleId": "3643"
+      },
+      {
+        "bearing": "264.7799987792969",
+        "lat": "42.335060119628906",
+        "lon": "-71.14903259277344",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3835_0",
+        "vehicleId": "3835"
+      },
+      {
+        "bearing": "279.3699951171875",
+        "lat": "42.33599853515625",
+        "lon": "-71.14148712158203",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3846_0",
+        "vehicleId": "3846"
+      },
+      {
+        "bearing": "76.83999633789062",
+        "lat": "42.335140228271484",
+        "lon": "-71.14820098876953",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3857_1",
+        "vehicleId": "3857"
+      },
+      {
+        "bearing": "74.83999633789062",
+        "lat": "42.330101013183594",
+        "lon": "-71.18997955322266",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3867_1",
+        "vehicleId": "3867"
+      },
+      {
+        "bearing": "302.7099914550781",
+        "lat": "42.32292175292969",
+        "lon": "-71.22480010986328",
+        "routeId": "851_",
+        "routeName": "\"Green Line\"",
+        "trip": "3868_0",
+        "vehicleId": "3868"
+      },
+      {
+        "bearing": "307.9700012207031",
+        "lat": "42.33325958251953",
+        "lon": "-71.1355972290039",
+        "routeId": "852_",
+        "routeName": "\"Green Line\"",
+        "trip": "3706_0",
+        "vehicleId": "3706"
+      },
+      {
+        "bearing": "243.27999877929688",
+        "lat": "42.33488082885742",
+        "lon": "-71.10304260253906",
+        "routeId": "880_",
+        "routeName": "\"Green Line\"",
+        "trip": "3678_0",
+        "vehicleId": "3678"
+      },
+      {
+        "bearing": "61.939998626708984",
+        "lat": "42.337669372558594",
+        "lon": "-71.09555053710938",
+        "routeId": "880_",
+        "routeName": "\"Green Line\"",
+        "trip": "3811_1",
+        "vehicleId": "3811"
+      },
+      {
+        "bearing": "330.0",
+        "lat": "42.36809158325195",
+        "lon": "-71.06263732910156",
+        "routeId": "903_",
+        "routeName": "\"Orange Line\"",
+        "trip": "\"Oak Grove\"",
+        "vehicleId": "1284"
+      },
+      {
+        "bearing": "40.0",
+        "lat": "42.34571075439453",
+        "lon": "-71.07814025878906",
+        "routeId": "903_",
+        "routeName": "\"Orange Line\"",
+        "trip": "\"Oak Grove\"",
+        "vehicleId": "1298"
+      },
+      {
+        "bearing": "130.0",
+        "lat": "42.373958587646484",
+        "lon": "-71.11873626708984",
+        "routeId": "931_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Ashmont\"",
+        "vehicleId": "1870"
+      },
+      {
+        "bearing": "175.0",
+        "lat": "42.33021926879883",
+        "lon": "-71.05699920654297",
+        "routeId": "931_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Ashmont\"",
+        "vehicleId": "1629"
+      },
+      {
+        "bearing": "330.0",
+        "lat": "42.25205993652344",
+        "lon": "-71.00537872314453",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1735"
+      },
+      {
+        "bearing": "315.0",
+        "lat": "42.359371185302734",
+        "lon": "-71.06741333007812",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1726"
+      },
+      {
+        "bearing": "190.0",
+        "lat": "42.210289001464844",
+        "lon": "-71.00125885009766",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Ashmont\"",
+        "vehicleId": "1820"
+      },
+      {
+        "bearing": "350.0",
+        "lat": "42.37406921386719",
+        "lon": "-71.11875915527344",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1831"
+      },
+      {
+        "bearing": "30.0",
+        "lat": "42.343658447265625",
+        "lon": "-71.05690002441406",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Alewife\"",
+        "vehicleId": "1864"
+      },
+      {
+        "bearing": "135.0",
+        "lat": "42.275760650634766",
+        "lon": "-71.03024291992188",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Braintree\"",
+        "vehicleId": "1852"
+      },
+      {
+        "bearing": "95.0",
+        "lat": "42.362430572509766",
+        "lon": "-71.08580780029297",
+        "routeId": "933_",
+        "routeName": "\"Red Line\"",
+        "trip": "\"Braintree\"",
+        "vehicleId": "1736"
+      },
+      {
+        "bearing": "45.0",
+        "lat": "42.37022018432617",
+        "lon": "-71.03849792480469",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Wonderland\"",
+        "vehicleId": "0750"
+      },
+      {
+        "bearing": "300.0",
+        "lat": "42.36063003540039",
+        "lon": "-71.06060028076172",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Bowdoin\"",
+        "vehicleId": "0742"
+      },
+      {
+        "bearing": "245.0",
+        "lat": "42.37971115112305",
+        "lon": "-71.02278900146484",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Bowdoin\"",
+        "vehicleId": "0786"
+      },
+      {
+        "bearing": "10.0",
+        "lat": "42.410850524902344",
+        "lon": "-70.99259185791016",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Wonderland\"",
+        "vehicleId": "0781"
+      },
+      {
+        "bearing": "15.0",
+        "lat": "42.3985595703125",
+        "lon": "-70.9917221069336",
+        "routeId": "946_",
+        "routeName": "\"Blue Line\"",
+        "trip": "\"Wonderland\"",
+        "vehicleId": "0715"
+      }
+    ]
+  }
+}

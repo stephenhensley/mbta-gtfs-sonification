@@ -2,12 +2,12 @@
 	"name" : "MbtaProj",
 	"version" : 1,
 	"creationdate" : -787832050,
-	"modificationdate" : -786828492,
-	"viewrect" : [ 29.0, 69.0, 300.0, 500.0 ],
+	"modificationdate" : -785938071,
+	"viewrect" : [ 29.0, 69.0, 592.0, 677.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
-	"autolocalize" : 0,
+	"autolocalize" : 1,
 	"contents" : 	{
 		"patchers" : 		{
 			"MaxTest2.maxpat" : 			{
@@ -29,12 +29,12 @@
 				"local" : 1
 			}
 ,
-			"compareSymbols.js" : 			{
+			"pairAssigner.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
 			}
 ,
-			"pairAssigner.js" : 			{
+			"compareSymbols.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
 			}
@@ -42,15 +42,19 @@
 		}
 ,
 		"data" : 		{
-			"blueRhythms.txt" : 			{
-				"kind" : "textfile",
-				"local" : 1
-			}
-,
 			"blueLineSounds.txt" : 			{
 				"kind" : "textfile",
 				"local" : 1
 			}
+,
+			"blueRhythms.txt" : 			{
+				"kind" : "textfile",
+				"local" : 1
+			}
+
+		}
+,
+		"externals" : 		{
 
 		}
 

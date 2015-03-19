@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 3;
+outlets = 4;
 
 var current = "foo";
 var previous = "oof";
@@ -14,7 +14,8 @@ function anything(val){
 		outlet(2, current);
 	}else{
 		outlet(1, "symbols are equal");
-		post(current);
+		outlet(3, current.replace(" ", ""));
+		//post(current);
 	}	
 		
 	

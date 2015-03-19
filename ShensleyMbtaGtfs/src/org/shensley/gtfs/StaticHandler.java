@@ -69,6 +69,7 @@ public class StaticHandler {
 					if (routeIdList.isEmpty()) {
 						for (RouteStatic r : trainRoutes) {
 							routeIdList.add(r.getId());
+							//log(r.getId());
 						}
 					}
 				} else {
