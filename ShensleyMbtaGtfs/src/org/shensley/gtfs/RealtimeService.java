@@ -173,6 +173,7 @@ public class RealtimeService {
 			}
 			VehiclePosition vehicle = entity.getVehicle();
 			
+			
 			//checks for trip, if null continue
 			if (!vehicle.hasTrip()){
 				_log.warn("entity doesn't have trip");
@@ -207,6 +208,9 @@ public class RealtimeService {
 			//Trip Descriptors
 			v.setRouteId(trip.getRouteId());
 			v.setTrip(trip.getTripId());
+			v.setStopId(vehicle.getStopId());
+			v.setStopSeq(vehicle.getCurrentStopSequence());
+			v.setCurrentStatus(vehicle.getCurrentStatus().toString());
 			v.setLastUpdate(System.currentTimeMillis());
 			
 			//now check if the vehicle we are updating already exists
@@ -220,19 +224,20 @@ public class RealtimeService {
 				
 			}
 			//This needs to be tweaked to get trains.
-			boolean isTrain = v.getRouteId().contains("_");
+			//boolean isTrain = v.getRouteId().contains("_");
 			
-			/**
-			 * This is going to be used when new feed rolls out.
+			
+			 //* This is going to be used when new feed rolls out.
 			boolean isTrain = false;
-			System.out.println(v.getRouteId());
+			//System.out.println(v.getRouteId());
 			if(v.getRouteId().contains("Green-B") || v.getRouteId().contains("Green-C") || v.getRouteId().contains("Green-D") || v.getRouteId().contains("Green-E")
 					|| v.getRouteId().contains("Orange") || v.getRouteId().contains("Red") || v.getRouteId().contains("Blue") || v.getRouteId().contains("Mattapan")){
 				isTrain = true;
+				//System.out.println(vehicle.getStopId() + ' ' + vehicle.getCurrentStopSequence() + vehicle.getCurrentStatus());
 			}else{
 				isTrain = false;
 			}
-			*/
+			
 			if(isTrain){
 				vehicles.add(v);
 			}

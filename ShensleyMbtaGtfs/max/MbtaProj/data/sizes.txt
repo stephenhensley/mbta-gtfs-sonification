@@ -1,0 +1,6 @@
+Env, 14;
+FM, 11;
+Noise, 1;
+Ring, 19;
+Karp, 12;
+Mix, 4;

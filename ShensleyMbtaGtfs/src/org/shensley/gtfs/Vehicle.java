@@ -27,10 +27,14 @@ public class Vehicle {
 	  private String route; 
 
 	  private String tripId;
+	  
+	  private String stopId;
 
 	  private double bearing;
 	  
 	  private long lastUpdate;
+	  
+	  private int stopSeq;
 	  
 	  //try here first current-nextStopName, Distance
 	  private String closestStopName;
@@ -38,6 +42,8 @@ public class Vehicle {
 	  private double closestStopDist;
 	  private double nextStopDist;
 	  private double percentToEnd;
+	  private String currentStatus;
+
 
 
 	  public String getId() {
@@ -80,6 +86,14 @@ public class Vehicle {
 
 	  public void setTrip(String trip){
 	    this.tripId = trip;
+	  }
+	  
+	  public String getStopId(){
+		  return stopId;
+	  }
+	  
+	  public void setStopId(String stopId){
+		  this.stopId = stopId;
 	  }
 
 	  public long getLastUpdate() {
@@ -136,6 +150,22 @@ public class Vehicle {
 	  
 	  public void setPercentToEnd(double percentToEnd){
 		  this.percentToEnd = percentToEnd;
+	  }
+	  
+	  public int getStopSeq(){
+		  return stopSeq;
+	  }
+	  
+	  public void setStopSeq(int stopSeq){
+		  this.stopSeq = stopSeq;
+	  }
+	  
+	  public String getCurrentStatus(){
+		  return currentStatus;
+	  }
+	  
+	  public void setCurrentStatus(String currentStatus){
+		  this.currentStatus = currentStatus;
 	  }
 	  
 

@@ -61,10 +61,10 @@ public class FormatOutput implements VehicleListener {
 	private HashMap<String, String> routeNameByRouteId = new HashMap<String, String>();
 	private HashMap<String, String> tripHeadsignByTripId = new HashMap<String, String>();
 	private HashMap<String, StopStatic> stopByStopName = new HashMap<String, StopStatic>();
+	private HashMap<String, String> stopNameByStopId = new HashMap<String,String>();
 	private HashMap<String, StopStatic> stopByPosition = new HashMap<String, StopStatic>();
 	private HashMap<String, ArrayList<StopStatic>> stopSequenceByShapeId = new HashMap<String, ArrayList<StopStatic>>();
 	private HashMap<String, ArrayList<StopStatic>> stopsByRouteId = new HashMap<String, ArrayList<StopStatic>>();
-	
 
 	
 	
@@ -175,16 +175,18 @@ public class FormatOutput implements VehicleListener {
 			//System.out.println(id);
 			ArrayList<StopStatic> listOfStops = stopsByRouteId.get(id);
 			//for(StopStatic s : listOfStops){
-			for(int i = 0; i < listOfStops.size(); i++){
-				//System.out.println(i);
-				double sLat = listOfStops.get(i).getLat();
-				double sLon = listOfStops.get(i).getLon();
-				double dist = calcDistance(lat, lon, sLat, sLon);
-				if(closestDist == -1 || dist < closestDist){
-					closestDist = dist;
-					closestName = listOfStops.get(i).getName();
-					//indexOfStop = listOfStops.indexOf(s);
-					indexOfStop = i;
+			if(!listOfStops.isEmpty()){
+				for(int i = 0; i < listOfStops.size(); i++){
+					//System.out.println(i);
+					double sLat = listOfStops.get(i).getLat();
+					double sLon = listOfStops.get(i).getLon();
+					double dist = calcDistance(lat, lon, sLat, sLon);
+					if(closestDist == -1 || dist < closestDist){
+						closestDist = dist;
+						closestName = listOfStops.get(i).getName();
+						//indexOfStop = listOfStops.indexOf(s);
+						indexOfStop = i;
+					}
 				}
 			}
 			v.setClosestStopDist(closestDist);
@@ -194,7 +196,7 @@ public class FormatOutput implements VehicleListener {
 				if(indexOfStop - 1 > 0 && indexOfStop -1 < listOfStops.size()){
 					v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
 					v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
-				}else{
+				}else if(indexOfStop + 1 > 0 && indexOfStop +1 < listOfStops.size()){
 					v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
 					v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
 					//System.out.println("This train is near its final stop.");
@@ -204,7 +206,7 @@ public class FormatOutput implements VehicleListener {
 				if(indexOfStop + 1 > 0 && indexOfStop + 1 < listOfStops.size()){
 					v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
 					v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
-				}else{
+				}else if(indexOfStop -1 > 0 && indexOfStop -1 < listOfStops.size()){
 					v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
 					v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
 					//System.out.println("This train is near its final stop.");
@@ -218,7 +220,7 @@ public class FormatOutput implements VehicleListener {
 						if(indexOfStop - 1 > 0 && indexOfStop -1 < listOfStops.size()){
 							v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
 							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
-						}else{
+						}else if(indexOfStop +1 > 0 && indexOfStop +1 < listOfStops.size()){
 							v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
 							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
 							//System.out.println("This train is near its final stop.");
@@ -228,7 +230,7 @@ public class FormatOutput implements VehicleListener {
 						if(indexOfStop + 1 > 0 && indexOfStop + 1 < listOfStops.size()){
 							v.setNextStopName(listOfStops.get(indexOfStop+1).getName());
 							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop+1).getLat(), listOfStops.get(indexOfStop+1).getLon()));
-						}else{
+						}else if(indexOfStop -1 > 0 && indexOfStop -1 < listOfStops.size()){
 							v.setNextStopName(listOfStops.get(indexOfStop-1).getName());
 							v.setNextStopDist(calcDistance(lat, lon, listOfStops.get(indexOfStop-1).getLat(), listOfStops.get(indexOfStop-1).getLon()));
 							//System.out.println("This train is near its final stop.");
@@ -252,17 +254,19 @@ public class FormatOutput implements VehicleListener {
 	private void setMaps(StaticHandler handler){
 		setRouteNameByRouteId(handler);
 		setStopByStopName(handler);
+		setStopNameByStopId(handler);
 		setTripHeadsignByTripId(handler);
 		setStopByPosition(handler);
 		setStopSequenceByShapeId(handler);
-		setStopsByRouteIdOld(handler);
-		//setStopsByRouteIdNew(handler);
+		//setStopsByRouteIdOld(handler);
+		setStopsByRouteIdNew(handler);
 		
 	}
 	
 	private void setRouteNameByRouteId(StaticHandler handler){
 		for(RouteStatic r : handler.getTrainRoutes()){
 			this.routeNameByRouteId.put(r.getId(), r.getLongName());
+			//System.out.println(r.getId() + ' ' + r.getLongName());
 		}
 	}
 	
@@ -279,11 +283,10 @@ public class FormatOutput implements VehicleListener {
 			String tripId = t.getTripId().replace("\"", "");
 			this.tripHeadsignByTripId.put(tripId, t.getTripHeadsign());
 			//System.out.println(tripId + '\t' + t.getTripHeadsign());
-		}
-		
-		
+		}	
 	}
 	
+
 	
 	//Position is a comma seperated value that can be generated relatively easy: Lat,Lon
 	//doesn't implement correctly because of the accuracy of train pos vs stop pos
@@ -296,6 +299,13 @@ public class FormatOutput implements VehicleListener {
 			this.stopByPosition.put(b.toString(), s);
 		}
 		
+	}
+	
+	private void setStopNameByStopId(StaticHandler handler){
+		for(StopStatic s : handler.getTrainStops()){
+			String stopId = s.getId();
+			this.stopNameByStopId.put(stopId, s.getName());
+		}
 	}
 	
 	
@@ -326,6 +336,7 @@ public class FormatOutput implements VehicleListener {
 	//Therefore, I will hard code this to be accurate. May come back to fix later.
 	//Green Line, Blue Line, Red Line, Orange Line stops
 	//I may need to handle green line and redline differently as they each have multiple paths.
+	@SuppressWarnings("unused")
 	private void setStopsByRouteIdOld(StaticHandler handler){
 		for(RouteStatic r : handler.getTrainRoutes()){
 			String id = r.getId();
@@ -529,10 +540,11 @@ public class FormatOutput implements VehicleListener {
 		}		
 	}
 	
-	@SuppressWarnings("unused")
+	//@SuppressWarnings("unused")
 	private void setStopsByRouteIdNew(StaticHandler handler){
 		for(RouteStatic r : handler.getTrainRoutes()){
 			String id = r.getId();
+			System.out.println(id);
 			ArrayList<StopStatic> stopSequence = new ArrayList<StopStatic>();
 			//greenline
 			/*
@@ -541,6 +553,7 @@ public class FormatOutput implements VehicleListener {
 					id.contains("852_") || id.contains("880_") || id.contains("882_")){
 			*/
 			if(id.contains("Green")){
+				//System.out.println("Green Line Stop Sequence");
 				//System.out.println("Adding Green Line.");
 				//if(id.contains("810_") || id.contains("830_") || id.contains("840_") || id.contains("880_")){
 					stopSequence.add(stopByStopName.get("Lechmere"));
@@ -620,7 +633,7 @@ public class FormatOutput implements VehicleListener {
 						
 		
 					//}else if(id.contains("840_") || id.contains("842_") || id.contains("851_") || id.contains("852_")){
-					}else if(id.contains("Green-D")){	
+					}else if(id.contains("Green-D")){						
 						//System.out.println("D LINE");
 						stopSequence.add(stopByStopName.get("Fenway"));
 						stopSequence.add(stopByStopName.get("Longwood"));
@@ -640,6 +653,7 @@ public class FormatOutput implements VehicleListener {
 				//System.out.print("done with green lines");
 			//}else if(id.contains("903_") || id.contains("913_")){
 			}else if(id.contains("Orange")){
+				
 				//System.out.println("Adding Orange Line");
 				stopSequence.add(stopByStopName.get("Oak Grove"));
 				stopSequence.add(stopByStopName.get("Malden Center"));
@@ -729,7 +743,8 @@ public class FormatOutput implements VehicleListener {
 				
 			}else{
 				System.out.println("RouteId does not match " + id);
-			}		
+			}
+			//System.out.println(id + ' ' + stopSequence);
 		}		
 	}
 
@@ -770,6 +785,9 @@ public class FormatOutput implements VehicleListener {
 				tempVehicleObj.put("nextStopName", vehicles.get(i).getNextStopName());
 				tempVehicleObj.put("nextStopDist", vehicles.get(i).getNextStopDist());
 				tempVehicleObj.put("percentToEnd", vehicles.get(i).getPercentToEnd());
+				tempVehicleObj.put("currentStop", stopNameByStopId.get(vehicles.get(i).getStopId()));
+				tempVehicleObj.put("currentStatus", vehicles.get(i).getCurrentStatus());
+				tempVehicleObj.put("stopSeq", vehicles.get(i).getStopSeq());
 				vehiclesArray.put(Integer.toString(i),tempVehicleObj);
 			}
 			JSONObject vehiclesArrayByTimeStamp = new JSONObject().put(timestamp,vehiclesArray);

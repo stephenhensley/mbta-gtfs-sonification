@@ -59,7 +59,18 @@ function createDicts(){
 		var trip = vehicle.get("trip");
 		var outString = null;
 		switch(routeName){
-			case "\"Green Line\"":
+			case "\"Green Line D\"":
+				if(vehicle.get("currentStop").search("Outbound") != -1){
+					gO.set(vehicle.get("vehicleId"), vehicle);
+					
+				}else if(vehicle.get("currentStop").search("Inbound") != 1){
+					gI.set(vehicle.get("vehicleId"), vehicle);
+				}
+				//post(vehicle.get("currentStop"));
+				break;
+			case "\"Green Line B\"":
+			case "\"Green Line C\"":
+			case "\"Green Line E\"":
 				if(trip.search("_0") != -1){
 					//guessing outbound for now
 					gO.set(vehicle.get("vehicleId"), vehicle);

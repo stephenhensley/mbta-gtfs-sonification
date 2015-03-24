@@ -27,6 +27,7 @@ public class StopStatic {
 	private String url;
 	private int type;
 	private String parentStation;
+	private boolean parent;
 
 	public String getId() {
 		return id;
@@ -116,6 +117,14 @@ public class StopStatic {
 
 	public void setParentStation(String parentStation) {
 		this.parentStation = parentStation;
+	}
+	
+	public boolean hasParent(){
+		return parent;
+	}
+	
+	public void setParent(boolean parent){
+		this.parent = parent;
 	}
 
 }

@@ -1,0 +1,15 @@
+\"ClevelandCircle\", 3;
+\"EnglewoodDrive\", 2;
+\"DeanRoad\", 0;
+\"TappanStreet\", -1;
+\"WashingtonSquare\", 1;
+\"Fairbanks\", -2;
+\"BrandonHall\", 2;
+\"SummitAve.\", 4;
+\"CoolidgeCorner\", 5;
+\"SaintPaulStreet\", 6;
+\"KentStreet\", 4;
+\"HawesStreet\", 5;
+\"SaintMaryStreet\", 7;
+Default, -12;
+noTrain, 0;

@@ -36,6 +36,7 @@ public class StaticHandler {
 	private static ArrayList<RouteStatic> trainRoutes = new ArrayList<RouteStatic>();
 	private static ArrayList<TripStatic> trainTrips = new ArrayList<TripStatic>();
 	private static ArrayList<StopStatic> trainStops = new ArrayList<StopStatic>();
+	private static ArrayList<StopStatic> trainSubStops = new ArrayList<StopStatic>();
 	private static ArrayList<ShapeStatic> trainShapes = new ArrayList<ShapeStatic>();
 	private static ArrayList<Calendar> trainCalendar = new ArrayList<Calendar>();
 
@@ -150,6 +151,10 @@ public class StaticHandler {
 
 	public ArrayList<Calendar> getTrainCalendar() {
 		return trainCalendar;
+	}
+	
+	public ArrayList<StopStatic> getTrainSubStops(){
+		return trainSubStops;
 	}
 
 	private void readFile(String aFileName) throws IOException {
@@ -285,7 +290,7 @@ public class StaticHandler {
 						}
 						j++;
 					}
-					if (t.getRouteId().contains("_")) {
+					if (t.getRouteId().contains("Red") || t.getRouteId().contains("Blue") || t.getRouteId().contains("Green") || t.getRouteId().contains("Orange") || t.getRouteId().contains("Mattapan")) {
 						trips.add(t);
 					}
 				}
@@ -338,6 +343,9 @@ public class StaticHandler {
 							break;
 						case 9:
 							s.setParentStation(temp);
+							if(s.getParentStation() == null){
+								s.setParent(false);
+							}else s.setParent(true);
 							break;
 						default:
 							break;
@@ -346,6 +354,11 @@ public class StaticHandler {
 					}
 					if (s.getType() == 1) {
 						stops.add(s);
+						//System.out.println(s.getName());
+					}else if(s.getType() == 0 && s.getId().contains("70")){
+						if(s.getName().contains("Inbound") || s.getName().contains("Outbound")){
+							stops.add(s);
+						}
 					}
 				}
 			}

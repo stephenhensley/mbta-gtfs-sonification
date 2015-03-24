@@ -1,0 +1,13 @@
+\"HeathStreet\", 0;
+\"BackOfTheHill\", -2;
+\"Riverway\", 3;
+\"MissionPark\", 2;
+\"Fenwoodroad\", 14;
+\"BrighamCircle\", 7;
+\"LongwoodMedicalArea\", 9;
+\"MuseumOfFineArts\", 11;
+\"NortheasternUniversity\", 12;
+\"Symphony\", 13;
+\"Prudential\", 12;
+Default, 0;
+noTrain, 0;

@@ -1,0 +1,14 @@
+\"Riverside\", 7;
+\"Woodland\", 5;
+\"Waban\", 8;
+\"Eliot\", 7;
+\"NewtonHighlands\", 9;
+\"NewtonCentre\", 5;
+\"ChestnutHill\", 6;
+\"Reservoir\", 7;
+\"Beaconsfield\", 9;
+\"BrooklineHills\", 11;
+\"BrooklineVillage\", 8;
+\"Longwood\", 7;
+\"Fenway\", 12;
+Default, -5;
