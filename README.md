@@ -26,6 +26,8 @@ The top row has many already used to explore each line's sound by itself.
   
   If you have any questions, or want to talk about my project don't hesitate to contact me!
 
+  I would also like to extend a huge thank you to my mentors at Berklee College of Music. Namely, Matthew Davidson, Dr. Richard Boulanger, Tom Zicarelli, and Neil Leonard. Without whom, this project would never have even been a thought, nevermind a working software system. Further, my friends and peers in Electronic Production and Design are some of the most inspring and intelligent people I have ever met, and they have constantly pushed me to push myself. All of these people deserve much more than a few words of thanks for being some of the best people I've ever had the pleasure of learning from, and with.
+  
   ALSO credit where credit is due:
   I have looked at, dissected and repurposed parts of the onebusaway visualizer project inside of my project:
       (https://github.com/OneBusAway/onebusaway-gtfs-realtime-visualizer/wiki)
