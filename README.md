@@ -1,4 +1,6 @@
 # mbta-gtfs-sonification
+THERE IS AN ISSUE ADDING THINGS TO THE GIT INDEX/COMMITTING FROM ECLIPSE RIGHT NOW.
+Below discusses the project as it exists now, and as it will be commited here as soon as possible.
 
     MBTA Sonification
     Stephen Hensley
