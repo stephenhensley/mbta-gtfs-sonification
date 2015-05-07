@@ -1,8 +1,8 @@
 # mbta-gtfs-sonification
 
-MBTA Sonification
-Stephen Hensley
-shensley.Audio@gmail.com
+    MBTA Sonification
+    Stephen Hensley
+    shensley.Audio@gmail.com
 
 TO RUN:
 
