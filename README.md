@@ -5,11 +5,15 @@ Stephen Hensley
 shensley.Audio@gmail.com
 
 TO RUN:
+
+
     open the max project located at ShensleyMbtaGtfs/max/MbtaProj/MbtaProj.maxproj
     cd MbtaProj/ShensleyMbtaGtfs/prototypes/
     java -jar shensleyMbtaGtfs_1-0-0.jar --vehiclePositionsUrl=http://developer.mbta.com/lib/GTRTFS/Alerts/VehiclePositions.pb
-    
-    and then check push the top left preset in the Max Main window.
+   
+and then click on the top left preset in the Max Main window.
+The presets are mostly blank and can be stored by shift clicking after changing the mix. 
+The top row has many already used to explore each line's sound by itself.
 
   This software was designed with the intent of creating a musical sonification of the real time positions of the trains in Boston. It is comprised of two parts.
   The first part is a command-line application written in Java. This application receives the protobuffer feed from the MBTA, parses it, and compares it with Static Files provided by the MBTA to create and format a file that has useful JSON data for each subway train. 
